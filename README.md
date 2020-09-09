@@ -2,7 +2,7 @@
 
 # Sistema de controle de oferecimento de disciplinas, controle de notas e frequência
 
-  -Ainda em estado embrionário...
+* Ainda em estado embrionário...
 
 ## Softwares utilizados no projeto
 
