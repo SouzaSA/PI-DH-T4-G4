@@ -7,7 +7,7 @@
 ## Softwares utilizados no projeto
 
 * BRModelo
-  * https://sourceforge.net/projects/brmodelo/ - automatic![BRModelo](https://sourceforge.net/projects/brmodelo/)
+  * [https://sourceforge.net/projects/brmodelo/](https://sourceforge.net/projects/brmodelo/)
 	
 * Pencil Project
-  * https://pencil.evolus.vn/ - automatic![Pencil Project](https://pencil.evolus.vn/)
+  * [https://pencil.evolus.vn/](https://pencil.evolus.vn/)
