@@ -26,6 +26,8 @@ OBSERVAÇÃO: Devem ser observados os diagramas conceitual e lógico na pasta pr
 * [BRModelo](https://sourceforge.net/projects/brmodelo/)
   
 * [Pencil Project](https://pencil.evolus.vn/)
-  * Coleções adicionais
+  * Coleções de stênceis adicionais
     * GENERIC WIREFRAME
     * [Material-Icons-for-Pencil](https://github.com/nathanielw/Material-Icons-for-Pencil/releases/tag/v2.0.0)
+	* [Bootstrap-Pencil-Stencils](https://github.com/nathanielw/Bootstrap-Pencil-Stencils/releases/tag/v1.1.1)
+	
