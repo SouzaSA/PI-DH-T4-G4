@@ -35,5 +35,5 @@ OBSERVAÇÃO: Devem ser observados os diagramas conceitual e lógico na pasta pr
 
 * Frontend
   * Angular V.10
-    * Bootstrap ([Dica de instalação] (https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/))
-	* ngx-bootstrap ([Dica de instalação] (https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/))
+    * Bootstrap ([Dica de instalação](https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/))
+	* ngx-bootstrap ([Dica de instalação](https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/))
