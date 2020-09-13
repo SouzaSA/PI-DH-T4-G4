@@ -31,3 +31,9 @@ OBSERVAÇÃO: Devem ser observados os diagramas conceitual e lógico na pasta pr
     * [Material-Icons-for-Pencil](https://github.com/nathanielw/Material-Icons-for-Pencil/releases/tag/v2.0.0)
 	* [Bootstrap-Pencil-Stencils](https://github.com/nathanielw/Bootstrap-Pencil-Stencils/releases/tag/v1.1.1)
 	
+### Ferramentas de desenvolvimento utilizadas
+
+* Frontend
+  * Angular V.10
+    * Bootstrap ([Dica de instalação] (https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/))
+	* ngx-bootstrap ([Dica de instalação] (https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/))
