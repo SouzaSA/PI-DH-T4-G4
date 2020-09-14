@@ -33,6 +33,11 @@ OBSERVAÇÃO: Devem ser observados os diagramas conceitual e lógico na pasta pr
 	
 ### Ferramentas de desenvolvimento utilizadas
 
+* Ferramenta de simulação de servidor Rest-client
+  * json-server ([Dica de utilização](https://www.youtube.com/watch?v=mczUdRvLBc8&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=122))
+    * comando para iniciar o server: json-server --watch db.json
+	
+
 * Frontend
   * Angular V.10
     * Bootstrap ([Dica de instalação](https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/))

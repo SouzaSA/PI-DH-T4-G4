@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-menu-lateral',
+  selector: 'comum-menu-lateral',
   templateUrl: './menu-lateral.component.html',
   styleUrls: ['./menu-lateral.component.css']
 })
