@@ -13,6 +13,7 @@ import { InformesGeralComponent } from './informes-geral/informes-geral.componen
 import { InformesDepartamentoComponent } from './informes-departamento/informes-departamento.component'; 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

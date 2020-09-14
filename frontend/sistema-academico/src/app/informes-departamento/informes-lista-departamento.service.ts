@@ -3,14 +3,15 @@ import { HttpClient } from '@angular/common/http';
 
 import { tap } from 'rxjs/operators';
 
-import { Informe } from './informes';
+import { Informe } from '../informes-geral/informes';
 
 @Injectable({
   providedIn: 'root'
 })
-export class InformesListaService {
+export class InformesListaDepartamentoService {
 
   private readonly API = 'http://localhost:3000/informes';
+  departamento: string = '';
 
   constructor( private http: HttpClient) { }
 
@@ -19,5 +20,9 @@ export class InformesListaService {
     .pipe(
       tap()
     );
+  }
+
+  changeDepartamento(dpto: string) {
+    this.departamento = dpto;
   }
 }

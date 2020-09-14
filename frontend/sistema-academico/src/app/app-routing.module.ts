@@ -9,6 +9,7 @@ import { InformesDepartamentoComponent } from './informes-departamento/informes-
 const routes: Routes = [
   {path: '', component: MenuLateralComponent, children: [
     {path: 'departamento', component: InformesGeralComponent },
+    {path: '', component: InformesGeralComponent },
     {path: 'departamento1', component: InformesDepartamentoComponent },
     {path: 'departamento2', component: InformesDepartamentoComponent },
     {path: 'departamento3', component: InformesDepartamentoComponent },
