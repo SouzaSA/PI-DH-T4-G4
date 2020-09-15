@@ -10,7 +10,10 @@ import { AppComponent } from './app.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { InformesGeralComponent } from './informes-geral/informes-geral.component';
-import { InformesDepartamentoComponent } from './informes-departamento/informes-departamento.component'; 
+import { InformesDepartamentoComponent } from './informes-departamento/informes-departamento.component';
+import { ProfessorComponent } from './professor/professor.component';
+import { DadosPessaisComponent } from './dados-pessais/dados-pessais.component';
+import { GerenciaInformesComponent } from './professor/gerencia-informes/gerencia-informes.component'; 
 
 
 
@@ -20,7 +23,10 @@ import { InformesDepartamentoComponent } from './informes-departamento/informes-
     LoginModalComponent,
     MenuLateralComponent,
     InformesGeralComponent,
-    InformesDepartamentoComponent
+    InformesDepartamentoComponent,
+    ProfessorComponent,
+    DadosPessaisComponent,
+    GerenciaInformesComponent
   ],
   imports: [
     BrowserModule,

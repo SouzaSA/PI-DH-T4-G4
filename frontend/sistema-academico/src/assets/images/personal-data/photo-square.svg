@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:pencil="http://www.evolus.vn/Namespace/Pencil"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="26.5mm"
+   height="26.5mm"
+   viewBox="0 0 26.5 26.5"
+   version="1.1"
+   id="svg719"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="photo-square.svg">
+  <defs
+     id="defs713" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="36.316906"
+     inkscape:cy="32.794127"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="720"
+     inkscape:window-x="1920"
+     inkscape:window-y="400"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata716">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       pencil:type="Shape"
+       pencil:def="dgthanhan.GenericWireframe:avatarsquare"
+       id="4dbd50cc62dd4dd0b827b83333aabccc"
+       transform="matrix(0.2649577,0,0,0.26504575,5.8737674e-5,-5.8603207e-5)">
+      <pencil:metadata>
+        <pencil:property
+           name="box">100,100</pencil:property>
+        <pencil:property
+           name="fillColor">#FFFFFF00</pencil:property>
+        <pencil:property
+           name="strokeColor">#000000FF</pencil:property>
+        <pencil:property
+           name="strokeStyle">2|</pencil:property>
+      </pencil:metadata>
+      <rect
+         rx="0"
+         ry="0"
+         style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         width="98"
+         height="98"
+         pencil:name="rectangle0"
+         id="c0c79b68a461482db06d6f04764f404e"
+         x="1"
+         y="1" />
+      <g
+         style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:7.84091;stroke-opacity:1"
+         pencil:name="vector0"
+         id="1552cb4492404145ac355e1ecdfe071b"
+         transform="matrix(0.23555556,0,0,0.25603865,24,24)">
+        <path
+           d="m 3,205 c -1.4582929,-3.80024 2.7892914,-22.50422 7,-31 6.821443,-13.63926 15.879874,-21.31623 30,-26 4.56669,-1.41539 14.929059,-4.60841 23,-7 16.160769,-4.9632 19.765342,-6.7412 21,-9 0.490696,-0.95683 1.177511,-5.27683 2,-10 0.621354,-7.70286 0.571842,-7.93893 -2,-12 -3.230362,-4.0786 -6.389405,-12.475687 -6,-16 0,-1.060649 -1.785864,-3.991824 -4,-7 -4.435011,-5.124246 -6.031484,-12.377008 -6,-20 0,-3.69634 0.597165,-5.451477 3,-8 2.625373,-3.120113 1.709934,-3.606576 2,-16 0.03855,-11.77183 0.229039,-12.989896 3,-18 5.567396,-11.342514 17.757884,-20.3804603 31,-23 17.83911,-3.257915 37.78001,6.6597166 46,23 2.68747,5.476308 2.84319,6.511445 3,19 -0.034,12.785461 -1.01133,12.91132 2,16 2.28721,2.287219 2.78411,3.657865 3,8 0,7.411389 -1.56612,14.635502 -6,20 -2.18268,2.52189 -3.96851,5.401323 -4,6 0,3.281953 -2.49626,10.47919 -6,16 l -3,5 v 8 c 0.69755,6.9194 1.25427,8.77205 3,10 1.97499,1.59927 11.65527,5.05149 42,14 9.99202,3.08012 18.82213,8.34678 23,14 4.23073,5.13256 9.61697,15.62982 12,22 1.9539,7.01934 3.09131,20.40949 3,20 z"
+           id="path514"
+           style="fill:#000000" />
+      </g>
+    </g>
+  </g>
+</svg>
