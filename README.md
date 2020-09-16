@@ -42,3 +42,12 @@ OBSERVAÇÃO: Devem ser observados os diagramas conceitual e lógico na pasta pr
   * Angular V.10
     * Bootstrap ([Dica de instalação](https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/))
 	* ngx-bootstrap ([Dica de instalação](https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/))
+	
+* Backend
+  * Springboot V.2.3.3
+	* Lombok ([Instalação eclipse/sts](https://projectlombok.org/setup/eclipse))
+	* JPA
+	* MySql
+
+
+
