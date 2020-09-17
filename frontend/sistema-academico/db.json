@@ -72,5 +72,15 @@
       "prioridade": 5,
       "data": "2020-11-01 11:25:15.123456"
     }
+  ],
+  "professor": [
+    {
+      "id": "",
+      "email": "",
+      "senha": "",
+      "nome": "",
+      "sobrenome": "",
+      "endereco": ""
+    }
   ]
 }
