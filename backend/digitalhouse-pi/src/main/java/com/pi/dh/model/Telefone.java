@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +23,9 @@ public class Telefone {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="telefone_id")
 	private Long telefoneId;
-	@Column(length= 11)
+	
+	@Size(max = 11)
+	@Column
 	private String telefone;
 
 }

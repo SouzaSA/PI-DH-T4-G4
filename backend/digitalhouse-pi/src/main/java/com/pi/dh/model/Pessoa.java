@@ -1,14 +1,17 @@
 package com.pi.dh.model;
 
-import java.util.Date;
+import java.time.OffsetDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,34 +28,61 @@ public class Pessoa {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="pessoa_id")
 	private Long pessoaId;
-	@Column(length = 8)
+	
+	@Size(max = 8)
+	@Column
     private String cep;
-	@Column(length = 60)
+	
+	@Size(max = 60)
+	@Column
     private String rua;
+	
+	@Size(max = 40)
 	@Column
     private Long numero;
-	@Column(length = 40)
+	
+	@Size(max = 40)
+	@Column
     private String bairro;
-	@Column(length = 40)
+	
+	@Size(max = 40)
+	@Column
 	private String cidade;
-	@Column(length = 25)
+	
+	@Size(max = 25)
+	@Column
     private String estado;
-	@Column(length = 60)
+	
+	@Size(max = 60)
+	@Column
     private String complemento;
+	
+	
 	@Column(name="data_cadastro")
-    private Date dataCadastro;
-	@Column(length = 60)
+    private OffsetDateTime dataCadastro;
+	
+	@Size(max = 60)
+	@Column
     private String sobrenome;
-	@Column(length = 25)
+	
+	@Size(max = 25)
+	@Column
 	private String nome;
-	@Column(length = 60)
+	
+	@Size(max = 60)
+	@Column
 	private String email;
-	@Column(length = 256)
+	
+	@Size(max = 256)
+	@Column
 	private String password;
-	@Column(length = 256)
+	
+	@Size(max = 256)
+	@Column
 	private String foto;
 	
 	@OneToMany
-	private Telefone telefone;
+	@JoinColumn(name = "telefone_id")
+	private List<Telefone> telefone;
 
 }

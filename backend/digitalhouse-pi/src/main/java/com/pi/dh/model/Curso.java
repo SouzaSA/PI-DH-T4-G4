@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +24,9 @@ public class Curso {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="curso_id")
 	private Long cursoId;
-	@Column(length=40)
+	
+	@Size(max=30)
+	@Column
 	private String nome;
 	
 	@OneToOne(optional=true)

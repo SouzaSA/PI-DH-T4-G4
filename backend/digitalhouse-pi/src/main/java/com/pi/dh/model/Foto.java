@@ -5,7 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +24,12 @@ public class Foto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="foto_id")
 	private Long fotoId;
-	@Column(length=256)
+	
+	@Size(max=256)
+	@Column
 	private String endereco;
+	
+	@ManyToOne
+	private Informe informe;
 
 }

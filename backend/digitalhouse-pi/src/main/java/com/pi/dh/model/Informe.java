@@ -1,15 +1,14 @@
 package com.pi.dh.model;
 
-import java.sql.Timestamp;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,20 +25,23 @@ public class Informe {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="informe_id")
 	private Long informeId;
-	@Column(length=30)
+	
+	@Size(max=30)
+	@Column
 	private String titulo;
 	@Column(columnDefinition = "TEXT")
 	private String descricao;
 	@Column
 	private Integer prioridade;
-	@Column(length= 40)
-	private Long departamento;
+	
+	@Size(max = 20)
 	@Column
-	private Timestamp publicacao;
+	private Long departamento;
+	
+	@Column(name="data_publicacao")
+	private String dataPublicacao;
 	
 	@ManyToOne(optional=true)
 	private Professor professor;
-	
-	@OneToMany
-	private Foto foto;
+
 }

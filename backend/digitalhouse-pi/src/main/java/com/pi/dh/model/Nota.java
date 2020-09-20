@@ -1,13 +1,16 @@
 package com.pi.dh.model;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.pi.dh.repository.Avaliacoes;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,8 +27,15 @@ public class Nota {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="nota_id")
 	private Long notaId;
+	
+	@Enumerated(EnumType.STRING)
 	@Column
-	private Enum<Avaliacoes> titulo;
+	private Avaliacoes titulo;
+	
 	@Column(precision=10, scale=2)
-	private Double valor;
+	private BigDecimal valor;
+	
+	@ManyToOne
+	private CursaDisciplinaOferecida disciplinaCursadaAluno;
+	
 }

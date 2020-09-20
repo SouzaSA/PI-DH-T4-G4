@@ -1,6 +1,6 @@
 package com.pi.dh.model;
 
-import java.sql.Timestamp;
+import java.time.OffsetDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -26,18 +25,17 @@ public class CursaDisciplinaOferecida {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="cursa_disciplina_oferecida_id")
 	private Long cursaDisciplinaOferecida;
+	
 	@Column(name="data_inscricao")
-	private Timestamp dataInscricao;
+	private OffsetDateTime dataInscricao;
+	
 	@Column(name="data_deferimento")
-	private Timestamp data_deferimento;
+	private OffsetDateTime data_deferimento;
 	
 	@ManyToOne
 	private Aluno aluno;
 	
 	@ManyToOne
 	private DisciplinaOferecida disciplinaOferecida;
-	
-	@OneToMany
-	private Nota nota;
 	
 }

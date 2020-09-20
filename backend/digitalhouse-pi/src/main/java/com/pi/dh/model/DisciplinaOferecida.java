@@ -4,14 +4,13 @@ import java.time.Year;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.pi.dh.repository.DiaSemana;
-import com.pi.dh.repository.Hora;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,14 +27,21 @@ public class DisciplinaOferecida {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="disciplina_oferecida_id")
 	private Long disciplinaOferecidaId;
+	
+	@Enumerated(EnumType.STRING)
 	@Column
-	private Enum<Hora> horario;
+	private Hora horario;
+	
+	@Enumerated(EnumType.STRING)
 	@Column(name="dia_semana")
-	private Enum<DiaSemana> diaSemana;
+	private DiaSemana diaSemana;
+	
 	@Column
 	private Integer semestre;
+	
 	@Column
 	private Year ano;
+	
 	@Column
 	private Integer turma;
 	

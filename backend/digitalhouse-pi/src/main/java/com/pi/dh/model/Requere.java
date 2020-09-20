@@ -1,6 +1,10 @@
 package com.pi.dh.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -14,6 +18,11 @@ import lombok.ToString;
 @Table(name="requere")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
 public class Requere {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="requere_id")
+	private Long requereId;
 	
 	@ManyToOne(optional=true)
 	private Disciplina disciplina;

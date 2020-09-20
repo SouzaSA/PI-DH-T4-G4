@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +24,9 @@ public class Professor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="professor_id")
 	private Long professor_id;
-	@Column(length= 40)
+	
+	@Size(max = 40)
+	@Column
 	private Long departamento;
 
 	@OneToOne(optional=true)

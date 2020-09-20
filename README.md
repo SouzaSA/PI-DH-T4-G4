@@ -48,6 +48,7 @@ OBSERVAÇÃO: Devem ser observados os diagramas conceitual e lógico na pasta pr
 	* Lombok ([Instalação eclipse/sts](https://projectlombok.org/setup/eclipse))
 	* JPA
 	* MySql
-
+	* [modelmapper](http://modelmapper.org/)
+	* Validation
 
 

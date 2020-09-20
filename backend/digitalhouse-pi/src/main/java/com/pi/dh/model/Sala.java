@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,12 +23,17 @@ public class Sala {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="sala_id")
 	private Long salaId;
-	@Column(length= 40)
+	
+	@Size(max = 40)
+	@Column
 	private Long departamento;
+	
 	@Column
 	private Integer andar;
+	
 	@Column
 	private Integer numero;
+	
 	@Column
 	private Integer capacidade;
 }
