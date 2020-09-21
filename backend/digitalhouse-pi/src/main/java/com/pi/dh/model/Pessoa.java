@@ -24,6 +24,7 @@ import lombok.ToString;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
 public class Pessoa {
 	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="pessoa_id")
@@ -37,7 +38,6 @@ public class Pessoa {
 	@Column
     private String rua;
 	
-	@Size(max = 40)
 	@Column
     private Long numero;
 	
@@ -74,7 +74,8 @@ public class Pessoa {
 	private String email;
 	
 	@Size(max = 256)
-	@Column
+	@Column		// TODO Auto-generated constructor stub
+
 	private String password;
 	
 	@Size(max = 256)
@@ -84,5 +85,24 @@ public class Pessoa {
 	@OneToMany
 	@JoinColumn(name = "telefone_id")
 	private List<Telefone> telefone;
+	
+	public Pessoa(Long pessoaId, String cep, String rua, Long numero, String bairro, String cidade, String estado,
+			String complemento, String sobrenome, String nome, String email,
+			String password, String foto, String telefone1, String telefone2) {
+		this.pessoaId = pessoaId;
+		this.cep = cep;
+		this.bairro = rua;
+		this.numero = numero;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.complemento = complemento;
+		this.sobrenome = sobrenome;
+		this.nome = nome;
+		this.email = email;
+		this.password = password;
+		this.foto = foto;
+				
+	}
 
 }
