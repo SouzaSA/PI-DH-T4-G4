@@ -86,23 +86,5 @@ public class Pessoa {
 	@JoinColumn(name = "pessoa_id")
 	private List<Telefone> telefone;
 	
-	public Pessoa(Long pessoaId, String cep, String rua, Long numero, String bairro, String cidade, String estado,
-			String complemento, String sobrenome, String nome, String email,
-			String password, String foto, String telefone1, String telefone2) {
-		this.pessoaId = pessoaId;
-		this.cep = cep;
-		this.bairro = rua;
-		this.numero = numero;
-		this.bairro = bairro;
-		this.cidade = cidade;
-		this.estado = estado;
-		this.complemento = complemento;
-		this.sobrenome = sobrenome;
-		this.nome = nome;
-		this.email = email;
-		this.password = password;
-		this.foto = foto;
-				
-	}
 
 }
