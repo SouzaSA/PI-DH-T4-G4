@@ -24,7 +24,7 @@ public class Telefone {
 	@Column(name="telefone_id")
 	private Long telefoneId;
 	
-	@Size(max = 11)
+	@Size(max = 15)
 	@Column
 	private String telefone;
 
