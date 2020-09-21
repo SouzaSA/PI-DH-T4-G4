@@ -16,7 +16,7 @@ import com.pi.dh.domain.model.Sala;
 import com.pi.dh.domain.repository.SalaRepository;
 
 @RestController
-@RequestMapping("/sala")
+@RequestMapping("/salas")
 public class SalaController {
 
 	@Autowired
