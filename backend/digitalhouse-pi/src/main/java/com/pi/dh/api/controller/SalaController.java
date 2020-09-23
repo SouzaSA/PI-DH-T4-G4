@@ -13,43 +13,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Sala;
-import com.pi.dh.domain.repository.SalaRepository;
+import com.pi.dh.domain.service.SalaService;
 
 @RestController
 @RequestMapping("/salas")
 public class SalaController {
 
 	@Autowired
-	private SalaRepository salaRepository;
+	private SalaService salaService;
 	
 	@PostMapping
 	public void salvar(@RequestBody Sala sala) {
-		salaRepository.save(sala);
+		salaService.salvar(sala);
 	}
 	
 	@GetMapping
 	public List<Sala> listar() {
-		return salaRepository.findAll();
+		return salaService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Sala buscar(@PathVariable Long id) {
-		return salaRepository.findById(id).get();
+	public Sala buscarPorId(@PathVariable Long id) {
+		return salaService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
-		salaRepository.deleteById(id);
+		salaService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
 	public void atualizar(@RequestBody Sala sala, @PathVariable Long id) {
-		Sala sl = salaRepository.findById(id).get();
-		sl.setAndar(sala.getAndar());
-		sl.setCapacidade(sala.getCapacidade());
-		sl.setDepartamento(sala.getDepartamento());
-		sl.setNumero(sala.getNumero());
-		
-		salaRepository.save(sl);
+		salaService.atualizar(sala, id);
 	}
 }

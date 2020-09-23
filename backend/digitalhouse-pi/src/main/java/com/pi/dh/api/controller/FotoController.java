@@ -13,43 +13,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Foto;
-import com.pi.dh.domain.repository.FotoRepository;
+import com.pi.dh.domain.service.FotoService;
 
 @RestController
 @RequestMapping("/fotos")
 public class FotoController {
 
 	@Autowired
-	private FotoRepository fotoRepository;
+	private FotoService fotoService;
 	
 	@PostMapping
 	public void salvar(@RequestBody Foto foto) {
-		fotoRepository.save(foto);
+		fotoService.salvar(foto);
 	}
 	
 	@GetMapping
 	public List<Foto> listar() {
-		return fotoRepository.findAll();
+		return fotoService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Foto buscar(@PathVariable Long id) {
-		return fotoRepository.findById(id).get();
+	public Foto buscarPorId(@PathVariable Long id) {
+		return fotoService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
-		fotoRepository.deleteById(id);
+		fotoService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
 	public void atualizar(@RequestBody Foto foto, @PathVariable Long id) {
-		Foto fo = fotoRepository.findById(id).get();
-		
-		fo.setEndereco(foto.getEndereco());
-		fo.setInforme(foto.getInforme());
-
-		
-		fotoRepository.save(fo);
+		fotoService.atualizar(foto, id);
 	}
 }

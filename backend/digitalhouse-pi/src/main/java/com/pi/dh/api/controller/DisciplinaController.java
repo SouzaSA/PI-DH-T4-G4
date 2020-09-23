@@ -13,46 +13,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Disciplina;
-import com.pi.dh.domain.repository.DisciplinaRepository;
+import com.pi.dh.domain.service.DisciplinaService;
 
 @RestController
 @RequestMapping("/disciplinas")
-public class DIsciplinaController {
+public class DisciplinaController {
 
 	@Autowired
-	private DisciplinaRepository disciplinaRepository;
+	private DisciplinaService disciplinaService;
 	
 	@PostMapping
 	public void salvar(@RequestBody Disciplina disciplina) {
-		disciplinaRepository.save(disciplina);
+		disciplinaService.salvar(disciplina);
 	}
 	
 	@GetMapping
 	public List<Disciplina> listar() {
-		return disciplinaRepository.findAll();
+		return disciplinaService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Disciplina buscar(@PathVariable Long id) {
-		return disciplinaRepository.findById(id).get();
+	public Disciplina buscarPorId(@PathVariable Long id) {
+		return disciplinaService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
-		disciplinaRepository.deleteById(id);
+		disciplinaService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
 	public void atualizar(@RequestBody Disciplina disciplina, @PathVariable Long id) {
-		Disciplina disc = disciplinaRepository.findById(id).get();
-		
-		disc.setNome(disciplina.getNome());
-		disc.setEmenta(disciplina.getEmenta());
-		disc.setCreditos(disciplina.getCreditos());
-		disc.setCodigo(disciplina.getCodigo());
-		disc.setSemestreIdeal(disciplina.getSemestreIdeal());
-
-		
-		disciplinaRepository.save(disc);
+		disciplinaService.atualizar(disciplina, id);
 	}
 }

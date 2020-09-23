@@ -13,45 +13,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.CursaDisciplinaOferecida;
-import com.pi.dh.domain.repository.CursaDisciplinaOferecidaRepository;
+import com.pi.dh.domain.service.CursaDisciplinaOferecidaService;
 
 @RestController
 @RequestMapping("/cursaDisciplinasOferecidas")
 public class CursaDisciplinaOferecidaController {
 
 	@Autowired
-	private CursaDisciplinaOferecidaRepository cursaDisciplinaOferecidaRepository;
+	private CursaDisciplinaOferecidaService cursaDisciplinaOferecidaService;
 	
 	@PostMapping
 	public void salvar(@RequestBody CursaDisciplinaOferecida cursaDisciplinaOferecida) {
-		cursaDisciplinaOferecidaRepository.save(cursaDisciplinaOferecida);
+		cursaDisciplinaOferecidaService.salvar(cursaDisciplinaOferecida);
 	}
 	
 	@GetMapping
 	public List<CursaDisciplinaOferecida> listar() {
-		return cursaDisciplinaOferecidaRepository.findAll();
+		return cursaDisciplinaOferecidaService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public CursaDisciplinaOferecida buscar(@PathVariable Long id) {
-		return cursaDisciplinaOferecidaRepository.findById(id).get();
+	public CursaDisciplinaOferecida buscarPorId(@PathVariable Long id) {
+		return cursaDisciplinaOferecidaService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
-		cursaDisciplinaOferecidaRepository.deleteById(id);
+		cursaDisciplinaOferecidaService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
 	public void atualizar(@RequestBody CursaDisciplinaOferecida cursaDisciplinaOferecida, @PathVariable Long id) {
-		CursaDisciplinaOferecida cdo = cursaDisciplinaOferecidaRepository.findById(id).get();
-		
-		cdo.setDataInscricao(cursaDisciplinaOferecida.getDataInscricao());
-		cdo.setData_deferimento(cursaDisciplinaOferecida.getData_deferimento());
-		cdo.setAluno(cursaDisciplinaOferecida.getAluno());
-		cdo.setDisciplinaOferecida(cursaDisciplinaOferecida.getDisciplinaOferecida());
-
-		
-		cursaDisciplinaOferecidaRepository.save(cdo);
+		cursaDisciplinaOferecidaService.atualizar(cursaDisciplinaOferecida, id);
 	}
 }

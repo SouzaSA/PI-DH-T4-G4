@@ -13,42 +13,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Aluno;
-import com.pi.dh.domain.repository.AlunoRepository;
+import com.pi.dh.domain.service.AlunoService;
 
 @RestController
 @RequestMapping("/alunos")
 public class AlunoController {
 
 	@Autowired
-	private AlunoRepository alunoRepository;
+	private AlunoService alunoService;
 	
 	@PostMapping
 	public void salvar(@RequestBody Aluno aluno) {
-		alunoRepository.save(aluno);
+		alunoService.salvar(aluno);
 	}
 	
 	@GetMapping
 	public List<Aluno> listar() {
-		return alunoRepository.findAll();
+		return alunoService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Aluno buscar(@PathVariable Long id) {
-		return alunoRepository.findById(id).get();
+	public Aluno buscarPorId(@PathVariable Long id) {
+		return alunoService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
-		alunoRepository.deleteById(id);
+		alunoService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
-	public void atualizar(@RequestBody Aluno aluno, @PathVariable Long id) {
-		Aluno al = alunoRepository.findById(id).get();
-		
-		al.setPessoa(aluno.getPessoa());
-		al.setCurso(aluno.getCurso());
-		
-		alunoRepository.save(al);
+	public void atualizar(@RequestBody Aluno aluno, @PathVariable Long id) {		
+		alunoService.atualizar(aluno, id);
 	}
 }

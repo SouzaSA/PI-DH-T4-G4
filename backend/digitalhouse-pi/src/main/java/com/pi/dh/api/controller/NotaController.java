@@ -13,44 +13,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Nota;
-import com.pi.dh.domain.repository.NotaRepository;
+import com.pi.dh.domain.service.NotaService;
 
 @RestController
 @RequestMapping("/notas")
 public class NotaController {
 
 	@Autowired
-	private NotaRepository notaRepository;
+	private NotaService notaService;
 	
 	@PostMapping
 	public void salvar(@RequestBody Nota nota) {
-		notaRepository.save(nota);
+		notaService.salvar(nota);
 	}
 	
 	@GetMapping
 	public List<Nota> listar() {
-		return notaRepository.findAll();
+		return notaService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Nota buscar(@PathVariable Long id) {
-		return notaRepository.findById(id).get();
+	public Nota buscarPorId(@PathVariable Long id) {
+		return notaService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
-		notaRepository.deleteById(id);
+		notaService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
 	public void atualizar(@RequestBody Nota nota, @PathVariable Long id) {
-		Nota no = notaRepository.findById(id).get();
-		
-		no.setTitulo(nota.getTitulo());
-		no.setValor(nota.getValor());
-		no.setDisciplinaCursadaAluno(nota.getDisciplinaCursadaAluno());
-
-		
-		notaRepository.save(no);
+		notaService.atualizar(nota, id);
 	}
 }

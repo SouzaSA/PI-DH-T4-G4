@@ -13,43 +13,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Obrigatoria;
-import com.pi.dh.domain.repository.ObrigatoriaRepository;
+import com.pi.dh.domain.service.ObrigatoriaService;
 
 @RestController
 @RequestMapping("/obrigatorias")
 public class ObrigatoriaController {
 
 	@Autowired
-	private ObrigatoriaRepository obrigatoriaRepository;
+	private ObrigatoriaService obrigatoriaService;
 	
 	@PostMapping
 	public void salvar(@RequestBody Obrigatoria obrigatoria) {
-		obrigatoriaRepository.save(obrigatoria);
+		obrigatoriaService.salvar(obrigatoria);
 	}
 	
 	@GetMapping
 	public List<Obrigatoria> listar() {
-		return obrigatoriaRepository.findAll();
+		return obrigatoriaService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Obrigatoria buscar(@PathVariable Long id) {
-		return obrigatoriaRepository.findById(id).get();
+	public Obrigatoria buscarPorId(@PathVariable Long id) {
+		return obrigatoriaService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
-		obrigatoriaRepository.deleteById(id);
+		obrigatoriaService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
 	public void atualizar(@RequestBody Obrigatoria obrigatoria, @PathVariable Long id) {
-		Obrigatoria obr = obrigatoriaRepository.findById(id).get();
-		
-		obr.setCurso(obrigatoria.getCurso());
-		obr.setDisciplina(obrigatoria.getDisciplina());
-
-		
-		obrigatoriaRepository.save(obr);
+		obrigatoriaService.atualizar(obrigatoria, id);
 	}
 }

@@ -13,41 +13,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Administrador;
-import com.pi.dh.domain.repository.AdministradorRepository;
+import com.pi.dh.domain.service.AdministradorService;
 
 @RestController
 @RequestMapping("/administradores")
 public class AdministradorController {
 
 	@Autowired
-	private AdministradorRepository administradorRepository;
+	private AdministradorService administradorService;
 	
 	@PostMapping
 	public void salvar(@RequestBody Administrador administrador) {
-		administradorRepository.save(administrador);
+		administradorService.salvar(administrador);
 	}
 	
 	@GetMapping
 	public List<Administrador> listar() {
-		return administradorRepository.findAll();
+		return administradorService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Administrador buscar(@PathVariable Long id) {
-		return administradorRepository.findById(id).get();
+	public Administrador buscarPorId(@PathVariable Long id) {
+		return administradorService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
-		administradorRepository.deleteById(id);
+		administradorService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
 	public void atualizar(@RequestBody Administrador administrador, @PathVariable Long id) {
-		Administrador adm = administradorRepository.findById(id).get();
-		
-		adm.setPessoa(administrador.getPessoa());
-		
-		administradorRepository.save(adm);
+		administradorService.atualizar(administrador, id);
 	}
 }

@@ -13,52 +13,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Pessoa;
-import com.pi.dh.domain.repository.PessoaRepository;
+import com.pi.dh.domain.service.PessoaService;
 
 @RestController
 @RequestMapping("/pessoas")
 public class PessoaController {
 
 	@Autowired
-	private PessoaRepository pessoaRepository;
+	private PessoaService pessoaService;
 	
 	@PostMapping
 	public void salvar(@RequestBody Pessoa pessoa) {
-		pessoaRepository.save(pessoa);
+		pessoaService.salvar(pessoa);
 	}
 	
 	@GetMapping
 	public List<Pessoa> listar() {
-		return pessoaRepository.findAll();
+		return pessoaService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Pessoa buscar(@PathVariable Long id) {
-		return pessoaRepository.findById(id).get();
+	public Pessoa buscarPorId(@PathVariable Long id) {
+		return pessoaService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
-		pessoaRepository.deleteById(id);
+		pessoaService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
 	public void atualizar(@RequestBody Pessoa pessoa, @PathVariable Long id) {
-		Pessoa pess = pessoaRepository.findById(id).get();
-		
-		pess.setCep(pessoa.getCep());
-		pess.setRua(pessoa.getRua());
-		pess.setNumero(pessoa.getNumero());
-		pess.setBairro(pessoa.getBairro());
-		pess.setCidade(pessoa.getCidade());
-		pess.setEstado(pessoa.getEstado());
-		pess.setComplemento(pessoa.getComplemento());
-		pess.setSobrenome(pessoa.getSobrenome());
-		pess.setNome(pessoa.getNome());
-		pess.setEmail(pessoa.getEmail());
-		pess.setPassword(pessoa.getPassword());
-		pess.setFoto(pessoa.getFoto());
-		
-		pessoaRepository.save(pess);
+		pessoaService.atualizar(pessoa, id);
 	}
 }

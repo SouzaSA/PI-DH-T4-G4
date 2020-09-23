@@ -13,51 +13,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.DisciplinaOferecida;
-import com.pi.dh.domain.repository.DisciplinaOferecidaRepository;
+import com.pi.dh.domain.service.DisciplinaOferecidaService;
 
 @RestController
 @RequestMapping("/disciplinaOferecidas")
 public class DisciplinaOferecidaController {
 
 	@Autowired
-	private DisciplinaOferecidaRepository disciplinaOferecidaRepository;
+	private DisciplinaOferecidaService disciplinaOferecidaService;
 	
 	@PostMapping
 	public void salvar(@RequestBody DisciplinaOferecida disciplinaOferecida) {
-		disciplinaOferecidaRepository.save(disciplinaOferecida);
+		disciplinaOferecidaService.salvar(disciplinaOferecida);
 	}
 	
 	@GetMapping
 	public List<DisciplinaOferecida> listar() {
-		return disciplinaOferecidaRepository.findAll();
+		return disciplinaOferecidaService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public DisciplinaOferecida buscar(@PathVariable Long id) {
-		return disciplinaOferecidaRepository.findById(id).get();
+	public DisciplinaOferecida buscarPorId(@PathVariable Long id) {
+		return disciplinaOferecidaService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
-		disciplinaOferecidaRepository.deleteById(id);
+		disciplinaOferecidaService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
 	public void atualizar(@RequestBody DisciplinaOferecida disciplinaOferecida, @PathVariable Long id) {
-		DisciplinaOferecida discO = disciplinaOferecidaRepository.findById(id).get();
-		
-		discO.setHorario(disciplinaOferecida.getHorario());
-		discO.setDiaSemana(disciplinaOferecida.getDiaSemana());
-		discO.setSemestre(disciplinaOferecida.getSemestre());
-		discO.setAno(disciplinaOferecida.getAno());
-		discO.setTurma(disciplinaOferecida.getTurma());
-		discO.setProfessor(disciplinaOferecida.getProfessor());
-		discO.setDisciplina(disciplinaOferecida.getDisciplina());
-		discO.setSala(disciplinaOferecida.getSala());
-
-
-
-		
-		disciplinaOferecidaRepository.save(discO);
+		disciplinaOferecidaService.atualizar(disciplinaOferecida, id);
 	}
 }

@@ -13,42 +13,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Telefone;
-import com.pi.dh.domain.repository.TelefoneRepository;
+import com.pi.dh.domain.service.TelefoneService;
 
 @RestController
 @RequestMapping("/telefones")
 public class TelefoneController {
 
 	@Autowired
-	private TelefoneRepository telefoneRepository;
+	private TelefoneService telefoneService;
 	
 	@PostMapping
 	public void salvar(@RequestBody Telefone telefone) {
-		telefoneRepository.save(telefone);
+		telefoneService.salvar(telefone);
 	}
 	
 	@GetMapping
 	public List<Telefone> listar() {
-		return telefoneRepository.findAll();
+		return telefoneService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Telefone buscar(@PathVariable Long id) {
-		return telefoneRepository.findById(id).get();
+	public Telefone buscarPorId(@PathVariable Long id) {
+		return telefoneService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
-		telefoneRepository.deleteById(id);
+		telefoneService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
 	public void atualizar(@RequestBody Telefone telefone, @PathVariable Long id) {
-		Telefone tel = telefoneRepository.findById(id).get();
-		
-		tel.setTelefone(telefone.getTelefone());
-
-		
-		telefoneRepository.save(tel);
+		telefoneService.atualizar(telefone, id);
 	}
 }

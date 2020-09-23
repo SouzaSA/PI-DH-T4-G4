@@ -13,43 +13,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Requere;
-import com.pi.dh.domain.repository.RequereRepository;
+import com.pi.dh.domain.service.RequereService;
 
 @RestController
 @RequestMapping("/requeres")
 public class RequereController {
 
 	@Autowired
-	private RequereRepository requereRepository;
+	private RequereService requereService;
 	
 	@PostMapping
 	public void salvar(@RequestBody Requere requere) {
-		requereRepository.save(requere);
+		requereService.salvar(requere);
 	}
 	
 	@GetMapping
 	public List<Requere> listar() {
-		return requereRepository.findAll();
+		return requereService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Requere buscar(@PathVariable Long id) {
-		return requereRepository.findById(id).get();
+	public Requere buscarPorId(@PathVariable Long id) {
+		return requereService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
-		requereRepository.deleteById(id);
+		requereService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
 	public void atualizar(@RequestBody Requere requere, @PathVariable Long id) {
-		Requere req = requereRepository.findById(id).get();
-		
-		req.setDisciplina(requere.getDisciplina());
-		req.setRequerida(requere.getRequerida());
-
-		
-		requereRepository.save(req);
+		requereService.atualizar(requere, id);
 	}
 }
