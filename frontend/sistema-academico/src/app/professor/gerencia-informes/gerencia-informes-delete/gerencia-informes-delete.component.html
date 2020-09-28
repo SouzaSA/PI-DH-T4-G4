@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>Excluir produto</mat-card-title>
+  <mat-card-content>
+    Departamento: <br />
+    {{ informe.departamento.name }}</mat-card-content
+  >
+  <mat-card-content>
+    Descrição: <br />
+    {{ informe.descricao }}
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button class="btn btn-danger mr-1" (click)="deleteInforme()">
+      Excluir
+    </button>
+
+    <button class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+  </mat-card-actions>
+</mat-card>

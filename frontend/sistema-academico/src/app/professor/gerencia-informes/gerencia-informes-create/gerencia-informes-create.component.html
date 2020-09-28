@@ -1,0 +1,49 @@
+<mat-accordion>
+  <mat-expansion-panel hideToggle #mep="matExpansionPanel">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="panel-title">
+        <i class="material-icons"> add </i>
+        Adicionar novo informe
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="p-formgroup-inline">
+      <div class="p-field">
+        <p-dropdown
+          [options]="prioridades"
+          [(ngModel)]="informe.prioridade" name="prioridade"
+          placeholder="Prioridade"
+          optionLabel="name"
+          [showClear]="true"
+          class="prioridade"
+        >
+        </p-dropdown>
+      </div>
+
+      <div class="p-field">
+        <p-dropdown
+          [options]="departamentos"
+          [(ngModel)]="informe.departamento" name="departamento"
+          placeholder="Departamento"
+          optionLabel="name"
+          [showClear]="true"
+        >
+        </p-dropdown>
+      </div>
+
+      <div class="p-field">
+        <div class="p-inputgroup">
+          <input type="text" pInputText placeholder="Título" [(ngModel)]="informe.titulo" name="titulo"/>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p-editor [style]="{ height: '320px' }" [(ngModel)]="informe.descricao" name="descricao"></p-editor>
+    </div>
+    <button class="btn btn-primary mr-1" (click)="createInforme()">
+      Salvar
+    </button>
+    <button class="btn btn-secondary" (click)="cancel(mep)">Cancelar</button>
+  </mat-expansion-panel>
+</mat-accordion>

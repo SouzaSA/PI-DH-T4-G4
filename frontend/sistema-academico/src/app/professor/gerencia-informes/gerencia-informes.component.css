@@ -1,0 +1,20 @@
+.panel-title {
+    align-items: center;
+}
+
+.material-icons{
+    padding-right: 10px;
+}
+
+.btn .btn-light{
+    align-items: center;
+}
+
+
+.card-footer {
+    height: 12px;
+}
+
+.ui-dialog{
+    z-index: 9999 !important
+}

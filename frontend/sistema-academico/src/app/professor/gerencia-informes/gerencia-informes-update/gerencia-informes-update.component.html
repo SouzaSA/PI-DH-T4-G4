@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-card-title>Editar Informe</mat-card-title>
+  <mat-card-content>
+    <div class="p-formgroup-inline">
+      <div class="p-field">
+        <p-dropdown
+          [options]="prioridades"
+          [(ngModel)]="informe.prioridade"
+          name="prioridade"
+          placeholder="Prioridade"
+          optionLabel="name"
+          [showClear]="true"
+          class="prioridade"
+        >
+        </p-dropdown>
+      </div>
+
+      <div class="p-field">
+        <p-dropdown
+          [options]="departamentos"
+          [(ngModel)]="informe.departamento"
+          name="departamento"
+          placeholder="Departamento"
+          optionLabel="name"
+          [showClear]="true"
+        >
+        </p-dropdown>
+      </div>
+
+      <div class="p-field">
+        <div class="p-inputgroup">
+          <input
+            type="text"
+            pInputText
+            placeholder="Título"
+            [(ngModel)]="informe.titulo"
+            name="titulo"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p-editor
+        [style]="{ height: '320px' }"
+        [(ngModel)]="informe.descricao"
+        name="descricao"
+      ></p-editor>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="btn btn-primary mr-1" (click)="updateInforme()">
+      Salvar
+    </button>
+    <button class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+  </mat-card-actions>
+</mat-card>

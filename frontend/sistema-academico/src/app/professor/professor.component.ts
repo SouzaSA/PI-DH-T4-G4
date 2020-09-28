@@ -12,4 +12,7 @@ export class ProfessorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
+
+
