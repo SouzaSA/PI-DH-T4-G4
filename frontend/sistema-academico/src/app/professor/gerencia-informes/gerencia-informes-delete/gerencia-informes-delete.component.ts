@@ -12,6 +12,7 @@ import { Informe } from '../gerencia-informes.model';
 export class GerenciaInformesDeleteComponent implements OnInit {
   
   informe: Informe;
+  displayConfirmacao = false;
   
   
   constructor(
@@ -37,5 +38,9 @@ export class GerenciaInformesDeleteComponent implements OnInit {
 
   cancel(): void {
     this.router.navigate(['professor/informes']);
+  }
+
+  dialogoConfirmacao(): void {
+    this.displayConfirmacao = true;
   }
 }
