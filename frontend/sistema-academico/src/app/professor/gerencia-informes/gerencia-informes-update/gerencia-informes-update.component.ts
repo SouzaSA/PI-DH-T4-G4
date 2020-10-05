@@ -51,8 +51,6 @@ export class GerenciaInformesUpdateComponent implements OnInit {
     });
   }
 
-
-
   updateInforme(): void {
     this.gerenciaInformesService.update(this.informe).subscribe(() => {
       this.gerenciaInformesService.showMessage(

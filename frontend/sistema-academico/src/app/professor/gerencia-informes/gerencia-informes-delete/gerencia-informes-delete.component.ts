@@ -12,12 +12,13 @@ import { Informe } from '../gerencia-informes.model';
 export class GerenciaInformesDeleteComponent implements OnInit {
   
   informe: Informe;
-  colunas = ['id', 'descricao', 'prioridade', 'departamento', 'name'];
+  
   
   constructor(
     private gerenciaInformesService: GerenciaInformesService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    
   ) {}
 
   ngOnInit(): void {

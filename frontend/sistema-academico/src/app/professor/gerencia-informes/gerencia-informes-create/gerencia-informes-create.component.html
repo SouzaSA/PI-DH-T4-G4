@@ -2,44 +2,54 @@
   <mat-expansion-panel hideToggle #mep="matExpansionPanel">
     <mat-expansion-panel-header>
       <mat-panel-title class="panel-title">
-        <i class="material-icons"> add </i>
+        <i class="pi pi-plus"></i>
         Adicionar novo informe
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <div class="p-formgroup-inline">
-      <div class="p-field">
-        <p-dropdown
-          [options]="prioridades"
-          [(ngModel)]="informe.prioridade" name="prioridade"
-          placeholder="Prioridade"
-          optionLabel="name"
-          [showClear]="true"
-          class="prioridade"
-        >
-        </p-dropdown>
-      </div>
-
-      <div class="p-field">
-        <p-dropdown
-          [options]="departamentos"
-          [(ngModel)]="informe.departamento" name="departamento"
-          placeholder="Departamento"
-          optionLabel="name"
-          [showClear]="true"
-        >
-        </p-dropdown>
-      </div>
-
-      <div class="p-field">
-        <div class="p-inputgroup">
-          <input type="text" pInputText placeholder="Título" [(ngModel)]="informe.titulo" name="titulo"/>
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="block-div">
+        <div class="p-field p-col-6">
+          <p-dropdown
+            [options]="prioridades"
+            [(ngModel)]="informe.prioridade"
+            name="prioridade"
+            placeholder="Prioridade"
+            optionLabel="name"
+            [showClear]="false"
+          >
+          </p-dropdown>
         </div>
+        <div class="p-field p-col-6">
+          <p-dropdown
+            [options]="departamentos"
+            [(ngModel)]="informe.departamento"
+            name="departamento"
+            placeholder="Departamento"
+            optionLabel="name"
+            [showClear]="false"
+          >
+          </p-dropdown>
+        </div>
+      </div>
+      <div class="p-field p-col-12">
+        <input
+          id="float-input"
+          type="text"
+          pInputText
+          placeholder="Título"
+          [(ngModel)]="informe.titulo"
+          name="titulo"
+        >
       </div>
     </div>
 
     <div>
-      <p-editor [style]="{ height: '320px' }" [(ngModel)]="informe.descricao" name="descricao"></p-editor>
+      <p-editor
+        [style]="{ height: '320px' }"
+        [(ngModel)]="informe.descricao"
+        name="descricao"
+      ></p-editor>
     </div>
     <button class="btn btn-primary mr-1" (click)="createInforme()">
       Salvar
