@@ -1,9 +1,9 @@
 export interface Informe {
     id?: number;
-    departamento: string;
+    departamento: any;
     titulo: string;
     descricao: string;
-    prioridade: string;
+    prioridade: any;
     data?: Date;
 }
 

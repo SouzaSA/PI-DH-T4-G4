@@ -37,10 +37,10 @@ export class GerenciaInformesCreateComponent implements OnInit {
 
   departamentoSelecionado: Departamento;
   informe: Informe = {
-    departamento: '',
     titulo: '',
     descricao: '',
     prioridade: null,
+    departamento: null,
   };
 
 
@@ -53,6 +53,7 @@ export class GerenciaInformesCreateComponent implements OnInit {
   ngOnInit(): void {}
 
   createInforme(): void {
+    
     this.gerenciaInformesService.create(this.informe).subscribe(() => {
       this.gerenciaInformesService.showMessage('Informe criado.');
       this.router.navigate(['/informes']);

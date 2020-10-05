@@ -21,6 +21,42 @@ export class GerenciaInformesService {
   }
 
   create(informe: Informe): Observable<Informe> {
+
+
+    switch (informe.departamento.name) {
+      case "Dep1":
+        informe.departamento = "Departamento 1";
+        break;
+      case "Dep2":
+        informe.departamento = "Departamento 2";
+        break;
+      case "Dep3":
+        informe.departamento = "Departamento 3";
+        break;
+      case "Dep4":
+        informe.departamento = "Departamento 4";
+        break;
+      default:
+        break;
+    }
+
+    switch (informe.prioridade.name) {
+      case "Baixa":
+        informe.prioridade = "Baixa";
+        break;
+      case "Média":
+        informe.prioridade = "Média";
+        break;
+      case "Alta":
+        informe.prioridade = "Alta";
+        break;
+      case "Urgente":
+        informe.prioridade = "Urgente";
+        break;
+      default:
+        break;
+    }
+
     return this.http.post<Informe>(this.baseUrl, informe);
   }
 
