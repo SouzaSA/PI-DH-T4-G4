@@ -1,5 +1,6 @@
 package com.pi.dh.domain.model;
 
+import java.io.Serializable;
 import java.time.OffsetDateTime;
 
 import javax.persistence.Column;
@@ -21,7 +22,8 @@ import lombok.ToString;
 @Entity
 @Table(name="informe")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
-public class Informe {
+public class Informe implements Serializable {
+private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,14 +33,17 @@ public class Informe {
 	@Size(max=30)
 	@Column
 	private String titulo;
+	
 	@Column(columnDefinition = "TEXT")
 	private String descricao;
-	@Column
-	private Integer prioridade;
 	
 	@Column
 	@NotNull
-	private Long departamento;
+	private String prioridade;
+	
+	@Column
+	@NotNull
+	private String departamento;
 	
 	@Column(name="data_publicacao")
 	private OffsetDateTime dataPublicacao;
