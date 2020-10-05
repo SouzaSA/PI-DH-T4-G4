@@ -1,5 +1,39 @@
 <div class="mat-elevation-z4">
-  <table mat-table [dataSource]="informes">
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 mx-auto my-5" *ngFor="let informe of informes">
+      <p-card header={{informe.titulo}} subheader={{informe.departamento}}>
+        
+        <p-content>
+          {{informe.descricao}}
+        </p-content>
+
+        <ng-template pTemplate="footer">
+          <p-button icon="pi pi-pencil"></p-button>
+          <p-button icon="pi pi-trash" [style]="{'margin-left': '.5em'}""></p-button>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</div>
+
+<!-- <p-card header="Advanced Card" subheader="Card Subheader" [style]="{width: '360px'}" styleClass="p-card-shadow">
+    <p-header>
+        <img alt="Card" src="assets/showcase/images/usercard.png">
+    </p-header>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+        quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+    <ng-template pTemplate="footer">
+        <p-button label="Save" icon="pi pi-check"></p-button>
+        <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary [style]="{'margin-left': '.5em'}""></p-button>
+    </ng-template>
+</p-card> -->
+
+
+
+
+
+  <!-- <table mat-table [dataSource]="informes"> -->
     <!-- Id Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>Id</th>
