@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,7 +28,6 @@ public class Professor implements Serializable {
 	@Column(name="professor_id")
 	private Long professor_id;
 	
-	@Size(max = 40)
 	@Column
 	private Long departamento;
 

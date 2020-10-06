@@ -64,6 +64,16 @@ public class Pessoa implements Serializable {
 	
 	@OneToMany(mappedBy="pessoa", cascade=CascadeType.ALL)
 	private List<Endereco> enderecos = new ArrayList<>();
+
+	public Pessoa(Long pessoaId, String sobrenome, String nome,
+			String email, String password) {
+		super();
+		this.pessoaId = pessoaId;
+		this.sobrenome = sobrenome;
+		this.nome = nome;
+		this.email = email;
+		this.password = password;
+	}
 	
 
 }

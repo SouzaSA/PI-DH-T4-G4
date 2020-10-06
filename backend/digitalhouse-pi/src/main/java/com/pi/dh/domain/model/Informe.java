@@ -53,14 +53,12 @@ private static final long serialVersionUID = 1L;
 	@ManyToOne(optional=true)
 	private Professor professor;
 
-	public Informe(Long informeId, String titulo, String descricao, String departamento, 
-			OffsetDateTime dataPublicacao, Professor professor, PrioridadeInforme prioridade) {
+	public Informe(Long informeId, String titulo, String descricao, String departamento, Professor professor, PrioridadeInforme prioridade) {
 		super();
 		this.informeId = informeId;
 		this.titulo = titulo;
 		this.descricao = descricao;
 		this.departamento = departamento;
-		this.dataPublicacao = dataPublicacao;
 		this.professor = professor;
 		this.prioridade = prioridade.getCod();
 	}
