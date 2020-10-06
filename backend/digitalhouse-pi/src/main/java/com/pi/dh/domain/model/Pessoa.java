@@ -74,8 +74,7 @@ public class Pessoa {
 	private String email;
 	
 	@Size(max = 256)
-	@Column		// TODO Auto-generated constructor stub
-
+	@Column
 	private String password;
 	
 	@Size(max = 256)

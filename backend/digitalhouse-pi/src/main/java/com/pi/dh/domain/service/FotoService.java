@@ -1,47 +1,41 @@
 package com.pi.dh.domain.service;
 
-import java.util.List;
-
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.pi.dh.domain.model.Foto;
+import com.pi.dh.domain.model.Pessoa;
 import com.pi.dh.domain.repository.FotoRepository;
+import com.pi.dh.domain.repository.PessoaRepository;
+import com.pi.dh.dto.FotoDTO;
+import com.pi.dh.mapper.FotoMapper;
+import com.pi.dh.request.FotoRequest;
 
 @Service
 public class FotoService {
 
 	@Autowired
-	private FotoRepository fotoRepository;
+	private FotoRepository repository;
 	
-	@Transactional
-	public void salvar(Foto foto) {
-		fotoRepository.save(foto);
-	}
+	@Autowired
+	private FotoMapper mapper;
 	
-	public List<Foto> listar() {
-		return fotoRepository.findAll();
-	}
+	@Autowired
+	private PessoaRepository pessoaRepository;
 	
-	public Foto buscarPorId(Long id) {
-		return fotoRepository.findById(id).get();
-	}
-	
-	@Transactional
-	public void excluir(Long id) {
-		fotoRepository.deleteById(id);
-	}
-	
-	@Transactional
-	public void atualizar(Foto foto, Long id) {
-		Foto fo = fotoRepository.findById(id).get();
+	public FotoDTO salvar(FotoRequest fotoRequest, Long id) {
 		
-		fo.setEndereco(foto.getEndereco());
-		fo.setInforme(foto.getInforme());
-
+		Foto foto = mapper.requestToModel(fotoRequest);
 		
-		fotoRepository.save(fo);
+		Pessoa pessoa = pessoaRepository.findById(id).get();
+	
+		MultipartFile arquivo = fotoRequest.getFoto();
+		foto.setPessoa(pessoa);
+		foto.setContentType(arquivo.getContentType());
+		foto.setTamanho(arquivo.getSize());
+		foto.setNomeArquivo(arquivo.getOriginalFilename());
+	    
+	    return mapper.modelToDTO( repository.save(foto) );	
 	}
 }

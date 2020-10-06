@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.pi.dh.domain.model.Foto;
 
 @Repository
-public interface FotoRepository extends JpaRepository<Foto, Long> {
+public interface FotoRepository extends JpaRepository<Foto, Long>{
 
 }

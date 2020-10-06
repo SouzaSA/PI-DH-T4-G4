@@ -2,34 +2,28 @@ package com.pi.dh.domain.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
+@Data
 @Entity
-@Table(name="foto")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
+@Table(name="fotos")
 public class Foto {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="foto_id")
-	private Long fotoId;
-	
-	@Size(max=256)
-	@Column
-	private String endereco;
-	
-	@ManyToOne
-	private Informe informe;
 
+	@Id
+	@Column(name = "pessoa_id")
+	private Long id;
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	@MapsId
+	private Pessoa pessoa;
+	
+	private String nomeArquivo;
+	private String contentType;
+	private Long tamanho;
 }
