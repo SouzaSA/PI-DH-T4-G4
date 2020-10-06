@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pi.dh.domain.model.Pessoa;
+import com.pi.dh.domain.repository.EnderecoRepository;
 import com.pi.dh.domain.repository.PessoaRepository;
 
 @Service
@@ -16,9 +17,14 @@ public class PessoaService {
 	@Autowired
 	private PessoaRepository pessoaRepository;
 	
+	@Autowired
+	private EnderecoRepository enderecoRepository;
+	
 	@Transactional
 	public void salvar(Pessoa pessoa) {
-		pessoaRepository.save(pessoa);
+		pessoa.setPessoaId(null);
+		pessoa = pessoaRepository.save(pessoa);
+		enderecoRepository.saveAll(pessoa.getEnderecos());
 	}
 	
 	public List<Pessoa> listar() {
@@ -38,13 +44,6 @@ public class PessoaService {
 	public void atualizar(Pessoa pessoa, Long id) {
 		Pessoa pess = pessoaRepository.findById(id).get();
 		
-		pess.setCep(pessoa.getCep());
-		pess.setRua(pessoa.getRua());
-		pess.setNumero(pessoa.getNumero());
-		pess.setBairro(pessoa.getBairro());
-		pess.setCidade(pessoa.getCidade());
-		pess.setEstado(pessoa.getEstado());
-		pess.setComplemento(pessoa.getComplemento());
 		pess.setSobrenome(pessoa.getSobrenome());
 		pess.setNome(pessoa.getNome());
 		pess.setEmail(pessoa.getEmail());

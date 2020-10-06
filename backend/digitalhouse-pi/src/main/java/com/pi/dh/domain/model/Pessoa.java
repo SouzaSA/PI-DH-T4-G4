@@ -1,8 +1,10 @@
 package com.pi.dh.domain.model;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,34 +32,6 @@ public class Pessoa {
 	@Column(name="pessoa_id")
 	private Long pessoaId;
 	
-	@Size(max = 8)
-	@Column
-    private String cep;
-	
-	@Size(max = 60)
-	@Column
-    private String rua;
-	
-	@Column
-    private Long numero;
-	
-	@Size(max = 40)
-	@Column
-    private String bairro;
-	
-	@Size(max = 40)
-	@Column
-	private String cidade;
-	
-	@Size(max = 25)
-	@Column
-    private String estado;
-	
-	@Size(max = 60)
-	@Column
-    private String complemento;
-	
-	
 	@Column(name="data_cadastro")
     private OffsetDateTime dataCadastro;
 	
@@ -84,6 +58,9 @@ public class Pessoa {
 	@OneToMany
 	@JoinColumn(name = "pessoa_id")
 	private List<Telefone> telefone;
+	
+	@OneToMany(mappedBy="pessoa", cascade=CascadeType.ALL)
+	private List<Endereco> enderecos = new ArrayList<>();
 	
 
 }
