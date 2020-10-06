@@ -1,5 +1,7 @@
 package com.pi.dh.domain.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,7 +15,9 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="fotos")
-public class Foto {
+public class Foto implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 
 	@Id
 	@Column(name = "pessoa_id")

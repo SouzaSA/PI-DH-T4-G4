@@ -1,5 +1,6 @@
 package com.pi.dh.domain.model;
 
+import java.io.Serializable;
 import java.time.OffsetDateTime;
 
 import javax.persistence.Column;
@@ -19,7 +20,9 @@ import lombok.ToString;
 @Entity
 @Table(name="cursa_disciplina_oferecida")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
-public class CursaDisciplinaOferecida {
+public class CursaDisciplinaOferecida implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

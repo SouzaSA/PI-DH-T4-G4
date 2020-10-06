@@ -1,5 +1,6 @@
 package com.pi.dh.domain.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
@@ -21,7 +22,8 @@ import lombok.ToString;
 @Entity
 @Table(name="nota")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
-public class Nota {
+public class Nota implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

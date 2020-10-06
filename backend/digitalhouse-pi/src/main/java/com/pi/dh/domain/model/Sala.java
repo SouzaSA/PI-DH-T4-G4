@@ -1,5 +1,7 @@
 package com.pi.dh.domain.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +19,9 @@ import lombok.ToString;
 @Entity
 @Table(name="sala")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
-public class Sala {
+public class Sala implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

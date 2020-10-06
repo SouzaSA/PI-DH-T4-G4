@@ -1,5 +1,6 @@
 package com.pi.dh.domain.model;
 
+import java.io.Serializable;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,9 @@ import lombok.ToString;
 @Entity
 @Table(name="pessoa")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
-public class Pessoa {
+public class Pessoa implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	
 
 	@Id
