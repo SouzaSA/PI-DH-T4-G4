@@ -15,7 +15,7 @@ public class InformeService {
 
 	@Autowired
 	private InformeRepository informeRepository;
-	
+		
 	@Transactional
 	public void salvar(Informe informe) {
 		informeRepository.save(informe);
@@ -39,10 +39,10 @@ public class InformeService {
 		Informe inf = informeRepository.findById(id).get();
 		inf.setTitulo(informe.getTitulo());
 		inf.setDescricao(informe.getDescricao());
-		inf.setPrioridade(informe.getPrioridade());
 		inf.setDepartamento(informe.getDepartamento());
 		inf.setProfessor(informe.getProfessor());
 		inf.setDataPublicacao(informe.getDataPublicacao());
+		inf.setPrioridade(informe.getPrioridade());
 		
 		informeRepository.save(inf);
 	}

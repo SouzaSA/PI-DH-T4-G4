@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.pi.dh.domain.model.enums.PrioridadeInforme;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -39,7 +41,7 @@ private static final long serialVersionUID = 1L;
 	
 	@Column
 	@NotNull
-	private String prioridade;
+	private Integer prioridade;
 	
 	@Column
 	@NotNull
@@ -50,5 +52,27 @@ private static final long serialVersionUID = 1L;
 	
 	@ManyToOne(optional=true)
 	private Professor professor;
+
+	public Informe(Long informeId, String titulo, String descricao, String departamento, 
+			OffsetDateTime dataPublicacao, Professor professor, PrioridadeInforme prioridade) {
+		super();
+		this.informeId = informeId;
+		this.titulo = titulo;
+		this.descricao = descricao;
+		this.departamento = departamento;
+		this.dataPublicacao = dataPublicacao;
+		this.professor = professor;
+		this.prioridade = prioridade.getCod();
+	}
+	
+	public void setPrioridade(PrioridadeInforme prioridade) {
+		this.prioridade = prioridade.getCod();
+		
+	}
+	
+	public PrioridadeInforme getPrioridade() {
+		return PrioridadeInforme.toEnum(prioridade);
+	}
+	
 
 }
