@@ -8,7 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.pi.dh.domain.model.enums.Departamentos;
+import com.pi.dh.domain.model.enums.Obrigatoria;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -43,5 +47,32 @@ public class Disciplina implements Serializable {
     
     @Column(name="semestre_ideal")
     private Integer semestreIdeal;
+    
+	@Column
+	@NotNull
+	private Integer obrigatoria;
+	
+	
+		public Disciplina(Long disciplinaId, String nome, String ementa, Integer creditos, 
+				String codigo, Integer semestreIdeal, Obrigatoria obrigatoria) {
+		super();
+		this.disciplinaId = disciplinaId;
+		this.nome = nome;
+		this.ementa = ementa;
+		this.creditos = creditos;
+		this.codigo = codigo;
+		this.semestreIdeal = semestreIdeal;
+		this.obrigatoria = obrigatoria.getCod();
+	}
+		
+		
+		public void setObrigatoria(Obrigatoria obrigatoria) {
+			this.obrigatoria = obrigatoria.getCod();
+			
+		}
+		
+		public Obrigatoria getObrigatoria() {
+			return Obrigatoria.toEnum(obrigatoria);
+		}
 
 }
