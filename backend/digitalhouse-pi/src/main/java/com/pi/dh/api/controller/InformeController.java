@@ -1,8 +1,10 @@
 package com.pi.dh.api.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Informe;
 import com.pi.dh.domain.service.InformeService;
+import com.pi.dh.dto.InformeDTO;
 
 @RestController
 @RequestMapping("/informes")
@@ -30,8 +33,10 @@ public class InformeController {
 	}
 	
 	@GetMapping
-	public List<Informe> listar() {
-		return informeService.listar();
+	public ResponseEntity<List<InformeDTO>> listar() {
+		List<Informe> list = informeService.listar();
+		List<InformeDTO> listDto = list.stream().map(obj -> new InformeDTO(obj)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listDto);
 	}
 	
 	@GetMapping("/{id}")
