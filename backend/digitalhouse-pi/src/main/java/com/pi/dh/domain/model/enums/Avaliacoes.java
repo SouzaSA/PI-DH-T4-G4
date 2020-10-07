@@ -1,4 +1,4 @@
-package com.pi.dh.domain.model;
+package com.pi.dh.domain.model.enums;
 
 public enum Avaliacoes {
 	PROVA,
