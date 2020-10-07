@@ -2,6 +2,7 @@ package com.pi.dh.domain.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +30,7 @@ public class Aluno implements Serializable {
 	@Column(name="aluno_id")
 	private Long alunoId;
 
-	@OneToOne(optional=true)
+	@OneToOne(cascade=CascadeType.REMOVE, optional=true)
 	private Pessoa pessoa;
 	
 	@ManyToOne(optional=true)

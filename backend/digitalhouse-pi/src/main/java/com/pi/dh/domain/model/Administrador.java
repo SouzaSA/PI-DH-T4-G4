@@ -2,6 +2,7 @@ package com.pi.dh.domain.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Administrador  implements Serializable {
 	@Column(name="administrador_id")
 	private Long administradorId;
 
-	@OneToOne(optional=true)
+	@OneToOne(cascade=CascadeType.REMOVE, optional=true)
 	private Pessoa pessoa;
 
 }
