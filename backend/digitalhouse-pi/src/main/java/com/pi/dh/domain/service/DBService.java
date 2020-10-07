@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.pi.dh.domain.model.Informe;
 import com.pi.dh.domain.model.Pessoa;
 import com.pi.dh.domain.model.Professor;
+import com.pi.dh.domain.model.enums.Departamentos;
 import com.pi.dh.domain.model.enums.PrioridadeInforme;
 import com.pi.dh.domain.repository.InformeRepository;
 import com.pi.dh.domain.repository.PessoaRepository;
@@ -29,9 +30,9 @@ public class DBService {
 		
 		Pessoa pess1 = new Pessoa(null, "Santiago", "Thyago", "ssantiagotl@gmail.com", "teste123");
 		
-		Professor prof1 = new Professor(null, 1L, pess1);
+		Professor prof1 = new Professor(null, pess1, Departamentos.Dept1);
 		
-		Informe informe1 = new Informe(null, "Teste 01", "Primeiro informe de teste", "Departamento 01", prof1, PrioridadeInforme.Média);
+		Informe informe1 = new Informe(null, "teste01", "Primeiro informe de teste", prof1, PrioridadeInforme.Média, Departamentos.Dept1);
 
 		pessoaRepository.save(pess1);
 		professorRepository.save(prof1);

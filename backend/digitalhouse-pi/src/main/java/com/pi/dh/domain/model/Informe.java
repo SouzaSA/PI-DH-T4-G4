@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.pi.dh.domain.model.enums.Departamentos;
 import com.pi.dh.domain.model.enums.PrioridadeInforme;
 
 import lombok.AllArgsConstructor;
@@ -45,7 +46,7 @@ private static final long serialVersionUID = 1L;
 	
 	@Column
 	@NotNull
-	private String departamento;
+	private Integer departamento;
 	
 	@Column(name="data_publicacao")
 	private OffsetDateTime dataPublicacao;
@@ -53,14 +54,15 @@ private static final long serialVersionUID = 1L;
 	@ManyToOne(optional=true)
 	private Professor professor;
 
-	public Informe(Long informeId, String titulo, String descricao, String departamento, Professor professor, PrioridadeInforme prioridade) {
+	public Informe(Long informeId, String titulo, String descricao, Professor professor, PrioridadeInforme prioridade, Departamentos departamento) {
 		super();
 		this.informeId = informeId;
 		this.titulo = titulo;
 		this.descricao = descricao;
-		this.departamento = departamento;
 		this.professor = professor;
 		this.prioridade = prioridade.getCod();
+		this.departamento = departamento.getCod();
+
 	}
 	
 	public void setPrioridade(PrioridadeInforme prioridade) {
@@ -70,6 +72,15 @@ private static final long serialVersionUID = 1L;
 	
 	public PrioridadeInforme getPrioridade() {
 		return PrioridadeInforme.toEnum(prioridade);
+	}
+	
+	public void setDepartamento(Departamentos departamento) {
+		this.departamento = departamento.getCod();
+		
+	}
+	
+	public Departamentos getDepartamento() {
+		return Departamentos.toEnum(departamento);
 	}
 	
 

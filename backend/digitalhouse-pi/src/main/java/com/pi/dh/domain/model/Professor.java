@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.pi.dh.domain.model.enums.Departamentos;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,9 +31,27 @@ public class Professor implements Serializable {
 	private Long professor_id;
 	
 	@Column
-	private Long departamento;
+	private Integer departamento;
 
 	@OneToOne(optional=true)
 	private Pessoa pessoa;
+	
 
+	public Professor(Long professor_id, Pessoa pessoa, Departamentos departamento) {
+		super();
+		this.professor_id = professor_id;
+		this.pessoa = pessoa;
+		this.departamento = departamento.getCod();
+
+	}
+
+	public void setDepartamento(Departamentos departamento) {
+		this.departamento = departamento.getCod();
+		
+	}
+	
+	public Departamentos getDepartamento() {
+		return Departamentos.toEnum(departamento);
+	}
+	
 }
