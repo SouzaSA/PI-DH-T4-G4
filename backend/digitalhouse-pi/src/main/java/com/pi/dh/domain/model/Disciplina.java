@@ -11,7 +11,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.pi.dh.domain.model.enums.Departamentos;
 import com.pi.dh.domain.model.enums.Obrigatoria;
 
 import lombok.AllArgsConstructor;
