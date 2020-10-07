@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pi.dh.domain.model.Pessoa;
 import com.pi.dh.domain.model.Professor;
+import com.pi.dh.domain.service.PessoaService;
 import com.pi.dh.domain.service.ProfessorService;
 
 @RestController
@@ -24,8 +26,13 @@ public class ProfessorController {
 	@Autowired
 	private ProfessorService professorService;
 	
+	@Autowired
+	private PessoaService pessoaService;
+	
 	@PostMapping
 	public void salvar(@RequestBody Professor professor) {
+		Pessoa pessoa = professor.getPessoa();
+		pessoaService.salvar(pessoa);
 		professorService.salvar(professor);
 	}
 	

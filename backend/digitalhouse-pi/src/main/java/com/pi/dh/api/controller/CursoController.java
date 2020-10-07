@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Curso;
-import com.pi.dh.domain.service.cursoService;
+import com.pi.dh.domain.service.CursoService;
 
 @RestController
 @RequestMapping("/cursos")
@@ -22,7 +22,7 @@ import com.pi.dh.domain.service.cursoService;
 public class CursoController {
 
 	@Autowired
-	private cursoService cursoService;
+	private CursoService cursoService;
 	
 	@PostMapping
 	public void salvar(@RequestBody Curso curso) {

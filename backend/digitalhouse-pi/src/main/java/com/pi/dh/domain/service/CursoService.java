@@ -11,7 +11,7 @@ import com.pi.dh.domain.model.Curso;
 import com.pi.dh.domain.repository.CursoRepository;
 
 @Service
-public class cursoService {
+public class CursoService {
 	
 	@Autowired
 	private CursoRepository cursoRepository;
