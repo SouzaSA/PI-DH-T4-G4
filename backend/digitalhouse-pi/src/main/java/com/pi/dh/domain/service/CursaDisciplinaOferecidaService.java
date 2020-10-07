@@ -1,5 +1,6 @@
 package com.pi.dh.domain.service;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -18,6 +19,7 @@ public class CursaDisciplinaOferecidaService {
 	
 	@Transactional
 	public void salvar(CursaDisciplinaOferecida cursaDisciplinaOferecida) {
+		cursaDisciplinaOferecida.setDataInscricao(OffsetDateTime.now());
 		cursaDisciplinaOferecidaRepository.save(cursaDisciplinaOferecida);
 	}
 	

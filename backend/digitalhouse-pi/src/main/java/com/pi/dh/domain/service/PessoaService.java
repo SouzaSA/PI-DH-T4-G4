@@ -1,5 +1,6 @@
 package com.pi.dh.domain.service;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -23,6 +24,7 @@ public class PessoaService {
 	@Transactional
 	public void salvar(Pessoa pessoa) {
 		pessoa.setPessoaId(null);
+		pessoa.setDataCadastro(OffsetDateTime.now());
 		pessoa = pessoaRepository.save(pessoa);
 		enderecoRepository.saveAll(pessoa.getEnderecos());
 	}

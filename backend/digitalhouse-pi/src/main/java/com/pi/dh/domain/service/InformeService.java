@@ -1,5 +1,6 @@
 package com.pi.dh.domain.service;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -18,6 +19,7 @@ public class InformeService {
 		
 	@Transactional
 	public void salvar(Informe informe) {
+		informe.setDataPublicacao(OffsetDateTime.now());
 		informeRepository.save(informe);
 	}
 	
