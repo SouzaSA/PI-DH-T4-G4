@@ -17,7 +17,7 @@ import com.pi.dh.request.ImagemRequest;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/imagem")
+@RequestMapping("/imagens")
 public class ImagemController {
 	@Autowired
 	private ImagemService service;

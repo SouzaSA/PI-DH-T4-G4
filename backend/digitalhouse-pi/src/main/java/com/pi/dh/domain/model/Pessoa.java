@@ -28,11 +28,8 @@ import lombok.ToString;
 public class Pessoa implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
 	@Column(name="pessoa_id")
 	private Long pessoaId;
 	
