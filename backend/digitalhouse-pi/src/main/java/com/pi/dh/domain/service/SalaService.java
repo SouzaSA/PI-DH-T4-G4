@@ -7,7 +7,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import com.pi.dh.domain.model.Sala;
 import com.pi.dh.domain.repository.SalaRepository;
 
