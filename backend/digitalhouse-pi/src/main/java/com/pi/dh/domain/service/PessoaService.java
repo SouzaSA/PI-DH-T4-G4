@@ -20,7 +20,7 @@ public class PessoaService {
 	
 	@Autowired
 	private EnderecoRepository enderecoRepository;
-	
+		
 	@Transactional
 	public void salvar(Pessoa pessoa) {
 		pessoa.setPessoaId(null);
