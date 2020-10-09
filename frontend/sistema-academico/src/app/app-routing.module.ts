@@ -8,6 +8,8 @@ import { InformesGeralComponent } from './informes-geral/informes-geral.componen
 import { InformesDepartamentoComponent } from './informes-departamento/informes-departamento.component';
 import { GerenciaInformesUpdateComponent } from './professor/gerencia-informes/gerencia-informes-update/gerencia-informes-update.component';
 import { GerenciaInformesDeleteComponent } from './professor/gerencia-informes/gerencia-informes-delete/gerencia-informes-delete.component';
+import { AdministradorComponent } from './administrador/administrador.component';
+import { MenuItensCadastroComponent } from './administrador/menu-itens-cadastro/menu-itens-cadastro.component';
 
 const routes: Routes = [
   { path: 'departamento', component: InformesGeralComponent },
@@ -30,6 +32,13 @@ const routes: Routes = [
   {
     path: 'professor/informes/delete/:id',
     component: GerenciaInformesDeleteComponent,
+  },
+  {
+    path: 'administrador', component: AdministradorComponent,
+    children: [
+      { path: '', component: DadosPessaisComponent },
+      { path: 'cadastro', component: MenuItensCadastroComponent },
+    ],
   },
 ];
 

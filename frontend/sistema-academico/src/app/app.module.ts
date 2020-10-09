@@ -39,6 +39,10 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
+import { AdministradorComponent } from './administrador/administrador.component';
+import { MenuAdmItensComponent } from './administrador/menu-adm-itens/menu-adm-itens.component';
+import { MenuItensCadastroComponent } from './administrador/menu-itens-cadastro/menu-itens-cadastro.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -55,6 +59,9 @@ import { DialogModule } from 'primeng/dialog';
     GerenciaInformesReadComponent,
     GerenciaInformesUpdateComponent,
     GerenciaInformesDeleteComponent,
+    AdministradorComponent,
+    MenuAdmItensComponent,
+    MenuItensCadastroComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +87,8 @@ import { DialogModule } from 'primeng/dialog';
     MatDialogModule,
     MatCardModule,
     InputTextModule,
-    DialogModule
+    DialogModule,
+    NgbModule
    
   ],
   providers: [],
