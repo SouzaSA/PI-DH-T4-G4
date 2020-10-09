@@ -25,8 +25,8 @@ public class PessoaService {
 	public void salvar(Pessoa pessoa) {
 		pessoa.setPessoaId(null);
 		pessoa.setDataCadastro(OffsetDateTime.now());
+		enderecoRepository.save(pessoa.getEndereco());
 		pessoa = pessoaRepository.save(pessoa);
-		enderecoRepository.saveAll(pessoa.getEnderecos());
 	}
 	
 	public List<Pessoa> listar() {

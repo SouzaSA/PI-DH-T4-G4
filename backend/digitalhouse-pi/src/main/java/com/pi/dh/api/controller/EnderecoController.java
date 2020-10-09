@@ -13,44 +13,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pi.dh.domain.model.Professor;
-import com.pi.dh.domain.service.PessoaService;
-import com.pi.dh.domain.service.ProfessorService;
+import com.pi.dh.domain.model.Endereco;
+import com.pi.dh.domain.service.EnderecoService;
 
 @RestController
-@RequestMapping("/professores")
+@RequestMapping("/enderecos")
 @CrossOrigin
-public class ProfessorController {
+public class EnderecoController {
 
 	@Autowired
-	private ProfessorService professorService;
-	
-	@Autowired
-	private PessoaService pessoaService;
+	private EnderecoService enderecoService;
 	
 	@PostMapping
-	public void salvar(@RequestBody Professor professor) {
-		pessoaService.salvar(professor.getPessoa());
-		professorService.salvar(professor);
+	public void salvar(@RequestBody Endereco endereco) {
+		enderecoService.salvar(endereco);
 	}
 	
 	@GetMapping
-	public List<Professor> listar() {
-		return professorService.listar();
+	public List<Endereco> listar() {
+		return enderecoService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Professor buscarPorId(@PathVariable Long id) {
-		return professorService.buscarPorId(id);
+	public Endereco buscarPorId(@PathVariable Integer id) {
+		return enderecoService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
-	public void excluir(@PathVariable Long id) {
-		professorService.excluir(id);
+	public void excluir(@PathVariable Integer id) {
+		enderecoService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
-	public void atualizar(@RequestBody Professor professor, @PathVariable Long id) {
-		professorService.atualizar(professor, id);
+	public void atualizar(@RequestBody Endereco endereco, @PathVariable Integer id) {
+		enderecoService.atualizar(endereco, id);
 	}
 }
