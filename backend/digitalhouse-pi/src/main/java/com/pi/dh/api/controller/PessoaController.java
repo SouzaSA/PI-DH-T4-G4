@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Pessoa;
+import com.pi.dh.domain.service.EnderecoService;
 import com.pi.dh.domain.service.PessoaService;
 
 @RestController
@@ -24,8 +25,12 @@ public class PessoaController {
 	@Autowired
 	private PessoaService pessoaService;
 	
+	@Autowired
+	private EnderecoService enderecoService;
+	
 	@PostMapping
 	public void salvar(@RequestBody Pessoa pessoa) {
+		enderecoService.salvar(pessoa.getEndereco());
 		pessoaService.salvar(pessoa);
 	}
 	
