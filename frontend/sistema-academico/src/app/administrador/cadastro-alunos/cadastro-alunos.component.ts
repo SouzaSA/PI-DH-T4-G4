@@ -12,7 +12,7 @@ import { ColumnSetting } from './../../model/table-layout.model';
 
 export class CadastroAlunosComponent implements OnInit {
 
-  title: string = 'Alunos';
+  title: string = ''//'Alunos';
   alunos: Aluno[];
 
   projectSettings: ColumnSetting[] = 
@@ -71,7 +71,6 @@ export class CadastroAlunosComponent implements OnInit {
 
   ngOnInit(): void {
     this.administradorService.listarAlunos().subscribe(aluno => this.alunos = aluno);
-    console.log(this.alunos);
   }
 
 }

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 
 import { NgModule } from '@angular/core';
 
@@ -9,15 +10,19 @@ import { AdministradorService } from '../service/administrador.service'
 import { CadastroAlunosComponent } from './cadastro-alunos/cadastro-alunos.component';
 import { MenuAdmItensComponent } from './menu-adm-itens/menu-adm-itens.component';
 import { MenuItensCadastroComponent } from './menu-itens-cadastro/menu-itens-cadastro.component';
+import { CadastroProfessoresComponent } from './cadastro-professores/cadastro-professores.component';
+import { CadastroAdministradoresComponent } from './cadastro-administradores/cadastro-administradores.component';
 
 @NgModule({
   declarations: [
     AdministradorComponent, 
     CadastroAlunosComponent,
     MenuAdmItensComponent,
-    MenuItensCadastroComponent
+    MenuItensCadastroComponent,
+    CadastroProfessoresComponent,
+    CadastroAdministradoresComponent
   ],
-  imports: [ SharedModule, NgbModule ],
+  imports: [ SharedModule, CommonModule, NgbModule ],
   providers: [ AdministradorService ],
   exports: [ 
     AdministradorComponent, 

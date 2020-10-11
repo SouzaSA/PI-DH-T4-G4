@@ -1,4 +1,4 @@
-export class Aluno {
+export interface Aluno {
   id: number;
   nome: string;
   email: string;
@@ -6,7 +6,7 @@ export class Aluno {
   rua: string;
   numero: number;
   bairro: string;
-  complemento: string;
+  complemento?: string;
   cidade: string;
   estado: string;
   telefone: Array<string>;

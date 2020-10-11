@@ -67,12 +67,32 @@
   ],
   "professor": [
     {
-      "id": "",
-      "email": "",
-      "senha": "",
-      "nome": "",
-      "sobrenome": "",
-      "endereco": ""
+      "id": 1,
+      "nome": "Carlos Ceará",
+      "email": "cace@escola.edu.br",
+      "cep": "98787687",
+      "rua": "Cartazes Contundentes",
+      "numero": 35,
+      "bairro": "Exposições",
+      "complemento": "apartamento 143",
+      "cidade": "racionais",
+      "estado": "gasoso",
+      "telefone": ["59830495"],
+      "departamento": "departamento 1"
+    },
+    {
+      "id": 2,
+      "nome": "Celina Cruel",
+      "email": "cecru@escola.edu.br",
+      "cep": "98745403",
+      "rua": "Criaturas Cricrilantes",
+      "numero": 334,
+      "bairro": "Faunas",
+      "complemento": "casa",
+      "cidade": "reais",
+      "estado": "Sólido",
+      "telefone": ["56406975", "20394857"],
+      "departamento": "departamento 2"
     }
   ],
   "aluno":[
@@ -103,6 +123,34 @@
       "estado": "liquido",
       "telefone": ["99999999", "11111111"],
       "curso": "licenciatura em pos verdade"
+    }
+  ],
+  "administrador": [
+    {
+      "id": 1,
+      "nome": "Barnabáz Berton",
+      "email": "baber@escola.edu.br",
+      "cep": "34243243",
+      "rua": "Barbeiros Benevolentes",
+      "numero": 3,
+      "bairro": "Cortes",
+      "complemento": "casa",
+      "cidade": "naturais",
+      "estado": "gasoso",
+      "telefone": ["88888888"]
+    },
+    {
+      "id": 2,
+      "nome": "Benedito Boaventura",
+      "email": "bebo@escola.edu.br",
+      "cep": "34523412",
+      "rua": "Bergamotas Briguentas",
+      "numero": 43,
+      "bairro": "Fruteiras",
+      "complemento": "apartamento 42",
+      "cidade": "Inteiros",
+      "estado": "plasma",
+      "telefone": ["56734609"]
     }
   ]
 }

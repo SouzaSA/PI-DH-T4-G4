@@ -3,15 +3,26 @@
     <div ngbDropdown class="d-inline-block">
       <button class="btn btn-outline-primary" id="cadastroItens" ngbDropdownToggle>Cadastrar</button>
       <div ngbDropdownMenu aria-labelledby="cadastroItens">
-        <button ngbDropdownItem>Administrador</button>
-        <button ngbDropdownItem>Professor</button>
-        <button ngbDropdownItem>Aluno</button>
+        <button ngbDropdownItem on-click="seleciona('Administrador')"> Administrador </button>
+        <button ngbDropdownItem on-click="seleciona('Professor')"> Professor </button>
+        <button ngbDropdownItem on-click="seleciona('Aluno')"> Aluno </button>
       </div>
     </div>
+  </div>
+  <div>
+    <h2>{{titulo}}</h2>
   </div>    
 </div>
 
+<div  *ngIf="titulo==='Aluno'">
+  <app-cadastro-alunos></app-cadastro-alunos>
+</div>
+<div  *ngIf="titulo==='Professor'">
+  <app-cadastro-professores></app-cadastro-professores>
+</div>
+<div  *ngIf="titulo==='Administrador'">
+  <app-cadastro-administradores></app-cadastro-administradores>
+</div>
 <div>
-    <app-cadastro-alunos></app-cadastro-alunos>
     <router-outlet></router-outlet>
 </div>
