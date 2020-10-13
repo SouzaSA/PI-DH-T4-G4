@@ -1,11 +1,14 @@
 package com.pi.dh.request;
 
+import java.io.Serializable;
+
 import com.pi.dh.domain.model.Endereco;
 
 import lombok.Data;
 
 @Data
-public class PessoaRequest {
+public class PessoaRequest implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	private Long pessoaId;
     private String sobrenome;

@@ -6,9 +6,13 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.pi.dh.domain.model.Nota;
 import com.pi.dh.domain.repository.NotaRepository;
+import com.pi.dh.dto.NotaDTO;
+import com.pi.dh.mapper.NotaMapper;
+import com.pi.dh.request.NotaRequest;
 
 @Service
 public class NotaService {
@@ -16,9 +20,16 @@ public class NotaService {
 	@Autowired
 	private NotaRepository notaRepository;
 	
+	@Autowired
+	private NotaMapper mapper;
+	
 	@Transactional
-	public void salvar(Nota nota) {
-		notaRepository.save(nota);
+	public NotaDTO salvar(@RequestBody NotaRequest notaRequest) {
+		
+		Nota nota = mapper.requestToModel(notaRequest);
+		nota.setNotaId(null);
+		
+	    return mapper.modelToDTO( notaRepository.save(nota) );
 	}
 	
 	public List<Nota> listar() {
