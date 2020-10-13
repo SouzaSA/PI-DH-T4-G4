@@ -8,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 
 export class MenuItensCadastroComponent implements OnInit {
 
+  titulo: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  seleciona(valor: string){
+    this.titulo = valor;
+    console.log(valor);
+  }
 }

@@ -1,19 +1,28 @@
-<div>
-    <div class="row">
-        <div class="col">
-          <div ngbDropdown class="d-inline-block">
-            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Cadastrar</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem>Administrador</button>
-              <button ngbDropdownItem>Professor</button>
-              <button ngbDropdownItem>Aluno</button>
-            </div>
-          </div>
-        </div>
-      
-    </div>      
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="cadastroItens" ngbDropdownToggle>Cadastrar</button>
+      <div ngbDropdownMenu aria-labelledby="cadastroItens">
+        <button ngbDropdownItem on-click="seleciona('Administrador')"> Administrador </button>
+        <button ngbDropdownItem on-click="seleciona('Professor')"> Professor </button>
+        <button ngbDropdownItem on-click="seleciona('Aluno')"> Aluno </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h2>{{titulo}}</h2>
+  </div>    
 </div>
 
+<div  *ngIf="titulo==='Aluno'">
+  <app-cadastro-alunos></app-cadastro-alunos>
+</div>
+<div  *ngIf="titulo==='Professor'">
+  <app-cadastro-professores></app-cadastro-professores>
+</div>
+<div  *ngIf="titulo==='Administrador'">
+  <app-cadastro-administradores></app-cadastro-administradores>
+</div>
 <div>
     <router-outlet></router-outlet>
 </div>
