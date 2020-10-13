@@ -6,9 +6,13 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.pi.dh.domain.model.Curso;
 import com.pi.dh.domain.repository.CursoRepository;
+import com.pi.dh.dto.CursoDTO;
+import com.pi.dh.mapper.CursoMapper;
+import com.pi.dh.request.CursoRequest;
 
 @Service
 public class CursoService {
@@ -16,9 +20,16 @@ public class CursoService {
 	@Autowired
 	private CursoRepository cursoRepository;
 	
+	@Autowired
+	private CursoMapper mapper;
+	
 	@Transactional
-	public void salvar(Curso curso) {
-		cursoRepository.save(curso);
+	public CursoDTO salvar(@RequestBody CursoRequest cursoRequest) {
+		
+		Curso curso = mapper.requestToModel(cursoRequest);
+		curso.setCursoId(null);
+		
+	    return mapper.modelToDTO( cursoRepository.save(curso) );
 	}
 	
 	public List<Curso> listar() {

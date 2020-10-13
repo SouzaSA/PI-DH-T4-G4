@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.pi.dh.domain.model.Administrador;
 import com.pi.dh.domain.repository.AdministradorRepository;
+import com.pi.dh.domain.repository.EnderecoRepository;
+import com.pi.dh.domain.repository.PessoaRepository;
+import com.pi.dh.dto.AdministradorDTO;
+import com.pi.dh.mapper.AdministradorMapper;
+import com.pi.dh.request.AdministradorRequest;
 
 @Service
 public class AdministradorService {
@@ -17,9 +22,26 @@ public class AdministradorService {
 	@Autowired
 	private AdministradorRepository administradorRepository;
 	
+	@Autowired 
+	private PessoaRepository pessoaRepository;
+	
+	@Autowired
+	private EnderecoRepository enderecoRepository;
+	
+	@Autowired
+	private AdministradorMapper mapper;
+	
 	@Transactional
-	public void salvar(@RequestBody Administrador administrador) {
-		administradorRepository.save(administrador);
+	public AdministradorDTO salvar(@RequestBody AdministradorRequest administradorRequest) {
+	
+		Administrador admin = mapper.requestToModel(administradorRequest);
+		
+		enderecoRepository.save(admin.getPessoa().getEndereco());
+		pessoaRepository.save(admin.getPessoa());
+		
+		admin.setAdministradorId(null);
+		
+	    return mapper.modelToDTO( administradorRepository.save(admin) );
 	}
 	
 	public List<Administrador> listar() {

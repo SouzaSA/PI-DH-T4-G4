@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Aluno;
 import com.pi.dh.domain.service.AlunoService;
-import com.pi.dh.domain.service.PessoaService;
+import com.pi.dh.request.AlunoRequest;
 
 @RestController
 @RequestMapping("/alunos")
@@ -24,14 +24,11 @@ public class AlunoController {
 
 	@Autowired
 	private AlunoService alunoService;
-	
-	@Autowired
-	private PessoaService pessoaService;
+
 		
 	@PostMapping
-	public void salvar(@RequestBody Aluno aluno) {
-		pessoaService.salvar(aluno.getPessoa());
-		alunoService.salvar(aluno);
+	public void salvar(@RequestBody AlunoRequest alunoRequest) {
+		alunoService.salvar(alunoRequest);
 	}
 	
 	@GetMapping

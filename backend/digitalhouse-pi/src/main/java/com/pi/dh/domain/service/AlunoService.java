@@ -6,9 +6,15 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.pi.dh.domain.model.Aluno;
 import com.pi.dh.domain.repository.AlunoRepository;
+import com.pi.dh.domain.repository.EnderecoRepository;
+import com.pi.dh.domain.repository.PessoaRepository;
+import com.pi.dh.dto.AlunoDTO;
+import com.pi.dh.mapper.AlunoMapper;
+import com.pi.dh.request.AlunoRequest;
 
 @Service
 public class AlunoService {
@@ -16,9 +22,25 @@ public class AlunoService {
 	@Autowired
 	private AlunoRepository alunoRepository;
 	
+	@Autowired 
+	private PessoaRepository pessoaRepository;
+	
+	@Autowired
+	private EnderecoRepository enderecoRepository;
+	
+	@Autowired
+	private AlunoMapper mapper;
+	
 	@Transactional
-	public void salvar(Aluno aluno) {
-		alunoRepository.save(aluno);
+	public AlunoDTO salvar(@RequestBody AlunoRequest alunoRequest) {
+		
+		Aluno aluno = mapper.requestToModel(alunoRequest);
+		
+		enderecoRepository.save(aluno.getPessoa().getEndereco());
+		pessoaRepository.save(aluno.getPessoa());
+		
+		aluno.setAlunoId(null);	
+	    return mapper.modelToDTO( alunoRepository.save(aluno) );
 	}
 	
 	public List<Aluno> listar() {

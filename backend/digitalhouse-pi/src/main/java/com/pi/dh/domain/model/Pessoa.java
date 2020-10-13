@@ -51,7 +51,6 @@ public class Pessoa implements Serializable {
 	@Column
 	private String password;
 	
-	@Size(max = 256)
 	@Column
 	private String foto;
 	

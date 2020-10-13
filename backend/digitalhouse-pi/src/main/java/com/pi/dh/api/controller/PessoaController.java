@@ -2,7 +2,11 @@ package com.pi.dh.api.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pi.dh.domain.model.Pessoa;
 import com.pi.dh.domain.service.EnderecoService;
 import com.pi.dh.domain.service.PessoaService;
+import com.pi.dh.dto.PessoaDTO;
+import com.pi.dh.request.PessoaRequest;
 
 @RestController
 @RequestMapping("/pessoas")
@@ -29,9 +35,16 @@ public class PessoaController {
 	private EnderecoService enderecoService;
 	
 	@PostMapping
-	public void salvar(@RequestBody Pessoa pessoa) {
-		enderecoService.salvar(pessoa.getEndereco());
-		pessoaService.salvar(pessoa);
+	public ResponseEntity<?> salvar(@RequestBody @Valid PessoaRequest pessoaRequest) {
+		
+		try {
+			PessoaDTO pessoaDTO = pessoaService.salvar(pessoaRequest);
+			enderecoService.salvar(pessoaRequest.getEndereco());
+			return ResponseEntity.status(HttpStatus.CREATED).body(pessoaDTO);
+			
+		} catch (Exception ex) {
+			return ResponseEntity.badRequest().body(ex.getMessage());
+		}
 	}
 	
 	@GetMapping

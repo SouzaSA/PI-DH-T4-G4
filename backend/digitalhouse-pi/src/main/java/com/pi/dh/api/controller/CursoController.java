@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Curso;
 import com.pi.dh.domain.service.CursoService;
+import com.pi.dh.request.CursoRequest;
 
 @RestController
 @RequestMapping("/cursos")
@@ -25,8 +26,8 @@ public class CursoController {
 	private CursoService cursoService;
 	
 	@PostMapping
-	public void salvar(@RequestBody Curso curso) {
-		cursoService.salvar(curso);
+	public void salvar(@RequestBody CursoRequest cursoRequest) {
+		cursoService.salvar(cursoRequest);
 	}
 	
 	@GetMapping

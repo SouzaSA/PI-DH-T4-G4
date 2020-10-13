@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import com.pi.dh.domain.model.Pessoa;
 import com.pi.dh.domain.repository.EnderecoRepository;
 import com.pi.dh.domain.repository.PessoaRepository;
+import com.pi.dh.dto.PessoaDTO;
+import com.pi.dh.mapper.PessoaMapper;
+import com.pi.dh.request.PessoaRequest;
 
 @Service
 public class PessoaService {
@@ -20,13 +23,21 @@ public class PessoaService {
 	
 	@Autowired
 	private EnderecoRepository enderecoRepository;
+	
+	@Autowired
+	private PessoaMapper mapper;
 		
 	@Transactional
-	public void salvar(Pessoa pessoa) {
+	public PessoaDTO salvar(PessoaRequest pessoaRequest) {
+		
+		Pessoa pessoa = mapper.requestToModel(pessoaRequest);
+		
 		pessoa.setPessoaId(null);
 		pessoa.setDataCadastro(OffsetDateTime.now());
 		enderecoRepository.save(pessoa.getEndereco());
-		pessoa = pessoaRepository.save(pessoa);
+		
+	    return mapper.modelToDTO( pessoaRepository.save(pessoa) );
+	    
 	}
 	
 	public List<Pessoa> listar() {
