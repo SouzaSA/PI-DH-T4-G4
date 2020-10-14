@@ -5,6 +5,8 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Nota;
 import com.pi.dh.domain.service.NotaService;
+import com.pi.dh.dto.NotaDTO;
 import com.pi.dh.request.NotaRequest;
 
 @RestController
@@ -28,8 +31,15 @@ public class NotaController {
 	private NotaService notaService;
 	
 	@PostMapping
-	public void salvar(@RequestBody @Valid NotaRequest notaRequest) {
-		notaService.salvar(notaRequest);
+	public ResponseEntity<?> salvar(@RequestBody @Valid NotaRequest notaRequest) {
+		
+		try {
+			NotaDTO notaDTO = notaService.salvar(notaRequest);
+			return ResponseEntity.status(HttpStatus.CREATED).body(notaDTO);
+			
+		} catch (Exception ex) {
+			return ResponseEntity.badRequest().body(ex.getMessage());
+		}
 	}
 	
 	@GetMapping

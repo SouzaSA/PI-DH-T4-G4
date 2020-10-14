@@ -2,7 +2,11 @@ package com.pi.dh.api.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Aluno;
 import com.pi.dh.domain.service.AlunoService;
+import com.pi.dh.dto.AlunoDTO;
 import com.pi.dh.request.AlunoRequest;
 
 @RestController
@@ -27,8 +32,15 @@ public class AlunoController {
 
 		
 	@PostMapping
-	public void salvar(@RequestBody AlunoRequest alunoRequest) {
-		alunoService.salvar(alunoRequest);
+	public ResponseEntity<?> salvar(@RequestBody @Valid AlunoRequest alunoRequest) {
+		
+		try {
+			AlunoDTO alunoDTO = alunoService.salvar(alunoRequest);
+			return ResponseEntity.status(HttpStatus.CREATED).body(alunoDTO);
+			
+		} catch (Exception ex) {
+			return ResponseEntity.badRequest().body(ex.getMessage());
+		}
 	}
 	
 	@GetMapping
