@@ -2,6 +2,8 @@ package com.pi.dh.api.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Disciplina;
 import com.pi.dh.domain.service.DisciplinaService;
+import com.pi.dh.request.DisciplinaRequest;
 
 @RestController
 @RequestMapping("/disciplinas")
@@ -25,8 +28,8 @@ public class DisciplinaController {
 	private DisciplinaService disciplinaService;
 	
 	@PostMapping
-	public void salvar(@RequestBody Disciplina disciplina) {
-		disciplinaService.salvar(disciplina);
+	public void salvar(@RequestBody @Valid DisciplinaRequest disciplinaRequest) {
+		disciplinaService.salvar(disciplinaRequest);
 	}
 	
 	@GetMapping

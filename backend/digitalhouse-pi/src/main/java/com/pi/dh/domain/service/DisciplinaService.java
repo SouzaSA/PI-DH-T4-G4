@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 
 import com.pi.dh.domain.model.Disciplina;
 import com.pi.dh.domain.repository.DisciplinaRepository;
+import com.pi.dh.dto.DisciplinaDTO;
+import com.pi.dh.mapper.DisciplinaMapper;
+import com.pi.dh.request.DisciplinaRequest;
 
 @Service
 public class DisciplinaService {
@@ -17,9 +20,18 @@ public class DisciplinaService {
 	@Autowired
 	private DisciplinaRepository disciplinaRepository;
 	
+	@Autowired
+	private DisciplinaMapper mapper;
+	
 	@Transactional
-	public void salvar(Disciplina disciplina) {
-		disciplinaRepository.save(disciplina);
+	public DisciplinaDTO salvar(DisciplinaRequest disciplinaRequest) {
+		
+		Disciplina disc = mapper.requestToModel(disciplinaRequest);
+		
+		disc.setDisciplinaId(null);
+		
+	    return mapper.modelToDTO( disciplinaRepository.save(disc) );
+	    
 	}
 	
 	public List<Disciplina> listar() {
