@@ -1,0 +1,46 @@
+<p-accordion expandIcon="pi pi-plus">
+  <p-accordionTab header="Adicionar novo informe" [(selected)]="activeState">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="block-div">
+        <div class="p-field p-col-6">
+          <p-dropdown
+            [options]="prioridades"
+            [(ngModel)]="prioridadeSelecionada"
+            placeholder="Prioridade"
+            optionLabel="name"
+            [showClear]="true"
+          ></p-dropdown>
+        </div>
+        <div class="p-field p-col-6">
+          <p-dropdown
+            [options]="departamentos"
+            [(ngModel)]="departamentoSelecionado"
+            placeholder="Departamento"
+            optionLabel="name"
+            [showClear]="true"
+          ></p-dropdown>
+        </div>
+      </div>
+      <div class="p-field p-col-12">
+        <input
+          type="text"
+          pInputText
+          (ngModel)="(informe.titulo)"
+          placeholder="Título"
+          name="titulo"
+        />
+      </div>
+    </div>
+    <div class="editor">
+      <p-editor
+        [style]="{ height: '320px' }"
+        (ngModel)="(informe.descricao)"
+        name="descricao"
+      ></p-editor>
+    </div>
+    <button class="btn btn-primary mr-1" (click)="criarInforme()">
+      Salvar
+    </button>
+    <button class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+  </p-accordionTab>
+</p-accordion>

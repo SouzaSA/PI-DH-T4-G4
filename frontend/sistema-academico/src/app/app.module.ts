@@ -1,3 +1,4 @@
+import { NotasComponent } from './professor/notas/notas.component';
 import { AdministradorModule } from './administrador/administrador.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,11 +15,6 @@ import { InformesGeralComponent } from './informes-geral/informes-geral.componen
 import { InformesDepartamentoComponent } from './informes-departamento/informes-departamento.component';
 import { ProfessorComponent } from './professor/professor.component';
 import { DadosPessaisComponent } from './dados-pessais/dados-pessais.component';
-import { GerenciaInformesComponent } from './professor/gerencia-informes/gerencia-informes.component';
-import { GerenciaInformesCreateComponent } from './professor/gerencia-informes/gerencia-informes-create/gerencia-informes-create.component';
-import { GerenciaInformesReadComponent } from './professor/gerencia-informes/gerencia-informes-read/gerencia-informes-read.component';
-import { GerenciaInformesUpdateComponent } from './professor/gerencia-informes/gerencia-informes-update/gerencia-informes-update.component';
-import { GerenciaInformesDeleteComponent } from './professor/gerencia-informes/gerencia-informes-delete/gerencia-informes-delete.component';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -40,7 +36,16 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
-
+import { GerenciaNotasComponent } from './professor/notas/gerencia-notas/gerencia-notas.component';
+import { TableModule } from 'primeng/table';
+import { AccordionModule } from 'primeng/accordion';
+import { KeyFilterModule } from 'primeng/keyfilter';
+import { MenuProfItensComponent } from './professor/menu-prof-itens/menu-prof-itens.component';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { PaginatorModule } from 'primeng/paginator';
+import { GerenciaInformesComponent } from './professor/informes/gerencia-informes/gerencia-informes.component';
+import { InformesComponent } from './professor/informes/informes.component';
+import { CadastroInformesComponent } from './professor/informes/cadastro-informes/cadastro-informes.component';
 
 @NgModule({
   declarations: [
@@ -52,10 +57,11 @@ import { DialogModule } from 'primeng/dialog';
     ProfessorComponent,
     DadosPessaisComponent,
     GerenciaInformesComponent,
-    GerenciaInformesCreateComponent,
-    GerenciaInformesReadComponent,
-    GerenciaInformesUpdateComponent,
-    GerenciaInformesDeleteComponent
+    GerenciaNotasComponent,
+    NotasComponent,
+    MenuProfItensComponent,
+    InformesComponent,
+    CadastroInformesComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,7 +88,12 @@ import { DialogModule } from 'primeng/dialog';
     MatCardModule,
     InputTextModule,
     DialogModule,
-    AdministradorModule
+    AdministradorModule,
+    TableModule,
+    AccordionModule,
+    KeyFilterModule,
+    InputNumberModule,
+    PaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

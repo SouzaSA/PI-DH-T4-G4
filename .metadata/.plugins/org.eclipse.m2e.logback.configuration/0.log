@@ -1,0 +1,204 @@
+2020-10-10 13:48:27,443 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-10-10 13:50:26,270 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-10-10 13:50:29,655 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pi.dh:digitalhouse-pi:0.0.1-SNAPSHOT @ /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/pom.xml.
+2020-10-10 13:50:32,219 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-validation/2.3.3.RELEASE/spring-boot-starter-validation-2.3.3.RELEASE.pom
+2020-10-10 13:50:32,546 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-validation/2.3.3.RELEASE/spring-boot-starter-validation-2.3.3.RELEASE.pom
+2020-10-10 13:50:32,837 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
+2020-10-10 13:50:32,990 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/commons-io/commons-io/maven-metadata.xml
+2020-10-10 13:50:33,149 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/commons-io/commons-io/2.8.0/commons-io-2.8.0.pom
+2020-10-10 13:50:33,447 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/commons-io/commons-io/2.8.0/commons-io-2.8.0.pom
+2020-10-10 13:50:33,602 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/52/commons-parent-52.pom
+2020-10-10 13:50:34,044 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/52/commons-parent-52.pom
+2020-10-10 13:50:34,207 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/apache/23/apache-23.pom
+2020-10-10 13:50:34,359 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/apache/23/apache-23.pom
+2020-10-10 13:50:34,515 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-configuration-processor/2.3.3.RELEASE/spring-boot-configuration-processor-2.3.3.RELEASE.pom
+2020-10-10 13:50:34,667 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-configuration-processor/2.3.3.RELEASE/spring-boot-configuration-processor-2.3.3.RELEASE.pom
+2020-10-10 13:50:34,942 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/commons-io/commons-io/2.8.0/commons-io-2.8.0.jar
+2020-10-10 13:50:35,241 [AetherRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-configuration-processor/2.3.3.RELEASE/spring-boot-configuration-processor-2.3.3.RELEASE.jar
+2020-10-10 13:50:35,241 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-validation/2.3.3.RELEASE/spring-boot-starter-validation-2.3.3.RELEASE.jar
+2020-10-10 13:50:35,398 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-validation/2.3.3.RELEASE/spring-boot-starter-validation-2.3.3.RELEASE.jar
+2020-10-10 13:50:35,428 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/commons-io/commons-io/2.8.0/commons-io-2.8.0.jar
+2020-10-10 13:50:35,548 [AetherRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-configuration-processor/2.3.3.RELEASE/spring-boot-configuration-processor-2.3.3.RELEASE.jar
+2020-10-10 13:50:39,539 [Worker-11: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-validation/2.3.3.RELEASE/spring-boot-starter-validation-2.3.3.RELEASE-sources.jar
+2020-10-10 13:50:39,884 [Worker-11: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-validation/2.3.3.RELEASE/spring-boot-starter-validation-2.3.3.RELEASE-sources.jar
+2020-10-10 13:50:39,920 [Worker-11: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-starter-validation:2.3.3.RELEASE
+2020-10-10 13:50:40,195 [Worker-10: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /digitalhouse-pi/src/main/java
+2020-10-10 13:50:40,195 [Worker-10: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /digitalhouse-pi/src/main/resources
+2020-10-10 13:50:40,202 [Worker-10: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /digitalhouse-pi/src/main/resources
+2020-10-10 13:50:40,212 [Worker-10: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /digitalhouse-pi/src/test/java
+2020-10-10 13:50:40,588 [Worker-11: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/commons-io/commons-io/2.8.0/commons-io-2.8.0-sources.jar
+2020-10-10 13:50:41,505 [Worker-11: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/commons-io/commons-io/2.8.0/commons-io-2.8.0-sources.jar
+2020-10-10 13:50:41,530 [Worker-11: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for commons-io:commons-io:2.8.0
+2020-10-10 13:50:42,289 [Worker-11: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-configuration-processor/2.3.3.RELEASE/spring-boot-configuration-processor-2.3.3.RELEASE-sources.jar
+2020-10-10 13:50:42,720 [Worker-11: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-configuration-processor/2.3.3.RELEASE/spring-boot-configuration-processor-2.3.3.RELEASE-sources.jar
+2020-10-10 13:50:42,790 [Worker-11: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-configuration-processor:2.3.3.RELEASE
+2020-10-10 13:50:46,221 [Worker-10: Update Maven projects configuration] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 19 sec
+2020-10-10 13:50:48,988 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 13:50:49,019 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2020-10-10 13:50:49,076 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-10-10 13:50:49,087 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 13:50:49,087 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 13:59:16,554 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 13:59:16,559 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 13:59:16,559 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 13:59:16,564 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 13:59:16,564 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 13:59:22,416 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 13:59:22,417 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 13:59:22,418 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 13:59:22,423 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 13:59:22,424 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 13:59:31,981 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 13:59:31,981 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 13:59:31,982 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 13:59:31,986 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 13:59:31,986 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 13:59:34,077 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 13:59:34,078 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 13:59:34,078 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 13:59:34,083 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 13:59:34,084 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 13:59:50,821 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 13:59:50,821 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 13:59:50,821 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 13:59:50,824 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 13:59:50,824 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 14:00:01,059 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:00:01,060 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:00:01,060 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:00:01,063 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:00:01,063 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 14:00:09,569 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:00:09,570 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:00:09,570 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:00:09,574 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:00:09,574 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 14:01:22,755 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:01:22,756 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:01:22,756 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:01:22,760 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:01:22,760 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 14:01:27,880 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:01:27,882 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:01:27,882 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:01:27,886 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:01:27,886 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 14:01:29,157 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:01:29,157 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:01:29,157 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:01:29,160 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:01:29,161 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 14:01:43,429 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:01:43,430 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:01:43,430 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:01:43,434 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:01:43,434 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 14:02:24,493 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:02:24,495 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:02:24,501 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:02:24,507 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:02:24,507 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 14:02:58,811 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:02:58,813 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:02:58,813 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:02:58,817 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:02:58,818 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 14:04:22,274 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:04:22,276 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:04:22,276 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 14:04:22,278 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 14:04:22,279 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 17:39:59,600 [Worker-28: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-10-10 17:40:04,090 [Worker-28: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pi.dh:digitalhouse-pi:0.0.1-SNAPSHOT @ /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/pom.xml.
+2020-10-10 17:40:08,765 [Worker-28: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /digitalhouse-pi/src/main/java
+2020-10-10 17:40:08,772 [Worker-28: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /digitalhouse-pi/src/main/resources
+2020-10-10 17:40:08,773 [Worker-28: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /digitalhouse-pi/src/main/resources
+2020-10-10 17:40:08,774 [Worker-28: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /digitalhouse-pi/src/test/java
+2020-10-10 17:40:12,123 [Worker-28: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 12 sec
+2020-10-10 17:40:21,617 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 17:40:21,623 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2020-10-10 17:40:21,732 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-10-10 17:40:21,758 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 17:40:21,759 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 18:37:10,286 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:37:10,294 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:37:10,294 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:37:10,298 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:37:10,299 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 18:37:11,354 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:37:11,354 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:37:11,355 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:37:11,360 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:37:11,361 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 18:37:18,365 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:37:18,365 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:37:18,365 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:37:18,371 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:37:18,372 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 18:44:57,308 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-10-10 18:46:13,888 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:46:13,909 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2020-10-10 18:46:13,961 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-10-10 18:46:13,970 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:46:13,970 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 18:46:23,271 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:46:23,280 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-10-10 18:46:23,293 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:46:23,337 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:46:23,337 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 18:47:05,764 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:47:05,765 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:47:05,765 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:47:05,773 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:47:05,774 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 18:47:13,183 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:47:13,184 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:47:13,184 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:47:13,252 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:47:13,253 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 18:48:55,981 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:48:55,983 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:48:55,983 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:48:55,987 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:48:55,987 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 18:49:18,624 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:49:18,625 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:49:18,625 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:49:18,648 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:49:18,648 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-10 18:56:35,665 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:56:35,672 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:56:35,683 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-10 18:56:35,691 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-10 18:56:35,692 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-11 19:33:16,590 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-10-17 19:55:26,863 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-10-17 19:55:42,381 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-17 19:55:42,394 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2020-10-17 19:55:42,436 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-10-17 19:55:42,450 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-17 19:55:42,450 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-17 19:55:47,490 [Worker-4: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pi.dh:digitalhouse-pi:0.0.1-SNAPSHOT @ /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/pom.xml.
+2020-10-17 19:55:50,180 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-17 19:55:50,190 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-17 19:55:50,190 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-17 19:55:50,196 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-17 19:55:50,196 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-17 19:55:57,989 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-17 19:55:57,995 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2020-10-17 19:55:58,051 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-10-17 19:55:58,068 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-17 19:55:58,068 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-17 19:57:33,216 [Worker-8: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-10-17 19:57:33,973 [Worker-8: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pi.dh:digitalhouse-pi:0.0.1-SNAPSHOT @ /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/pom.xml.
+2020-10-17 19:57:34,653 [Worker-8: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /digitalhouse-pi/src/main/java
+2020-10-17 19:57:34,653 [Worker-8: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /digitalhouse-pi/src/main/resources
+2020-10-17 19:57:34,654 [Worker-8: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /digitalhouse-pi/src/main/resources
+2020-10-17 19:57:34,655 [Worker-8: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /digitalhouse-pi/src/test/java
+2020-10-17 19:57:35,261 [Worker-8: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
+2020-10-17 19:57:39,028 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-17 19:57:39,029 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2020-10-17 19:57:39,140 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-10-17 19:57:39,150 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-17 19:57:39,151 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/melissavanzella/Documents/DH - JAVA/GIT/digital-house/PI-DH-T4-G4/backend/digitalhouse-pi/src/test/resources
+2020-10-18 19:15:02,282 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

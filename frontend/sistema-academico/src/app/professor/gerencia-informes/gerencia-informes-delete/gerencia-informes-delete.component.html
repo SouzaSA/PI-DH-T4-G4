@@ -1,8 +1,0 @@
-<p-dialog header="Excluir informe" [(visible)]="displayConfirmacao" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
-    [draggable]="false" [resizable]="false">
-    <p class="p-m-0">Você deseja excluir o informe?</p>
-        <ng-template pTemplate="footer">
-            <p-button icon="pi pi-check" (click)="deleteInforme()" label="Excluir" class="p-button-text"></p-button>
-            <p-button icon="pi pi-times" (click)="cancel()" label="Cancelar"></p-button>
-        </ng-template>
-</p-dialog>

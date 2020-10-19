@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { GerenciaInformesComponent } from './professor/gerencia-informes/gerencia-informes.component';
 import { DadosPessaisComponent } from './dados-pessais/dados-pessais.component';
 import { ProfessorComponent } from './professor/professor.component';
 import { InformesGeralComponent } from './informes-geral/informes-geral.component';
 import { InformesDepartamentoComponent } from './informes-departamento/informes-departamento.component';
-import { GerenciaInformesUpdateComponent } from './professor/gerencia-informes/gerencia-informes-update/gerencia-informes-update.component';
-import { GerenciaInformesDeleteComponent } from './professor/gerencia-informes/gerencia-informes-delete/gerencia-informes-delete.component';
+
 import { AdministradorComponent } from './administrador/administrador.component';
 import { MenuItensCadastroComponent } from './administrador/menu-itens-cadastro/menu-itens-cadastro.component';
+import { NotasComponent } from './professor/notas/notas.component';
+import { InformesComponent } from './professor/informes/informes.component';
 
 const routes: Routes = [
   { path: 'departamento', component: InformesGeralComponent },
@@ -22,19 +22,13 @@ const routes: Routes = [
     component: ProfessorComponent,
     children: [
       { path: '', component: DadosPessaisComponent },
-      { path: 'informes', component: GerenciaInformesComponent },
+      { path: 'informes', component: InformesComponent },
+      { path: 'notas', component: NotasComponent },
     ],
   },
   {
-    path: 'professor/informes/update/:id',
-    component: GerenciaInformesUpdateComponent,
-  },
-  {
-    path: 'professor/informes/delete/:id',
-    component: GerenciaInformesDeleteComponent,
-  },
-  {
-    path: 'administrador', component: AdministradorComponent,
+    path: 'administrador',
+    component: AdministradorComponent,
     children: [
       { path: '', component: DadosPessaisComponent },
       { path: 'cadastro', component: MenuItensCadastroComponent },
