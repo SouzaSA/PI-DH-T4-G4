@@ -1,55 +1,49 @@
-<p-dropdown
-  [options]="disciplinas"
-  [(ngModel)]="selectedDisciplina"
-  placeholder="Disciplina"
-  optionLabel="nome"
-  [showClear]="true"
->
-</p-dropdown>
-<div *ngIf="selectedDisciplina !== ''">
-  <p-table [value]="turmas" [paginator]="true" [rows]="3">
-    <ng-template pTemplate="caption"> {{ selectedDisciplina }} </ng-template>
-    <ng-template pTemplate="header">
-      <tr>
-        <th>Id</th>
-        <th>Nome</th>
-        <th colspan="3" style="text-align: center">Notas</th>
-        <th>Faltas</th>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-turma>
-      <tr style="text-align: center">
-        {{
-          turma.nome
-        }}
-      </tr>
-      <tr *ngFor="let aluno of turma.alunos">
-        <td>{{ aluno.id }}</td>
-        <td>{{ aluno.nome }}</td>
-        <td pEditableColumn *ngFor="let notas of aluno.notas">
-          <p-cellEditor>
-            <ng-template pTemplate="input">
-              <input pInputText type="text" [(ngModel)]="notas" />
-            </ng-template>
-            <ng-template pTemplate="output">
-              {{ notas }}
-            </ng-template>
-          </p-cellEditor>
-        </td>
-        <td pEditableColumn>
-          <p-cellEditor>
-            <ng-template pTemplate="input">
-              <p-inputNumber
-                [showButtons]="true"
-                [(ngModel)]="aluno.faltas"
-              ></p-inputNumber>
-            </ng-template>
-            <ng-template pTemplate="output">
-              {{ aluno.faltas }}
-            </ng-template>
-          </p-cellEditor>
-        </td>
-      </tr>
-    </ng-template>
-  </p-table>
-</div>
+<p-accordion [multiple]="true" *ngFor="let disciplina of disciplinas">
+  <p-accordionTab header="{{ disciplina.nome }}">
+    <ng-container *ngFor="let turma of disciplina.turma">
+      <p-accordionTab header="{{ turma }}">
+        <p-table [value]="turmas" [paginator]="true" [rows]="3">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Id</th>
+              <th>Nome</th>
+              <th colspan="3" style="text-align: center">Notas</th>
+              <th>Faltas</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-turma let-disc="disciplina.turma">
+            <tr *ngIf="turma.nome == disciplina.turma">
+              <ng-template *ngFor="let aluno of turma.aluno">
+                <td>{{ aluno.id }}</td>
+                <td>{{ aluno.nome }}</td>
+                <td pEditableColumn *ngFor="let notas of aluno.notas">
+                  <p-cellEditor>
+                    <ng-template pTemplate="input">
+                      <input pInputText type="text" [(ngModel)]="notas" />
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                      {{ notas }}
+                    </ng-template>
+                  </p-cellEditor>
+                </td>
+                <td pEditableColumn>
+                  <p-cellEditor>
+                    <ng-template pTemplate="input">
+                      <p-inputNumber
+                        [showButtons]="true"
+                        [(ngModel)]="aluno.faltas"
+                      ></p-inputNumber>
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                      {{ aluno.faltas }}
+                    </ng-template>
+                  </p-cellEditor>
+                </td>
+              </ng-template>
+            </tr>
+          </ng-template>
+        </p-table>
+      </p-accordionTab>
+    </ng-container>
+  </p-accordionTab>
+</p-accordion>

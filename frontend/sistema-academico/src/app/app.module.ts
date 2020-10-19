@@ -46,6 +46,8 @@ import { PaginatorModule } from 'primeng/paginator';
 import { GerenciaInformesComponent } from './professor/informes/gerencia-informes/gerencia-informes.component';
 import { InformesComponent } from './professor/informes/informes.component';
 import { CadastroInformesComponent } from './professor/informes/cadastro-informes/cadastro-informes.component';
+import { CadastroAvaliacaoComponent } from './professor/notas/cadastro-avaliacao/cadastro-avaliacao.component';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { CadastroInformesComponent } from './professor/informes/cadastro-informe
     MenuProfItensComponent,
     InformesComponent,
     CadastroInformesComponent,
+    CadastroAvaliacaoComponent,
   ],
   imports: [
     BrowserModule,
@@ -94,6 +97,7 @@ import { CadastroInformesComponent } from './professor/informes/cadastro-informe
     KeyFilterModule,
     InputNumberModule,
     PaginatorModule,
+    CalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

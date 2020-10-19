@@ -69,9 +69,7 @@
       "complemento": "apartamento 143",
       "cidade": "racionais",
       "estado": "gasoso",
-      "telefone": [
-        "59830495"
-      ],
+      "telefone": ["59830495"],
       "departamento": "departamento 1"
     },
     {
@@ -85,10 +83,7 @@
       "complemento": "casa",
       "cidade": "reais",
       "estado": "Sólido",
-      "telefone": [
-        "56406975",
-        "20394857"
-      ],
+      "telefone": ["56406975", "20394857"],
       "departamento": "departamento 2"
     }
   ],
@@ -104,11 +99,7 @@
       "complemento": "casa",
       "cidade": "imaginaria",
       "estado": "solido",
-      "telefone": [
-        "12345678",
-        "35462343",
-        "90876234"
-      ],
+      "telefone": ["12345678", "35462343", "90876234"],
       "curso": "bacharelado em pos verdade"
     },
     {
@@ -122,10 +113,7 @@
       "complemento": "apartamento 234",
       "cidade": "complexa",
       "estado": "liquido",
-      "telefone": [
-        "99999999",
-        "11111111"
-      ],
+      "telefone": ["99999999", "11111111"],
       "curso": "licenciatura em pos verdade"
     }
   ],
@@ -141,9 +129,7 @@
       "complemento": "casa",
       "cidade": "naturais",
       "estado": "gasoso",
-      "telefone": [
-        "88888888"
-      ]
+      "telefone": ["88888888"]
     },
     {
       "id": 2,
@@ -156,123 +142,103 @@
       "complemento": "apartamento 42",
       "cidade": "Inteiros",
       "estado": "plasma",
-      "telefone": [
-        "56734609"
-      ]
+      "telefone": ["56734609"]
     }
+  ],
+  "avaliacao": [
+    {
+      "id": 1,
+      "disciplina": "DISC1",
+      "turma": "DISC1-A",
+      "data": "2020-10-21",
+      "nome": "Av1"
+    },
+    {
+      "id": 2,
+      "disciplina": "DISC1",
+      "turma": "DISC1-B",
+      "data": "2020-10-22",
+      "nome": "Trab1"
+    },
+    {
+      "id": 3,
+      "disciplina": "DISC2",
+      "turma": "DISC2-A",
+      "data": "2020-10-21",
+      "nome": "Sem1"
+    }
+  ],
+
+  "disciplinas": [
+    { "nome": "DISC1", "turma": ["DISC1-A", "DISC1-B"] },
+    { "nome": "DISC2", "turma": ["DISC2-A"] },
+    { "nome": "DISC3", "turma": [] },
+    { "nome": "DISC4", "turma": [] }
   ],
   "turmas": [
     {
       "id": 1,
       "nome": "DISC1-A",
-      "disciplina": {
-        "id": 1,
-        "nome": "DISC1"
-      },
       "professor": "Prof1",
       "alunos": [
         {
           "nome": "Aluno1",
           "faltas": 0,
-          "notas": [
-            "10",
-            "8.5",
-            "8.8"
-          ]
+          "notas": ["10", "8.5", "8.8"]
         },
         {
           "nome": "Aluno2",
           "faltas": 1,
-          "notas": [
-            "9",
-            "5.7",
-            "8.2"
-          ]
+          "notas": ["9", "5.7", "8.2"]
         },
         {
           "nome": "Aluno3",
           "faltas": 2,
-          "notas": [
-            "7.5",
-            "8.3",
-            "6.8"
-          ]
+          "notas": ["7.5", "8.3", "6.8"]
         }
       ]
     },
     {
       "id": 2,
       "nome": "DISC1-B",
-      "disciplina": {
-        "id": 1,
-        "nome": "DISC1"
-      },
       "professor": "Prof2",
       "alunos": [
         {
           "nome": "Aluno1",
           "faltas": 0,
-          "notas": [
-            "10",
-            "8.5",
-            "8.8"
-          ]
+          "notas": ["10", "8.5", "8.8"]
         },
         {
           "nome": "Aluno2",
           "faltas": 1,
-          "notas": [
-            "9",
-            "5.7",
-            "8.2"
-          ]
+          "notas": ["9", "5.7", "8.2"]
         },
         {
           "nome": "Aluno3",
           "faltas": 2,
-          "notas": [
-            "7.5",
-            "8.3",
-            "6.8"
-          ]
+          "notas": ["7.5", "8.3", "6.8"]
         }
       ]
     },
     {
       "id": 3,
       "nome": "DISC2-A",
-      "disciplina": {
-        "id": 2,
-        "nome": "DISC2"
-      },
       "professor": "Prof1",
       "alunos": [
         {
           "nome": "Aluno1",
           "faltas": 0,
-          "notas": [
-            "10",
-            "8.5",
-            "8.8"
-          ]
+          "notas": ["10", "8.5", "8.8"]
         },
         {
           "nome": "Aluno2",
           "faltas": 1,
-          "notas": [
-            "9",
-            "5.7",
-            "8.2"
-          ]
+          "notas": ["9", "5.7", "8.2"]
         },
         {
           "nome": "Aluno3",
           "faltas": 2,
-          "notas": [
-            "7.5",
-            "8.3",
-            "6.8"
-          ]
+          "notas": ["7.5", "8.3", "6.8"]
         }
       ]
     }

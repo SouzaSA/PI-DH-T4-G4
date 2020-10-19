@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Informe } from 'src/app/model/informes.model';
 import { InformesService } from 'src/app/service/informes.service';
 
@@ -37,10 +36,7 @@ export class CadastroInformesComponent implements OnInit {
   informe: Informe;
 
   activeState: boolean;
-  constructor(
-    private informesService: InformesService,
-    private router: Router
-  ) {}
+  constructor(private informesService: InformesService) {}
 
   ngOnInit(): void {}
 
