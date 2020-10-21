@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AdministradorService } from './../../service/administrador.service';
-import { ColumnSetting } from './../../model/table-layout.model';
-import { Professor } from './../../model/professor.model';
+import { AdministradorService } from '../../service/administrador.service';
+import { ColumnSetting } from '../../shared/model/table-layout.model';
+import { Professor } from '../../shared/model/professor.model';
 
 @Component({
   selector: 'app-cadastro-professores',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Administrador } from './../../model/administrador.model';
-import { ColumnSetting } from './../../model/table-layout.model';
+import { Administrador } from '../../shared/model/administrador.model';
+import { ColumnSetting } from '../../shared/model/table-layout.model';
 import { AdministradorService } from './../../service/administrador.service';
 
 @Component({

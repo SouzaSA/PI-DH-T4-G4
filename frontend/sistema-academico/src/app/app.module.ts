@@ -40,6 +40,7 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
+import { DataFormModule } from './data-form/data-form.module';
 
 
 @NgModule({
@@ -82,7 +83,8 @@ import { DialogModule } from 'primeng/dialog';
     MatCardModule,
     InputTextModule,
     DialogModule,
-    AdministradorModule
+    AdministradorModule,
+    DataFormModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Aluno } from './../../model/aluno.model';
-import { AdministradorService } from './../../service/administrador.service';
-import { ColumnSetting } from './../../model/table-layout.model';
+import { Aluno } from '../../shared/model/aluno.model';
+import { AdministradorService } from '../../service/administrador.service';
+import { ColumnSetting } from '../../shared/model/table-layout.model';
 
 @Component({
   selector: 'app-cadastro-alunos',

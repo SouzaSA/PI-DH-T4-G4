@@ -12,6 +12,7 @@ import { MenuAdmItensComponent } from './menu-adm-itens/menu-adm-itens.component
 import { MenuItensCadastroComponent } from './menu-itens-cadastro/menu-itens-cadastro.component';
 import { CadastroProfessoresComponent } from './cadastro-professores/cadastro-professores.component';
 import { CadastroAdministradoresComponent } from './cadastro-administradores/cadastro-administradores.component';
+import { DataFormModule } from '../data-form/data-form.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,12 @@ import { CadastroAdministradoresComponent } from './cadastro-administradores/cad
     CadastroProfessoresComponent,
     CadastroAdministradoresComponent
   ],
-  imports: [ SharedModule, CommonModule, NgbModule ],
+  imports: [ 
+    NgbModule,
+    CommonModule,
+    SharedModule, 
+    DataFormModule 
+  ],
   providers: [ AdministradorService ],
   exports: [ 
     AdministradorComponent, 

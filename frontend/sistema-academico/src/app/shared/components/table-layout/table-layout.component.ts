@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { ColumnSetting } from '../../../model/table-layout.model';
+import { ColumnSetting } from '../../../shared/model/table-layout.model';
 
 @Component({
   selector: 'ct-table',
