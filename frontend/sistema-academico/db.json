@@ -1,14 +1,6 @@
 {
   "informes": [
     {
-      "id": 2,
-      "departamento": "departamento 2",
-      "titulo": "informe 01 dpto2",
-      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "prioridade": 4,
-      "data": "2020-01-10 15:25:15.123456"
-    },
-    {
       "id": 3,
       "departamento": "departamento 3",
       "titulo": "informe 01 dpto3",
@@ -95,7 +87,7 @@
       "departamento": "departamento 2"
     }
   ],
-  "aluno":[
+  "aluno": [
     {
       "id": 1,
       "nome": "Adalberto Aaron",
@@ -151,6 +143,104 @@
       "cidade": "Inteiros",
       "estado": "plasma",
       "telefone": ["56734609"]
+    }
+  ],
+  "avaliacao": [
+    {
+      "id": 1,
+      "disciplina": "DISC1",
+      "turma": "DISC1-A",
+      "data": "2020-10-21",
+      "nome": "Av1"
+    },
+    {
+      "id": 2,
+      "disciplina": "DISC1",
+      "turma": "DISC1-B",
+      "data": "2020-10-22",
+      "nome": "Trab1"
+    },
+    {
+      "id": 3,
+      "disciplina": "DISC2",
+      "turma": "DISC2-A",
+      "data": "2020-10-21",
+      "nome": "Sem1"
+    }
+  ],
+
+  "disciplinas": [
+    { "nome": "DISC1", "turma": ["DISC1-A", "DISC1-B"] },
+    { "nome": "DISC2", "turma": ["DISC2-A"] },
+    { "nome": "DISC3", "turma": [] },
+    { "nome": "DISC4", "turma": [] }
+  ],
+  "turmas": [
+    {
+      "id": 1,
+      "nome": "DISC1-A",
+      "professor": "Prof1",
+      "alunos": [
+        {
+          "nome": "Aluno1",
+          "faltas": 0,
+          "notas": ["10", "8.5", "8.8"]
+        },
+        {
+          "nome": "Aluno2",
+          "faltas": 1,
+          "notas": ["9", "5.7", "8.2"]
+        },
+        {
+          "nome": "Aluno3",
+          "faltas": 2,
+          "notas": ["7.5", "8.3", "6.8"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "DISC1-B",
+      "professor": "Prof2",
+      "alunos": [
+        {
+          "nome": "Aluno1",
+          "faltas": 0,
+          "notas": ["10", "8.5", "8.8"]
+        },
+        {
+          "nome": "Aluno2",
+          "faltas": 1,
+          "notas": ["9", "5.7", "8.2"]
+        },
+        {
+          "nome": "Aluno3",
+          "faltas": 2,
+          "notas": ["7.5", "8.3", "6.8"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "DISC2-A",
+      "professor": "Prof1",
+      "alunos": [
+        {
+          "nome": "Aluno1",
+          "faltas": 0,
+          "notas": ["10", "8.5", "8.8"]
+        },
+        {
+          "nome": "Aluno2",
+          "faltas": 1,
+          "notas": ["9", "5.7", "8.2"]
+        },
+        {
+          "nome": "Aluno3",
+          "faltas": 2,
+          "notas": ["7.5", "8.3", "6.8"]
+        }
+      ]
     }
   ]
 }

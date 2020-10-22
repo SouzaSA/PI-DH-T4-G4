@@ -1,0 +1,82 @@
+<div class="mat-elevation-z4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto my-3" *ngFor="let informe of informe">
+        <p-card
+          header="{{ informe.titulo }}"
+          subheader="{{ informe.departamento }}"
+        >
+          {{ informe.descricao }}
+
+          <ng-template pTemplate="footer">
+            <p-button icon="pi pi-pencil" (click)="janelaEditar(informe)">
+            </p-button>
+            <p-button
+              icon="pi pi-trash"
+              (click)="excluir(informe.id)"
+              [style]="{ 'margin-left': '.5em' }"
+            >
+            </p-button>
+          </ng-template>
+        </p-card>
+      </div>
+    </div>
+  </div>
+  <p-paginator [rows]="5"></p-paginator>
+</div>
+
+<p-dialog header="Editar Informe" [(visible)]="displayEditar">
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="block-div">
+      <div class="p-field p-col-6">
+        <p-dropdown
+          [options]="prioridades"
+          [(ngModel)]="prioridadeSelecionada"
+          optionLabel="name"
+          [showClear]="true"
+        ></p-dropdown>
+      </div>
+      <div class="p-field p-col-6">
+        <p-dropdown
+          [options]="departamentos"
+          [(ngModel)]="departamentoSelecionado"
+          optionLabel="name"
+          [showClear]="true"
+        ></p-dropdown>
+      </div>
+    </div>
+    <div class="p-field p-col-12">
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="informe.titulo"
+        [ngModelOptions]="{ standalone: true }"
+        placeholder="Título"
+        name="titulo"
+      />
+    </div>
+  </div>
+  <div class="editor">
+    <p-editor
+      [style]="{ height: '320px' }"
+      [(ngModel)]="informe.descricao"
+      [ngModelOptions]="{ standalone: true }"
+      name="descricao"
+    ></p-editor>
+  </div>
+  <button
+    class="btn btn-primary mr-1"
+    (click)="atualizarInforme(informeSelecionado)"
+  >
+    Salvar
+  </button>
+  <button class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+</p-dialog>
+
+<p-dialog header="Deletar Informe" [(visible)]="displayDeletar">
+  <p>Você gostaria de excluir o informe?</p>
+  <button class="btn btn-danger mr-1" (click)="delete(informeSelecionado.id)">
+    Excluir
+  </button>
+  <button class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+</p-dialog>
