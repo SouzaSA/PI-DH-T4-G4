@@ -7,11 +7,11 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { AdministradorService } from './../../service/administrador.service';
 
 @Component({
-  selector: 'professor-form',
-  templateUrl: './professor-form.component.html',
-  styleUrls: ['./professor-form.component.css']
+  selector: 'disciplina-form',
+  templateUrl: './disciplina-form.component.html',
+  styleUrls: ['./disciplina-form.component.css']
 })
-export class ProfessorFormComponent implements OnInit {
+export class DisciplinaFormComponent implements OnInit {
 
   formulario: FormGroup;
 
@@ -25,18 +25,20 @@ export class ProfessorFormComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-
     this.formulario = this.formBuilder.group({
-      pessoaRequest: [null],
-      departamento: [null],
-      professorId: [null]
+      disciplinaId: [null],
+      codigo: [null],
+      creditos: [null],
+      ementa: [null],
+      nome: [null],
+      obrigatoria: [null],
+      semestreIdeal: [null]
     });
-
   }
 
-  openModalWithClass(cadastroProfessor: TemplateRef<any>) {  
+  openModalWithClass(cadastroDisciplina: TemplateRef<any>) {  
     this.modalRef = this.modalService.show(  
-      cadastroProfessor,  
+      cadastroDisciplina,  
       Object.assign({}, { class: 'gray modal-lg' })  
     );  
   }
@@ -44,7 +46,7 @@ export class ProfessorFormComponent implements OnInit {
   onSubmit() {
     console.log(this.formulario.value);
 
-    this.administradorService.postProfessor(this.formulario.value).subscribe();
+    this.administradorService.postDisciplina(this.formulario.value).subscribe();
   }
 
   resetar(){

@@ -12,6 +12,6 @@ public class AlunoRequest implements Serializable {
 
 	private Long alunoId;
 	private PessoaRequest pessoaRequest;	
-	private Curso curso;
+	private CursoRequest curso;
 	
 }

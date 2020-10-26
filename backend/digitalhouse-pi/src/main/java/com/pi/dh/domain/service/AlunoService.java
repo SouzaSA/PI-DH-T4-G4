@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.pi.dh.domain.model.Aluno;
 import com.pi.dh.domain.repository.AlunoRepository;
+import com.pi.dh.domain.repository.CursoRepository;
 import com.pi.dh.domain.repository.EnderecoRepository;
 import com.pi.dh.domain.repository.PessoaRepository;
 import com.pi.dh.dto.AlunoDTO;
@@ -29,6 +30,9 @@ public class AlunoService {
 	private EnderecoRepository enderecoRepository;
 	
 	@Autowired
+	private CursoRepository cursoRepository;
+	
+	@Autowired
 	private AlunoMapper mapper;
 	
 	@Transactional
@@ -36,6 +40,7 @@ public class AlunoService {
 		
 		Aluno aluno = mapper.requestToModel(alunoRequest);
 		
+		cursoRepository.save(aluno.getCurso());
 		enderecoRepository.save(aluno.getPessoa().getEndereco());
 		pessoaRepository.save(aluno.getPessoa());
 		

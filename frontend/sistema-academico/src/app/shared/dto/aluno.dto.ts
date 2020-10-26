@@ -1,7 +1,8 @@
+import { CursoDto } from './curso.dto';
 import { PessoaDto } from './pessoa.dto';
 
 export interface AlunoDto {
-    id?: number;
-    pessoa?: PessoaDto;
-    curso?: string;
-  }
+  alunoId?: number;
+  pessoa?: PessoaDto;
+  curso?: CursoDto;
+}

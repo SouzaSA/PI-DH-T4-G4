@@ -1,6 +1,7 @@
-export interface Aluno {
+export class Aluno {
   id: number;
   nome: string;
+  sobrenome:string;
   email: string;
   cep: string;
   rua: string;
@@ -11,4 +12,20 @@ export interface Aluno {
   estado: string;
   telefone: Array<string>;
   curso: string;
+
+  constructor() {
+    this.id = undefined;
+    this.nome  = undefined;
+    this.sobrenome  = undefined;
+    this.email = undefined;
+    this.cep = undefined;
+    this.rua = undefined;
+    this.numero = undefined;
+    this.bairro = undefined;
+    this.complemento = undefined;
+    this.cidade = undefined;
+    this.estado = undefined;
+    this.telefone = undefined;
+    this.curso = undefined;
+  }
 }

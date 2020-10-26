@@ -6,6 +6,7 @@
         <button ngbDropdownItem on-click="seleciona('Administrador')"> Administrador </button>
         <button ngbDropdownItem on-click="seleciona('Professor')"> Professor </button>
         <button ngbDropdownItem on-click="seleciona('Aluno')"> Aluno </button>
+        <button ngbDropdownItem on-click="seleciona('Sala')"> Sala </button>
       </div>
     </div>
   </div>
@@ -22,6 +23,9 @@
 </div>
 <div  *ngIf="titulo==='Administrador'">
   <app-cadastro-administradores></app-cadastro-administradores>
+</div>
+<div  *ngIf="titulo==='Sala'">
+  <app-cadastro-salas></app-cadastro-salas>
 </div>
 <div>
     <router-outlet></router-outlet>

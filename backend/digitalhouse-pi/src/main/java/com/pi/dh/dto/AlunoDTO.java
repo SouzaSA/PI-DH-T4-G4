@@ -10,5 +10,6 @@ public class AlunoDTO implements Serializable {
 	
 	private Long alunoId;
 	private PessoaDTO pessoaDTO;
+	private CursoDTO cursoDTO;
 	
 }

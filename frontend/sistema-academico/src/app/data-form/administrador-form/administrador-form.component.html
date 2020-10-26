@@ -1,11 +1,11 @@
 <div style="width: fit-content;margin: right;margin-top: 18px;">  
-    <button type="button" class="btn btn-primary" (click)="openModalWithClass(cadastroAluno)">Adicionar</button>  
+    <button type="button" class="btn btn-primary" (click)="openModalWithClass(cadastroAdministrador)">Adicionar</button>  
   </div>  
     
        
-    <ng-template #cadastroAluno>  
+    <ng-template #cadastroAdministrador>  
       <div class="modal-header">  
-        <h4 class="modal-title pull-left">Aluno</h4>  
+        <h4 class="modal-title pull-left">Administrador</h4>  
         <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">  
           <span aria-hidden="true">×</span>  
         </button>  
@@ -14,14 +14,7 @@
         <div>
           
           <form  [formGroup]="formulario" (ngSubmit)="onSubmit()">
-  
-            <div class="form-row" formGroupName="curso">
-              <div class="form-group col-md-6">
-                <label for="curso" class="control-label mb-0">Curso</label>
-                <input type="text" class="form-control" formControlName="nome" id="curso" placeholder="curso">
-              </div>
-            </div>
-  
+
               <pessoa-form formControlName = "pessoaRequest"> </pessoa-form>
           
               <div class="form-row">

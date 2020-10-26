@@ -7,11 +7,11 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { AdministradorService } from './../../service/administrador.service';
 
 @Component({
-  selector: 'professor-form',
-  templateUrl: './professor-form.component.html',
-  styleUrls: ['./professor-form.component.css']
+  selector: 'sala-form',
+  templateUrl: './sala-form.component.html',
+  styleUrls: ['./sala-form.component.css']
 })
-export class ProfessorFormComponent implements OnInit {
+export class SalaFormComponent implements OnInit {
 
   formulario: FormGroup;
 
@@ -27,16 +27,18 @@ export class ProfessorFormComponent implements OnInit {
   ngOnInit(): void {
 
     this.formulario = this.formBuilder.group({
-      pessoaRequest: [null],
+      salaId: [null],
+      numero: [null],
       departamento: [null],
-      professorId: [null]
+      capacidade: [null],
+      andar: [null]
     });
 
   }
 
-  openModalWithClass(cadastroProfessor: TemplateRef<any>) {  
+  openModalWithClass(cadastroSala: TemplateRef<any>) {  
     this.modalRef = this.modalService.show(  
-      cadastroProfessor,  
+      cadastroSala,  
       Object.assign({}, { class: 'gray modal-lg' })  
     );  
   }
@@ -44,7 +46,7 @@ export class ProfessorFormComponent implements OnInit {
   onSubmit() {
     console.log(this.formulario.value);
 
-    this.administradorService.postProfessor(this.formulario.value).subscribe();
+    this.administradorService.postSala(this.formulario.value).subscribe();
   }
 
   resetar(){
@@ -63,5 +65,4 @@ export class ProfessorFormComponent implements OnInit {
       'has-feedback': this.verificaValidTouched(campo)
     }
   }
-
 }

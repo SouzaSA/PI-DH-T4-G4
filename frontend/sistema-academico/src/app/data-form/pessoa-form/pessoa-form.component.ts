@@ -22,7 +22,7 @@ import { FormGroup, FormBuilder, Validators, ControlValueAccessor, Validator, Va
 export class PessoaFormComponent implements OnInit, ControlValueAccessor, Validator {
 
   public pessoaForm: FormGroup = this.formBuilder.group({
-    //pessoaId: [null],
+    pessoaId: [null],
     nome: [null, Validators.required],
     sobrenome: [null, Validators.required],
     email: [null, Validators.required],

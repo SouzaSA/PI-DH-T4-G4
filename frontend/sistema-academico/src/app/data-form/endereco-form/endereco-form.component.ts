@@ -22,7 +22,7 @@ import { FormGroup, FormBuilder, Validators, ControlValueAccessor, Validator, Va
 export class EnderecoFormComponent implements OnInit, ControlValueAccessor, Validator {
 
   public enderecoForm: FormGroup = this.formBuilder.group({
-    //id: [null],
+    id: [null],
     cep: [null, Validators.required],
     rua: [null, Validators.required],
     numero: [null, Validators.required],

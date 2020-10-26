@@ -8,6 +8,9 @@ import { SharedModule } from '../shared/shared.module';
 import { ProfessorFormComponent } from './professor-form/professor-form.component';
 import { EnderecoFormComponent } from './endereco-form/endereco-form.component';
 import { PessoaFormComponent } from './pessoa-form/pessoa-form.component';
+import { AdministradorFormComponent } from './administrador-form/administrador-form.component';
+import { SalaFormComponent } from './sala-form/sala-form.component';
+import { DisciplinaFormComponent } from './disciplina-form/disciplina-form.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { PessoaFormComponent } from './pessoa-form/pessoa-form.component';
     AlunoFormComponent,
     ProfessorFormComponent,
     EnderecoFormComponent,
-    PessoaFormComponent
+    PessoaFormComponent,
+    AdministradorFormComponent,
+    SalaFormComponent,
+    DisciplinaFormComponent
   ],
   imports: [
     SharedModule,
@@ -28,7 +34,9 @@ import { PessoaFormComponent } from './pessoa-form/pessoa-form.component';
     AlunoFormComponent,
     ProfessorFormComponent,
     EnderecoFormComponent,
-    PessoaFormComponent
+    PessoaFormComponent,
+    AdministradorFormComponent,
+    SalaFormComponent
   ]
 })
 export class DataFormModule { }

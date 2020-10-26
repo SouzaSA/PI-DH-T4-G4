@@ -13,6 +13,8 @@ import { MenuItensCadastroComponent } from './menu-itens-cadastro/menu-itens-cad
 import { CadastroProfessoresComponent } from './cadastro-professores/cadastro-professores.component';
 import { CadastroAdministradoresComponent } from './cadastro-administradores/cadastro-administradores.component';
 import { DataFormModule } from '../data-form/data-form.module';
+import { CadastroSalasComponent } from './cadastro-salas/cadastro-salas.component';
+import { CadastroDisciplinasComponent } from './cadastro-disciplinas/cadastro-disciplinas.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { DataFormModule } from '../data-form/data-form.module';
     MenuAdmItensComponent,
     MenuItensCadastroComponent,
     CadastroProfessoresComponent,
-    CadastroAdministradoresComponent
+    CadastroAdministradoresComponent,
+    CadastroSalasComponent,
+    CadastroDisciplinasComponent
   ],
   imports: [ 
     NgbModule,

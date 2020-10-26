@@ -1,0 +1,58 @@
+<div style="width: fit-content;margin: right;margin-top: 18px;">  
+    <button type="button" class="btn btn-primary" (click)="openModalWithClass(cadastroSala)">Adicionar</button>  
+  </div>  
+    
+       
+    <ng-template #cadastroSala>  
+      <div class="modal-header">  
+        <h4 class="modal-title pull-left">Sala</h4>  
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">  
+          <span aria-hidden="true">×</span>  
+        </button>  
+      </div>  
+      <div class="modal-body">  
+        <div>
+          
+          <form  [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="numero" class="control-label mb-0">Número</label>
+                    <input type="text" class="form-control" formControlName="numero" id="numero" placeholder="Número">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="departamento" class="control-label mb-0">Departamento</label>
+                    <input type="text" class="form-control" formControlName="departamento" id="departamento" placeholder="Departamento">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="capacidade" class="control-label mb-0">Capacidade</label>
+                    <input type="text" class="form-control" formControlName="capacidade" id="capacidade" placeholder="Capacidade">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="andar" class="control-label mb-0">Andar</label>
+                    <input type="text" class="form-control" formControlName="andar" id="andar" placeholder="Andar">
+                </div>
+            </div>   
+            
+          
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <button type="submit" class="btn btn-primary">Gravar</button>
+                    <button class="btn btn-secondary ml-2" (click)="modalRef.hide()">Cancelar</button>
+                </div>    
+            </div>
+              
+          </form>
+  
+        </div>
+      </div>  
+    </ng-template>  
