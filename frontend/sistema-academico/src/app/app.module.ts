@@ -36,10 +36,8 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
-<<<<<<< HEAD
 import { DataFormModule } from './data-form/data-form.module';
 
-=======
 import { GerenciaNotasComponent } from './professor/notas/gerencia-notas/gerencia-notas.component';
 import { TableModule } from 'primeng/table';
 import { AccordionModule } from 'primeng/accordion';
@@ -52,7 +50,6 @@ import { InformesComponent } from './professor/informes/informes.component';
 import { CadastroInformesComponent } from './professor/informes/cadastro-informes/cadastro-informes.component';
 import { CadastroAvaliacaoComponent } from './professor/notas/cadastro-avaliacao/cadastro-avaliacao.component';
 import { CalendarModule } from 'primeng/calendar';
->>>>>>> 7dcb3291dcd44c08e39547e081e7be00313da6f7
 
 @NgModule({
   declarations: [
@@ -97,16 +94,13 @@ import { CalendarModule } from 'primeng/calendar';
     InputTextModule,
     DialogModule,
     AdministradorModule,
-<<<<<<< HEAD
-    DataFormModule
-=======
+    DataFormModule,
     TableModule,
     AccordionModule,
     KeyFilterModule,
     InputNumberModule,
     PaginatorModule,
     CalendarModule,
->>>>>>> 7dcb3291dcd44c08e39547e081e7be00313da6f7
   ],
   providers: [],
   bootstrap: [AppComponent],

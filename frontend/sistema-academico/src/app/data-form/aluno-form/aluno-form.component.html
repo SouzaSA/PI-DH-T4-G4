@@ -1,22 +1,12 @@
-<form class="form-horizontal" [formGroup]="formulario" (ngSubmit)="onSubmit()">
-    <div class="form-group" [ngClass]="aplicaCssErro('nome')">
-        <div class="col-sm-12">
-            <label for="nome" class="control-label">Nome</label>
-        </div>
+<form  [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    
+    <pessoa-form formControlName = "pessoaRequest"> </pessoa-form>
 
-        <div class="col-sm-12">
-            <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Nome">
-        </div>   
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <button type="submit" class="btn btn-primary">Gravar</button>
+            <button class="btn btn-secondary ml-2" (click)="resetar()">Cancelar</button>
+        </div>    
     </div>
-
-    <div class="form-group">
-        <div class="col-sm-12">
-            <input type="email" class="form-control" formControlName="email" id="email" placeholder="nome@email.com">
-        </div>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Gravar</button>
-    <button class="btn btn-secondary ml-2" (click)="resetar()">Cancelar</button>
-
-    <app-form-debug [form]="formulario"></app-form-debug>
+    
 </form>

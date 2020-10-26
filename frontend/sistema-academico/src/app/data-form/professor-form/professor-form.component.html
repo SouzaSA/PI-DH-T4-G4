@@ -1,0 +1,39 @@
+<div style="width: fit-content;margin: right;margin-top: 18px;">  
+  <button type="button" class="btn btn-primary" (click)="openModalWithClass(cadastroProfessor)">Adicionar</button>  
+</div>  
+  
+     
+  <ng-template #cadastroProfessor>  
+    <div class="modal-header">  
+      <h4 class="modal-title pull-left">Professor</h4>  
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">  
+        <span aria-hidden="true">×</span>  
+      </button>  
+    </div>  
+    <div class="modal-body">  
+      <div>
+        
+        <form  [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="departamento" class="control-label mb-0">Departamento</label>
+              <input type="text" class="form-control" formControlName="departamento" id="departamento" placeholder="departamento">
+            </div>
+          </div>
+
+            <pessoa-form formControlName = "pessoaRequest"> </pessoa-form>
+        
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <button type="submit" class="btn btn-primary">Gravar</button>
+                    <button class="btn btn-secondary ml-2" (click)="modalRef.hide()">Cancelar</button>
+                </div>    
+            </div>
+            
+        </form>
+
+      </div>
+    </div>  
+  </ng-template>  
+

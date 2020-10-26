@@ -1,0 +1,40 @@
+<ng-container [formGroup]="enderecoForm">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="cep" class="control-label mb-0">CEP</label>
+            <input type="text" class="form-control" formControlName="cep" id="cep" placeholder="CEP">
+        </div>   
+    
+        <div class="form-group col-md-9">
+            <label for="logradouro" class="control-label mb-0">Logradouro</label>
+            <input type="text" class="form-control" formControlName="rua" id="logradouro" placeholder="Logradouro">
+        </div>
+    
+        <div class="form-group col-md-3">
+            <label for="logradouro" class="control-label mb-0">Número</label>
+            <input type="text" class="form-control" formControlName="numero" id="numero" placeholder="">
+        </div>
+    
+        <div class="form-group col-md-12 ">
+            <label for="complemento" class="control-label mb-0">Complemento</label>
+            <input type="text" class="form-control" formControlName="complemento" id="complemento" placeholder="Complemento">
+        </div>
+    
+        <div class="form-group col-md-6">
+            <label for="bairro" class="control-label mb-0">Bairro</label>
+            <input type="text" class="form-control" formControlName="bairro" id="bairro" placeholder="Bairro">
+        </div>
+    
+        <div class="form-group col-md-4">
+            <label for="cidade" class="control-label mb-0">Cidade</label>
+            <input type="text" class="form-control" formControlName="cidade" id="cidade" placeholder="Cidade">
+        </div>
+        
+        <div class="form-group col-md-2">
+            <label for="estado" class="control-label mb-0">UF</label>
+            <input type="text" class="form-control" formControlName="estado" id="estado" placeholder="UF">
+        </div>
+    
+    </div>
+    
+</ng-container>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Informe } from 'src/app/model/informes.model';
+import { Informe } from '../../../shared/model/informes.model';
 import { InformesService } from 'src/app/service/informes.service';
 
 interface Prioridade {

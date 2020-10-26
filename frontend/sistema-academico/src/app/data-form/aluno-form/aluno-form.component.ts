@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -19,8 +19,7 @@ export class AlunoFormComponent implements OnInit {
   ngOnInit(): void {
 
     this.formulario = this.formBuilder.group({
-      nome: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]]
+      pessoaRequest: [null],
     });
 
   }
@@ -31,7 +30,7 @@ export class AlunoFormComponent implements OnInit {
     this.http.post('https:/httpbin.org/post', 
                     JSON.stringify(this.formulario.value))
       .subscribe(dados => {
-        console.log(dados);
+        //console.log(dados);
         // reseta o form
         this.formulario.reset();
       });

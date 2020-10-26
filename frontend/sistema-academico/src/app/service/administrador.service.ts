@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { map, tap } from 'rxjs/operators';
+import { map, take, tap } from 'rxjs/operators';
 
 import { Aluno } from '../shared/model/aluno.model';
 import { Administrador } from '../shared/model/administrador.model';
@@ -33,6 +33,13 @@ export class AdministradorService {
           )
         )
     );
+  }
+
+  postProfessor(professorData) {
+    console.log(JSON.stringify(professorData));
+    return this.http.post(this.API+"professores", professorData)
+      .pipe(take(1));
+  
   }
 
   listarAdministradores() {

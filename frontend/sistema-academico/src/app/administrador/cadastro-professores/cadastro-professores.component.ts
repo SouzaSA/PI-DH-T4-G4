@@ -17,7 +17,7 @@ export class CadastroProfessoresComponent implements OnInit {
   projectSettings: ColumnSetting[] = 
     [
       {
-        primaryKey: 'id',
+        primaryKey: 'professorId',
         header: 'Código'
       },
       {

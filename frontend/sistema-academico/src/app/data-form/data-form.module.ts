@@ -5,11 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AlunoFormComponent } from './aluno-form/aluno-form.component';
 import { SharedModule } from '../shared/shared.module';
+import { ProfessorFormComponent } from './professor-form/professor-form.component';
+import { EnderecoFormComponent } from './endereco-form/endereco-form.component';
+import { PessoaFormComponent } from './pessoa-form/pessoa-form.component';
 
 
 @NgModule({
   declarations: [
-    AlunoFormComponent
+    AlunoFormComponent,
+    ProfessorFormComponent,
+    EnderecoFormComponent,
+    PessoaFormComponent
   ],
   imports: [
     SharedModule,
@@ -20,6 +26,9 @@ import { SharedModule } from '../shared/shared.module';
   ],
   exports: [
     AlunoFormComponent,
+    ProfessorFormComponent,
+    EnderecoFormComponent,
+    PessoaFormComponent
   ]
 })
 export class DataFormModule { }
