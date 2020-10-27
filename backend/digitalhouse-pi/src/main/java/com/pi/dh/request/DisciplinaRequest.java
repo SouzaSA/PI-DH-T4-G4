@@ -14,6 +14,5 @@ public class DisciplinaRequest implements Serializable {
     private Integer creditos;   
     private String codigo;
     private Integer semestreIdeal;  
-	private Integer obrigatoria;
 	
 }

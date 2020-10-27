@@ -4,6 +4,6 @@ export interface DisciplinaDto {
     creditos?: number;
     ementa?: string;
     nome?: string;
-    obrigatoria?: string[];
+    requeridas?: DisciplinaDto[];
     semestreIdeal?: number;
 }

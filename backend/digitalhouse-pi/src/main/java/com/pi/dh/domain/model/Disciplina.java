@@ -46,10 +46,6 @@ public class Disciplina implements Serializable {
     
     @Column(name="semestre_ideal")
     private Integer semestreIdeal;
-    
-	@Column
-	@NotNull
-	private Integer obrigatoria;
 	
 	
 		public Disciplina(Long disciplinaId, String nome, String ementa, Integer creditos, 
@@ -61,17 +57,6 @@ public class Disciplina implements Serializable {
 		this.creditos = creditos;
 		this.codigo = codigo;
 		this.semestreIdeal = semestreIdeal;
-		this.obrigatoria = obrigatoria.getCod();
 	}
-		
-		
-		public void setObrigatoria(Obrigatoria obrigatoria) {
-			this.obrigatoria = obrigatoria.getCod();
-			
-		}
-		
-		public Obrigatoria getObrigatoria() {
-			return Obrigatoria.toEnum(obrigatoria);
-		}
 
 }

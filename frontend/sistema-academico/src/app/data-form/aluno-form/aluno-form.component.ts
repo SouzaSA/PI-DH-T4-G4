@@ -7,7 +7,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { AdministradorService } from './../../service/administrador.service';
 
 @Component({
-  selector: 'app-aluno-form',
+  selector: 'aluno-form',
   templateUrl: './aluno-form.component.html',
   styleUrls: ['./aluno-form.component.css']
 })

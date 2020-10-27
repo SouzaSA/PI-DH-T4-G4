@@ -31,7 +31,7 @@ export class DisciplinaFormComponent implements OnInit {
       creditos: [null],
       ementa: [null],
       nome: [null],
-      obrigatoria: [null],
+      requeridas: [null],
       semestreIdeal: [null]
     });
   }

@@ -36,7 +36,8 @@ import { DisciplinaFormComponent } from './disciplina-form/disciplina-form.compo
     EnderecoFormComponent,
     PessoaFormComponent,
     AdministradorFormComponent,
-    SalaFormComponent
+    SalaFormComponent,
+    DisciplinaFormComponent
   ]
 })
 export class DataFormModule { }

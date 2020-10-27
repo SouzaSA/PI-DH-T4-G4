@@ -27,12 +27,16 @@
     
         <div class="form-group col-md-4">
             <label for="cidade" class="control-label mb-0">Cidade</label>
-            <input type="text" class="form-control" formControlName="cidade" id="cidade" placeholder="Cidade">
+            <select class="form-control" id="cidade" formControlName="cidade">
+                <option *ngFor="let cidade of cidades" [value]="cidade.nome">{{ cidade.nome }}</option>
+              </select>
         </div>
         
         <div class="form-group col-md-2">
             <label for="estado" class="control-label mb-0">UF</label>
-            <input type="text" class="form-control" formControlName="estado" id="estado" placeholder="UF">
+            <select class="form-control" id="estado" formControlName="estado">
+                <option *ngFor="let estado of estados" [value]="estado.sigla">{{ estado.nome }}</option>
+            </select>
         </div>
     
     </div>

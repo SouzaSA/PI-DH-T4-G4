@@ -1,1 +1,11 @@
-<p>cadastro-disciplinas works!</p>
+<disciplina-form></disciplina-form>
+
+<div class="container-fluid overflow-auto">
+  <div class="page-header">
+      <h1>{{ title }}</h1>
+  </div>
+  <ct-table [records]="disciplinas"
+            [caption]="'Sistema Acadêmico'"
+            [settings]="projectSettings">
+  </ct-table>
+</div>

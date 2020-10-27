@@ -14,49 +14,38 @@
     <div>
           
       <form  [formGroup]="formulario" (ngSubmit)="onSubmit()">
-            
-        <div class="form-row">
-          <div class="form-group col-md-6">
+        <div class="form-row">    
+          <div class="form-group col-md-2">
             <label for="codigo" class="control-label mb-0">Código</label>
             <input type="text" class="form-control" formControlName="codigo" id="codigo" placeholder="Código">
           </div>
-        </div>
 
-        <div class="form-row">
           <div class="form-group col-md-6">
             <label for="nome" class="control-label mb-0">Nome</label>
             <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Nome">
           </div>
-        </div>
 
-        <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-2">
             <label for="creditos" class="control-label mb-0">Créditos</label>
             <input type="text" class="form-control" formControlName="creditos" id="creditos" placeholder="Créditos">
           </div>
-        </div>
 
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="ementa" class="control-label mb-0">Ementa</label>
-            <input type="text" class="form-control" formControlName="ementa" id="ementa" placeholder="Ementa">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="obrigatoria" class="control-label mb-0">Obrigatória</label>
-            <input type="text" class="form-control" formControlName="obrigatoria" id="obrigatoria" placeholder="Obrigatória">
-          </div>
-        </div>
-        
-        <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-2">
             <label for="semestreIdeal" class="control-label mb-0">Semestre Ideal</label>
             <input type="text" class="form-control" formControlName="semestreIdeal" id="semestreIdeal" placeholder="Semestre Ideal">
           </div>
-        </div>  
-            
+
+          <div class="form-group col-md-12">
+            <label for="ementa">Ementa</label>
+            <textarea class="form-control" id="ementa" rows="3" formControlName="ementa" placeholder="Ementa"></textarea>
+          </div>
+
+          <div class="form-group col-md-12">
+            <label for="obrigatoria" class="control-label mb-0">Requeridas</label>
+            <input type="text" class="form-control" formControlName="obrigatoria" id="obrigatoria" placeholder="Obrigatória">
+          </div>
+        </div>
+
           
         <div class="form-row">
           <div class="form-group col-md-12">
