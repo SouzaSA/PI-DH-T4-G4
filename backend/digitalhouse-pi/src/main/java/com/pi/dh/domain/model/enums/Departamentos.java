@@ -6,7 +6,7 @@ import lombok.Getter;
 public enum Departamentos {
 
 	Dept1(1, "Humaninades"),
-	Depr2(2, "Física"),
+	Dept2(2, "Física"),
 	Dept3(3, "Matemática"),
 	Dept4(4, "Química");
 	

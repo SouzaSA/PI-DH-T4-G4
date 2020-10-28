@@ -17,7 +17,7 @@ export class InformesListaService {
   listar() {
     return this.http.get<Informe[]>(this.API)
     .pipe(
-      tap()
+      tap(console.log)
     );
   }
 }

@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'departamento1', component: InformesDepartamentoComponent },
   { path: 'departamento2', component: InformesDepartamentoComponent },
   { path: 'departamento3', component: InformesDepartamentoComponent },
+  { path: 'departamento4', component: InformesDepartamentoComponent },
   {
     path: 'professor',
     component: ProfessorComponent,
