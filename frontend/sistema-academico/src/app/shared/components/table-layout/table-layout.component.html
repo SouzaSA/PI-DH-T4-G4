@@ -2,13 +2,38 @@
   <caption *ngIf="caption">{{ caption }}</caption>
   <thead>
       <tr>
+          <th></th>
           <th *ngFor="let map of columnMaps">{{ map.header }}</th>
       </tr>
   </thead>
   <tbody>
       <tr *ngFor="let record of records">
-          <td *ngFor="let map of columnMaps">
-              {{ record[map.primaryKey] }}</td>
+            <td>
+                <div class="btn-group" dropdown>
+                    <button id="button-edicao" dropdownToggle type="button" class="btn btn-light"
+                            aria-controls="menu-edicao">
+                            <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <ul id="menu-edicao" *dropdownMenu class="dropdown-menu"
+                        role="menu" aria-labelledby="button-basic">
+                        <li role="menuitem">
+                            <button type="button" class="btn btn-light dropdown-item" (click)="editar(record[columnMaps[0].primaryKey])">
+                                <mat-icon>edit</mat-icon>
+                                <span class="ml-3 align-top">Editar</span>
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button type="button" class="btn btn-light dropdown-item">
+                                <mat-icon>delete</mat-icon>
+                                <span class="ml-3 align-top">Remover</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+            <td *ngFor="let map of columnMaps">
+                {{ record[map.primaryKey] }}
+            </td>
       </tr>
   </tbody>
 </table>

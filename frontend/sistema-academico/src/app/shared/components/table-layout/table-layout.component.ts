@@ -1,4 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
+
+import { SharedService } from './../../../service/shared.service';
 import { ColumnSetting } from '../../../shared/model/table-layout.model';
 
 @Component({
@@ -21,6 +23,8 @@ export class TableLayoutComponent implements OnChanges {
 
   keys: string[];
 
+  constructor(private sharedService: SharedService) { }
+
   ngOnChanges() {
     if (this.settings) { // when settings provided
       this.columnMaps = this.settings;
@@ -34,6 +38,12 @@ export class TableLayoutComponent implements OnChanges {
           }
         });
     }
-  }
+  };
 
+  public editar(v: any){
+    console.log(v);
+    this.sharedService.sendEditEvent(v);
+    
+    //fazer
+  };
 }

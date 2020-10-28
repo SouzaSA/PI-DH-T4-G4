@@ -2,6 +2,8 @@ import { ProfessorDto } from '../dto/professor.dto';
 
 export class Professor {
   professorId?: number;
+  pessoaId?: number;
+  enderecoId?: number;
   nome?: string;
   sobrenome?: string;
   email?: string;
@@ -17,6 +19,8 @@ export class Professor {
 
   constructor() {
     this.professorId = undefined;
+    this.pessoaId = undefined;
+    this.enderecoId = undefined;
     this.nome  = undefined;
     this.sobrenome  = undefined;
     this.email = undefined;

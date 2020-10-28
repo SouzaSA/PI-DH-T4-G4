@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatIconModule} from '@angular/material/icon';
+
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { TableLayoutComponent } from './components/table-layout/table-layout.component';
@@ -22,7 +27,10 @@ import { ErrorMsgComponent } from './components/error-msg/error-msg.component';
     CommonModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+    BsDropdownModule
   ],
   exports: [
     SharedRoutingModule,

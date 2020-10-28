@@ -1,3 +1,4 @@
+import { Professor } from './../shared/model/professor.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -70,6 +71,15 @@ export class AdministradorService {
     );
   }
 
+  getProfessorePorId(id: number)  {
+    return this.http.get<ProfessorDto>(this.API+"professores/"+id)
+    .pipe(
+      map((data: ProfessorDto) =>
+        <Professor>ProfessorMapper.toProfessor(data),
+      )
+    );
+  }
+
   postProfessor(professorData) {
     console.log(JSON.stringify(professorData));
     return this.http.post(this.API+"professores", professorData)
@@ -102,6 +112,12 @@ export class AdministradorService {
     return this.http.post(this.API+"disciplinas", disciplinaData)
       .pipe(take(1));
   
+  }
+
+  putProfessor(professorData, id) {
+    console.log(JSON.stringify(professorData));
+    return this.http.put(this.API+"professores"+"/"+id, professorData)
+      .pipe(take(1));
   }
 
 }

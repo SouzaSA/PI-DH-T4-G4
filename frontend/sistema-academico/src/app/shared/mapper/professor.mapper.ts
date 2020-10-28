@@ -7,6 +7,8 @@ export class ProfessorMapper {
         let professor = new Professor();
 
         professor.professorId = professorDto.professor_id;
+        professor.pessoaId = professorDto.pessoa.pessoaId;
+        professor.enderecoId = professorDto.pessoa.endereco.id;
         professor.nome = professorDto.pessoa.nome;
         professor.sobrenome = professorDto.pessoa.sobrenome;
         professor.email = professorDto.pessoa.email;
