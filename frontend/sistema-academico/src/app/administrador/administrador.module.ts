@@ -15,6 +15,7 @@ import { CadastroAdministradoresComponent } from './cadastro-administradores/cad
 import { DataFormModule } from '../data-form/data-form.module';
 import { CadastroSalasComponent } from './cadastro-salas/cadastro-salas.component';
 import { CadastroDisciplinasComponent } from './cadastro-disciplinas/cadastro-disciplinas.component';
+import { CadastroDisciplinaOferecidaComponent } from './cadastro-disciplina-oferecida/cadastro-disciplina-oferecida.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CadastroDisciplinasComponent } from './cadastro-disciplinas/cadastro-di
     CadastroProfessoresComponent,
     CadastroAdministradoresComponent,
     CadastroSalasComponent,
-    CadastroDisciplinasComponent
+    CadastroDisciplinasComponent,
+    CadastroDisciplinaOferecidaComponent
   ],
   imports: [ 
     NgbModule,

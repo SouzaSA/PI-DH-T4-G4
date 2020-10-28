@@ -2,8 +2,6 @@ package com.pi.dh.request;
 
 import java.io.Serializable;
 
-import com.pi.dh.domain.model.Curso;
-
 import lombok.Data;
 
 @Data

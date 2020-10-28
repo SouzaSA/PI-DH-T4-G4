@@ -5,10 +5,10 @@ import lombok.Getter;
 @Getter
 public enum Departamentos {
 
-	Dept1(1, "Dept1"),
-	Depr2(2, "Dept2"),
-	Dept3(3, "Dept3"),
-	Dept4(4, "Dept4");
+	Dept1(1, "Humaninades"),
+	Depr2(2, "Física"),
+	Dept3(3, "Matemática"),
+	Dept4(4, "Química");
 	
 	private int cod;
 	private String description;

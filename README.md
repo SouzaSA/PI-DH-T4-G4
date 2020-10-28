@@ -50,5 +50,6 @@ OBSERVAÇÃO: Devem ser observados os diagramas conceitual e lógico na pasta pr
 	* MySql
 	* [modelmapper](http://modelmapper.org/)
 	* Validation
+	* FlyWay
 
 

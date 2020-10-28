@@ -11,6 +11,7 @@ import { PessoaFormComponent } from './pessoa-form/pessoa-form.component';
 import { AdministradorFormComponent } from './administrador-form/administrador-form.component';
 import { SalaFormComponent } from './sala-form/sala-form.component';
 import { DisciplinaFormComponent } from './disciplina-form/disciplina-form.component';
+import { DisciplinaOferecidaFormComponent } from './disciplina-oferecida-form/disciplina-oferecida-form.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DisciplinaFormComponent } from './disciplina-form/disciplina-form.compo
     PessoaFormComponent,
     AdministradorFormComponent,
     SalaFormComponent,
-    DisciplinaFormComponent
+    DisciplinaFormComponent,
+    DisciplinaOferecidaFormComponent
   ],
   imports: [
     SharedModule,
