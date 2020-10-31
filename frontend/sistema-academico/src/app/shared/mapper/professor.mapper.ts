@@ -19,9 +19,8 @@ export class ProfessorMapper {
         professor.complemento = professorDto.pessoa.endereco.complemento;
         professor.cidade = professorDto.pessoa.endereco.cidade;
         professor.estado = professorDto.pessoa.endereco.estado;
-        professor.telefone = professorDto.pessoa.telefone;
+        professor.telefone = professorDto.pessoa.telefone.map(v => v.telefone);
         professor.departamento = professorDto.departamento;
-
 
         return professor;
     }

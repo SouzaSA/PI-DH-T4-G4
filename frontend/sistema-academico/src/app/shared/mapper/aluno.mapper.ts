@@ -17,7 +17,7 @@ export class AlunoMapper {
         aluno.complemento = alunoDto.pessoa.endereco.complemento;
         aluno.cidade = alunoDto.pessoa.endereco.cidade;
         aluno.estado = alunoDto.pessoa.endereco.estado;
-        aluno.telefone = alunoDto.pessoa.telefone;
+        aluno.telefone = alunoDto.pessoa.telefone.map(v => v.telefone);
         aluno.curso = alunoDto.curso.nome;
 
 

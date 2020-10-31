@@ -95,7 +95,7 @@ export class ProfessorFormComponent implements OnInit {
       this.administradorService.postProfessor(this.formulario.value).subscribe();
     }
     else {
-      this.administradorService.putProfessor(this.formulario.value, this.formulario.value.professorId).subscribe();
+      //this.administradorService.putProfessor(this.formulario.value, this.formulario.value.professorId).subscribe();
     }
   }
 

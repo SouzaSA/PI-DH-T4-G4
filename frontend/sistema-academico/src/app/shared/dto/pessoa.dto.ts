@@ -1,4 +1,5 @@
 import { EnderecoDto } from './endereco.dto';
+import { TelefoneDto } from './telefone.dto';
 
 export interface PessoaDto {
     pessoaId?: number;
@@ -6,5 +7,5 @@ export interface PessoaDto {
     sobrenome?: string;
     email?: string;
     endereco?: EnderecoDto;
-    telefone?: Array<string>;
+    telefone?: Array<TelefoneDto>;
   }

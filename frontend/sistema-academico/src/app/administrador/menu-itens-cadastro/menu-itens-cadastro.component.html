@@ -3,11 +3,12 @@
     <div ngbDropdown class="d-inline-block">
       <button class="btn btn-outline-primary" id="cadastroItens" ngbDropdownToggle>Cadastrar</button>
       <div ngbDropdownMenu aria-labelledby="cadastroItens">
-        <button ngbDropdownItem on-click="seleciona('Administrador')"> Administrador </button>
-        <button ngbDropdownItem on-click="seleciona('Professor')"> Professor </button>
-        <button ngbDropdownItem on-click="seleciona('Aluno')"> Aluno </button>
-        <button ngbDropdownItem on-click="seleciona('Sala')"> Sala </button>
-        <button ngbDropdownItem on-click="seleciona('Disciplina')"> Disciplina </button>
+        <button ngbDropdownItem (click)="seleciona('Administradores')"> Administradores </button>
+        <button ngbDropdownItem (click)="seleciona('Professores')"> Professores </button>
+        <button ngbDropdownItem (click)="seleciona('Alunos')"> Alunos </button>
+        <button ngbDropdownItem (click)="seleciona('Salas')"> Salas </button>
+        <button ngbDropdownItem (click)="seleciona('Disciplinas')"> Disciplinas </button>
+        <button ngbDropdownItem (click)="seleciona('Disciplinas Oferecidadas')"> Disciplinas Oferecidas </button>
       </div>
     </div>
   </div>
@@ -16,20 +17,23 @@
   </div>    
 </div>
 
-<div  *ngIf="titulo==='Aluno'">
+<div  *ngIf="titulo==='Alunos'">
   <app-cadastro-alunos></app-cadastro-alunos>
 </div>
-<div  *ngIf="titulo==='Professor'">
+<div  *ngIf="titulo==='Professores'">
   <app-cadastro-professores></app-cadastro-professores>
 </div>
-<div  *ngIf="titulo==='Administrador'">
+<div  *ngIf="titulo==='Administradores'">
   <app-cadastro-administradores></app-cadastro-administradores>
 </div>
-<div  *ngIf="titulo==='Sala'">
+<div  *ngIf="titulo==='Salas'">
   <app-cadastro-salas></app-cadastro-salas>
 </div>
-<div  *ngIf="titulo==='Disciplina'">
+<div  *ngIf="titulo==='Disciplinas'">
   <app-cadastro-disciplinas></app-cadastro-disciplinas>
+</div>
+<div *ngIf="titulo==='Disciplinas Oferecidadas'">
+  <app-cadastro-disciplina-oferecida></app-cadastro-disciplina-oferecida>
 </div>
 <div>
     <router-outlet></router-outlet>

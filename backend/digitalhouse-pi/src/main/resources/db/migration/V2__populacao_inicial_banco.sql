@@ -15,7 +15,7 @@ INSERT INTO pessoa (nome, sobrenome, email, password, endereco_id) VALUES
 	("Harry", "Potter", "harrypotter@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 5),
 	("Helena", "de Troia", "helena@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 6),
 	("Perseu", "do Olimpo", "perseu@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 7),
-	("Perseia", "do Olimpo", "perseia@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 7);
+	("Perseia", "do Olimpo", "perseia@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 6);
 	
 INSERT INTO professor (departamento, pessoa_pessoa_id) VALUES 
 	(1, 1),
@@ -37,7 +37,7 @@ INSERT INTO curso (nome, professor_professor_id) VALUES
 INSERT INTO aluno (curso_curso_id, pessoa_pessoa_id) VALUES 
 	(1, 8),
 	(2, 9),
-	(3, 10);
+	(3, 9);
 	
 INSERT INTO disciplina (codigo, creditos, ementa, nome, semestre_ideal) VALUES
 	("MAT-12", 3, "Números reais. Funções reais de uma variável real. Limites. Funções contínuas: teoremas do valor intermediário e de Bolzano-Weierstrass. Derivadas: definição e propriedades, funções diferenciáveis, regra da cadeia e derivada da função inversa. Teorema do valor médio. Fórmula de Taylor e pesquisa de máximos, mínimos e pontos de inflexão; aplicações. Regras de L'Hospital. Integral de Riemann: definição, propriedades e interpretação geométrica. O Teorema Fundamental do Cálculo. Técnicas de integração. Aplicações. Integrais impróprias. Sequências numéricas: continuidade e convergência, seqüências monótonas, convergência e completude do conjunto dos números reais. Séries Numéricas: convergência ou divergência de uma série. Critérios de convergência: critérios do termo geral, da razão, da raiz, da integral e critério de Leibniz. Convergência absoluta e convergência condicional. Séries de Potências: intervalo de convergência e o Teorema de Abel. Propriedades da soma de uma série de potências: continuidade, derivação e integração termo a termo. Séries de Taylor das principais funções elementares. Aplicações.","Cálculo Diferencial e Integral I", "1"),

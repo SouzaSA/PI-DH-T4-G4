@@ -1,1 +1,9 @@
-<p>cadastro-disciplina-oferecida works!</p>
+<div class="container-fluid overflow-auto">
+  <div class="page-header">
+      <h1>{{ title }}</h1>
+  </div>
+  <ct-table [records]="disciplinasOferecidas"
+            [caption]="'Sistema Acadêmico'"
+            [settings]="projectSettings">
+  </ct-table>
+</div>
