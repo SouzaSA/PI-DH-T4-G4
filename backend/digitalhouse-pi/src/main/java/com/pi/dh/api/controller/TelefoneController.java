@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pi.dh.domain.model.Telefone;
 import com.pi.dh.domain.service.TelefoneService;
+import com.pi.dh.dto.TelefoneDTO;
+import com.pi.dh.request.TelefoneRequest;
 
 @RestController
 @RequestMapping("/telefones")
@@ -25,17 +26,17 @@ public class TelefoneController {
 	private TelefoneService telefoneService;
 	
 	@PostMapping
-	public void salvar(@RequestBody Telefone telefone) {
-		telefoneService.salvar(telefone);
+	public void salvar(@RequestBody TelefoneRequest telefoneRequest) {
+		telefoneService.salvar(telefoneRequest);
 	}
 	
 	@GetMapping
-	public List<Telefone> listar() {
+	public List<TelefoneDTO> listar() {
 		return telefoneService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Telefone buscarPorId(@PathVariable Long id) {
+	public TelefoneDTO buscarPorId(@PathVariable Long id) {
 		return telefoneService.buscarPorId(id);
 	}
 	
@@ -45,7 +46,7 @@ public class TelefoneController {
 	}
 	
 	@PutMapping("/{id}")
-	public void atualizar(@RequestBody Telefone telefone, @PathVariable Long id) {
-		telefoneService.atualizar(telefone, id);
+	public void atualizar(@RequestBody TelefoneRequest telefoneRequest, @PathVariable Long id) {
+		telefoneService.atualizar(telefoneRequest, id);
 	}
 }

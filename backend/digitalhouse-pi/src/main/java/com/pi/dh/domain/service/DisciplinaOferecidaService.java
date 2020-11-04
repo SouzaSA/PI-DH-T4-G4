@@ -1,6 +1,7 @@
 package com.pi.dh.domain.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import com.pi.dh.domain.model.DisciplinaOferecida;
 import com.pi.dh.domain.repository.DisciplinaOferecidaRepository;
+import com.pi.dh.dto.DisciplinaOferecidaDTO;
+import com.pi.dh.mapper.DisciplinaOferecidaMapper;
 
 @Service
 public class DisciplinaOferecidaService {
@@ -16,13 +19,20 @@ public class DisciplinaOferecidaService {
 	@Autowired
 	private DisciplinaOferecidaRepository disciplinaOferecidaRepository;
 	
+	@Autowired
+	private DisciplinaOferecidaMapper mapper;
+	
 	@Transactional
 	public void salvar(DisciplinaOferecida disciplinaOferecida) {
 		disciplinaOferecidaRepository.save(disciplinaOferecida);
 	}
 	
-	public List<DisciplinaOferecida> listar() {
-		return disciplinaOferecidaRepository.findAll();
+	public List<DisciplinaOferecidaDTO> listar() {
+		//return disciplinaOferecidaRepository.findAll();
+		return disciplinaOferecidaRepository.findAll()
+				.stream()
+				.map(pess -> mapper.modelToDTO(pess))
+				.collect(Collectors.toList());
 	}
 	
 	public DisciplinaOferecida buscarPorId(Long id) {

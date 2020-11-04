@@ -75,7 +75,7 @@ export class AdministradorService {
   }
 
   listarDisciplinasOferecidas() {
-    return this.http.get<DisciplinaOferecidaDto[]>(this.API+"disciplinasOferecidas")
+    return this.http.get<DisciplinaOferecidaDto[]>(this.API+"disciplinaOferecidas")
     .pipe(
       map((data: DisciplinaOferecidaDto[]) =>
         data.map(

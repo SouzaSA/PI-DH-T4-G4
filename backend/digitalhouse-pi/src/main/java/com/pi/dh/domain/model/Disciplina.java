@@ -1,14 +1,16 @@
 package com.pi.dh.domain.model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.pi.dh.domain.model.enums.Obrigatoria;
@@ -46,10 +48,38 @@ public class Disciplina implements Serializable {
     
     @Column(name="semestre_ideal")
     private Integer semestreIdeal;
+    
+    @OneToMany(
+			mappedBy = "disciplina",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
+	private List<DisciplinaOferecida> disciplinasOferecidas;
 	
+    @OneToMany(
+    		mappedBy = "disciplina",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+    )
+	private List<Requere> disciplinas;
+    
+    @OneToMany(
+			mappedBy = "requerida",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+    )
+	private List<Requere> requeridas;
+    
+    @OneToMany(
+			mappedBy = "disciplinaOferecida",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+    )
+	private List<CursaDisciplinaOferecida> disciplinasOferecidasCursadas;
+    
 	
-		public Disciplina(Long disciplinaId, String nome, String ementa, Integer creditos, 
-				String codigo, Integer semestreIdeal, Obrigatoria obrigatoria) {
+	public Disciplina(Long disciplinaId, String nome, String ementa, Integer creditos, 
+			String codigo, Integer semestreIdeal, Obrigatoria obrigatoria) {
 		super();
 		this.disciplinaId = disciplinaId;
 		this.nome = nome;

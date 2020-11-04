@@ -4,21 +4,20 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 @Entity
 @Table(name="telefone")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
+@Data
 public class Telefone implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -31,5 +30,9 @@ public class Telefone implements Serializable {
 	@Size(max = 15)
 	@Column
 	private String telefone;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="fk_pessoa_id")
+	private Pessoa fkPessoaId;
 
 }

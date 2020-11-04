@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pi.dh.domain.model.Professor;
 import com.pi.dh.domain.service.ProfessorService;
 import com.pi.dh.dto.ProfessorDTO;
 import com.pi.dh.request.ProfessorRequest;
+import com.pi.dh.security.permit.CheckSecurity;
 
 @RestController
 @RequestMapping("/professores")
@@ -42,13 +42,14 @@ public class ProfessorController {
 		}
 	}
 	
+	@CheckSecurity.Professor.PodeConsultar
 	@GetMapping
-	public List<Professor> listar() {
+	public List<ProfessorDTO> listar() {
 		return professorService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Professor buscarPorId(@PathVariable Long id) {
+	public ProfessorDTO buscarPorId(@PathVariable Long id) {
 		return professorService.buscarPorId(id);
 	}
 	
@@ -58,7 +59,7 @@ public class ProfessorController {
 	}
 	
 	@PutMapping("/{id}")
-	public void atualizar(@RequestBody Professor professor, @PathVariable Long id) {
+	public void atualizar(@RequestBody ProfessorRequest professor, @PathVariable Long id) {
 		professorService.atualizar(professor, id);
 	}
 }

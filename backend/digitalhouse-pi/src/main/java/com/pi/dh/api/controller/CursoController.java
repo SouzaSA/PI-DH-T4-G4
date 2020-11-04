@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Curso;
 import com.pi.dh.domain.service.CursoService;
+import com.pi.dh.dto.CursoDTO;
 import com.pi.dh.request.CursoRequest;
 
 @RestController
@@ -31,7 +32,7 @@ public class CursoController {
 	}
 	
 	@GetMapping
-	public List<Curso> listar() {
+	public List<CursoDTO> listar() {
 		return cursoService.listar();
 	}
 	

@@ -2,11 +2,12 @@ package com.pi.dh.dto;
 
 import java.io.Serializable;
 import java.time.OffsetDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-import com.pi.dh.domain.model.Endereco;
+import com.pi.dh.domain.model.Grupo;
 import com.pi.dh.domain.model.Imagem;
-import com.pi.dh.domain.model.Telefone;
 
 import lombok.Data;
 
@@ -21,7 +22,8 @@ public class PessoaDTO implements Serializable {
 	private String email;	
 	private String password;	
 	private Imagem foto;	
-	private List<Telefone> telefone;	
-	private Endereco endereco;
+	private List<TelefoneDTO> telefone;	
+	private EnderecoDTO endereco;
+	private Set<Grupo> grupos = new HashSet<>();
 	
 }

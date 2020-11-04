@@ -6,6 +6,6 @@ import lombok.Data;
 public class AdministradorDTO {
 	
 	private Long administradorId;
-	private PessoaDTO pessoaDTO;
+	private PessoaDTO pessoa;
 	
 }

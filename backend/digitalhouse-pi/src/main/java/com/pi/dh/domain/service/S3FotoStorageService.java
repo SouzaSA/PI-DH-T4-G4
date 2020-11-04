@@ -11,8 +11,8 @@ import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.pi.dh.config.StorageProperties;
 import com.pi.dh.exceptions.StorageException;
+import com.pi.dh.security.config.StorageProperties;
 
 
 @Service

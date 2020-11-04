@@ -9,7 +9,7 @@ public class AlunoDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long alunoId;
-	private PessoaDTO pessoaDTO;
-	private CursoDTO cursoDTO;
+	private PessoaDTO pessoa;
+	private CursoDTO curso;
 	
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.DisciplinaOferecida;
 import com.pi.dh.domain.service.DisciplinaOferecidaService;
+import com.pi.dh.dto.DisciplinaOferecidaDTO;
 
 @RestController
 @RequestMapping("/disciplinaOferecidas")
@@ -30,7 +31,7 @@ public class DisciplinaOferecidaController {
 	}
 	
 	@GetMapping
-	public List<DisciplinaOferecida> listar() {
+	public List<DisciplinaOferecidaDTO> listar() {
 		return disciplinaOferecidaService.listar();
 	}
 	

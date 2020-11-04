@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.CursaDisciplinaOferecida;
 import com.pi.dh.domain.service.CursaDisciplinaOferecidaService;
+import com.pi.dh.dto.CursaDisciplinaOferecidaDTO;
+import com.pi.dh.request.CursaDisciplinaOferecidaRequest;
 
 @RestController
 @RequestMapping("/cursaDisciplinasOferecidas")
@@ -30,12 +32,12 @@ public class CursaDisciplinaOferecidaController {
 	}
 	
 	@GetMapping
-	public List<CursaDisciplinaOferecida> listar() {
+	public List<CursaDisciplinaOferecidaDTO> listar() {
 		return cursaDisciplinaOferecidaService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public CursaDisciplinaOferecida buscarPorId(@PathVariable Long id) {
+	public CursaDisciplinaOferecidaDTO buscarPorId(@PathVariable Long id) {
 		return cursaDisciplinaOferecidaService.buscarPorId(id);
 	}
 	
@@ -45,7 +47,7 @@ public class CursaDisciplinaOferecidaController {
 	}
 	
 	@PutMapping("/{id}")
-	public void atualizar(@RequestBody CursaDisciplinaOferecida cursaDisciplinaOferecida, @PathVariable Long id) {
+	public void atualizar(@RequestBody CursaDisciplinaOferecidaRequest cursaDisciplinaOferecida, @PathVariable Long id) {
 		cursaDisciplinaOferecidaService.atualizar(cursaDisciplinaOferecida, id);
 	}
 }

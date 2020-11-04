@@ -3,15 +3,21 @@ package com.pi.dh.domain.model;
 import java.io.Serializable;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -54,13 +60,48 @@ public class Pessoa implements Serializable {
 	@Column
 	private String foto;
 	
-	@OneToMany
-	@JoinColumn(name = "pessoa_id")
+	@OneToMany(
+			mappedBy = "fkPessoaId",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
 	private List<Telefone> telefone;
 	
-	@ManyToOne
-	@JoinColumn(name="endereco_id")	
-	private Endereco endereco;
+	@OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fk_endereco_id")
+    private Endereco endereco;
+	
+	@OneToOne(
+			mappedBy = "pessoa", 
+			cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, 
+            optional = false
+    )
+	private Administrador administrador;
+	
+	@OneToOne(
+			mappedBy = "pessoa", 
+			cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, 
+            optional = false
+    )
+	private Aluno aluno;
+	
+	@OneToOne(
+			mappedBy = "pessoa", 
+			cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, 
+            optional = false
+    )
+	private Professor professor;
+	
+	@ManyToMany
+	@JoinTable(
+		name = "usuario_grupo", 
+		joinColumns = @JoinColumn(name = "usuario_id"),
+		inverseJoinColumns = @JoinColumn(name = "grupo_id")
+	)
+	private Set<Grupo> grupos = new HashSet<>();
 
 	public Pessoa(Long pessoaId, String sobrenome, String nome,
 			String email, String password) {

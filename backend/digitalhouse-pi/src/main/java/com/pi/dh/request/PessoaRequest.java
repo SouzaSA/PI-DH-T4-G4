@@ -1,8 +1,11 @@
 package com.pi.dh.request;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-import com.pi.dh.domain.model.Endereco;
+import com.pi.dh.domain.model.Grupo;
 
 import lombok.Data;
 
@@ -16,6 +19,8 @@ public class PessoaRequest implements Serializable {
 	private String email;
 	private String password;
 	private String foto;
-	private Endereco endereco;
+	private EnderecoRequest endereco;
+	private List<TelefoneRequest> telefones;
+	private Set<Grupo> grupos = new HashSet<>();
 	
 }

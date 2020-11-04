@@ -7,9 +7,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -39,7 +41,8 @@ public class Nota implements Serializable {
 	@Column(precision=5, scale=2)
 	private BigDecimal valor;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="fk_cursa_disciplina_oferecida_id")
 	private CursaDisciplinaOferecida disciplinaCursadaAluno;
 	
 }

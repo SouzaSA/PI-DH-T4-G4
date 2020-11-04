@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Endereco;
 import com.pi.dh.domain.service.EnderecoService;
+import com.pi.dh.dto.EnderecoDTO;
+import com.pi.dh.request.EnderecoRequest;
 
 @RestController
 @RequestMapping("/enderecos")
@@ -25,27 +27,27 @@ public class EnderecoController {
 	private EnderecoService enderecoService;
 	
 	@PostMapping
-	public void salvar(@RequestBody Endereco endereco) {
+	public void salvar(@RequestBody EnderecoRequest endereco) {
 		enderecoService.salvar(endereco);
 	}
 	
 	@GetMapping
-	public List<Endereco> listar() {
+	public List<EnderecoDTO> listar() {
 		return enderecoService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Endereco buscarPorId(@PathVariable Integer id) {
+	public Endereco buscarPorId(@PathVariable Long id) {
 		return enderecoService.buscarPorId(id);
 	}
 	
 	@DeleteMapping("/{id}")
-	public void excluir(@PathVariable Integer id) {
+	public void excluir(@PathVariable Long id) {
 		enderecoService.excluir(id);
 	}
 	
 	@PutMapping("/{id}")
-	public void atualizar(@RequestBody Endereco endereco, @PathVariable Integer id) {
+	public void atualizar(@RequestBody Endereco endereco, @PathVariable Long id) {
 		enderecoService.atualizar(endereco, id);
 	}
 }

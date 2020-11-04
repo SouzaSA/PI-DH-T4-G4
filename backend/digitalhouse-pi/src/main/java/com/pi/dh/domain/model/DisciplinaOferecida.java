@@ -6,9 +6,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -25,6 +27,7 @@ import lombok.ToString;
 @Table(name="disciplina_oferecida")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
 public class DisciplinaOferecida implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 	
 	
@@ -50,13 +53,16 @@ public class DisciplinaOferecida implements Serializable {
 	@Column
 	private Integer turma;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="fk_professor_id")
 	private Professor professor;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="fk_disciplina_id")
 	private Disciplina disciplina;
 	
-    @ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="fk_sala_id")
     private Sala sala;
 
 }

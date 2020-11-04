@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pi.dh.domain.model.Administrador;
 import com.pi.dh.domain.service.AdministradorService;
 import com.pi.dh.dto.AdministradorDTO;
 import com.pi.dh.request.AdministradorRequest;
+import com.pi.dh.security.permit.CheckSecurity;
 
 @RestController
 @RequestMapping("/administradores")
@@ -43,13 +43,14 @@ public class AdministradorController {
 		}
 	}
 	
+	@CheckSecurity.Administrador.PodeConsultar
 	@GetMapping
-	public List<Administrador> listar() {
+	public List<AdministradorDTO> listar() {
 		return administradorService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Administrador buscarPorId(@PathVariable Long id) {
+	public AdministradorDTO buscarPorId(@PathVariable Long id) {
 		return administradorService.buscarPorId(id);
 	}
 	
@@ -59,7 +60,7 @@ public class AdministradorController {
 	}
 	
 	@PutMapping("/{id}")
-	public void atualizar(@RequestBody Administrador administrador, @PathVariable Long id) {
+	public void atualizar(@RequestBody AdministradorRequest administrador, @PathVariable Long id) {
 		administradorService.atualizar(administrador, id);
 	}
 }

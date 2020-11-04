@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pi.dh.domain.model.Aluno;
 import com.pi.dh.domain.service.AlunoService;
 import com.pi.dh.dto.AlunoDTO;
 import com.pi.dh.request.AlunoRequest;
@@ -44,12 +43,12 @@ public class AlunoController {
 	}
 	
 	@GetMapping
-	public List<Aluno> listar() {
+	public List<AlunoDTO> listar() {
 		return alunoService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Aluno buscarPorId(@PathVariable Long id) {
+	public AlunoDTO buscarPorId(@PathVariable Long id) {
 		return alunoService.buscarPorId(id);
 	}
 	
@@ -59,7 +58,7 @@ public class AlunoController {
 	}
 	
 	@PutMapping("/{id}")
-	public void atualizar(@RequestBody Aluno aluno, @PathVariable Long id) {		
+	public void atualizar(@RequestBody AlunoRequest aluno, @PathVariable Long id) {		
 		alunoService.atualizar(aluno, id);
 	}
 }

@@ -1,4 +1,4 @@
-package com.pi.dh.config;
+package com.pi.dh.security.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

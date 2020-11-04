@@ -2,14 +2,13 @@ package com.pi.dh.domain.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
@@ -20,18 +19,18 @@ public class Endereco implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id; 
+	private Long id; 
 	
-	public String cep;
-	public String rua;
-	public String numero;
-	public String complemento;
-	public String bairro;
-	public String cidade;
-	public String estado;
+	private String cep;
+	private String rua;
+	private String numero;
+	private String complemento;
+	private String bairro;
+	private String cidade;
+	private String estado;
 	
-	@JsonIgnore
-	@ManyToOne
-	@JoinColumn(name="pessoa_id")
-	private Pessoa pessoa;
+	@OneToOne(mappedBy = "endereco", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, optional = false)
+    private Pessoa pessoa;
+	
 }

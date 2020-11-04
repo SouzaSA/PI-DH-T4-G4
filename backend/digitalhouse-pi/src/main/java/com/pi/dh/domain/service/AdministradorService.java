@@ -1,6 +1,7 @@
 package com.pi.dh.domain.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -44,12 +45,16 @@ public class AdministradorService {
 	    return mapper.modelToDTO( administradorRepository.save(admin) );
 	}
 	
-	public List<Administrador> listar() {
-		return administradorRepository.findAll();
+	public List<AdministradorDTO> listar() {
+		//return administradorRepository.findAll();
+		return administradorRepository.findAll()
+				.stream()
+				.map(pess -> mapper.modelToDTO(pess))
+				.collect(Collectors.toList());
 	}
 	
-	public Administrador buscarPorId(Long id) {
-		return administradorRepository.findById(id).get();
+	public AdministradorDTO buscarPorId(Long id) {
+		return mapper.modelToDTO(administradorRepository.findById(id).get());
 	}
 	
 	@Transactional
@@ -58,10 +63,10 @@ public class AdministradorService {
 	}
 	
 	@Transactional
-	public void atualizar(Administrador administrador, Long id) {
+	public void atualizar(AdministradorRequest administrador, Long id) {
 		Administrador adm = administradorRepository.findById(id).get();
 		
-		adm.setPessoa(administrador.getPessoa());
+		adm.setPessoa(mapper.requestToModel(administrador).getPessoa());
 		
 		administradorRepository.save(adm);
 	}

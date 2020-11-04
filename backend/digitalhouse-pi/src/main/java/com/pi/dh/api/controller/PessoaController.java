@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pi.dh.domain.model.Pessoa;
 import com.pi.dh.domain.service.EnderecoService;
 import com.pi.dh.domain.service.PessoaService;
 import com.pi.dh.dto.PessoaDTO;
 import com.pi.dh.request.PessoaRequest;
+import com.pi.dh.security.permit.CheckSecurity;
 
 @RestController
 @RequestMapping("/pessoas")
@@ -47,13 +47,14 @@ public class PessoaController {
 		}
 	}
 	
+	@CheckSecurity.Pessoa.PodeConsultar
 	@GetMapping
-	public List<Pessoa> listar() {
+	public List<PessoaDTO> listar() {
 		return pessoaService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Pessoa buscarPorId(@PathVariable Long id) {
+	public PessoaDTO buscarPorId(@PathVariable Long id) {
 		return pessoaService.buscarPorId(id);
 	}
 	
@@ -63,7 +64,7 @@ public class PessoaController {
 	}
 	
 	@PutMapping("/{id}")
-	public void atualizar(@RequestBody Pessoa pessoa, @PathVariable Long id) {
+	public void atualizar(@RequestBody PessoaRequest pessoa, @PathVariable Long id) {
 		pessoaService.atualizar(pessoa, id);
 	}
 }

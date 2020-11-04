@@ -13,6 +13,7 @@ export class DisciplinaOferecidaMapper {
       disciplinaOferecida.sala = disciplinaOferecidaDto.sala.departamento + ' ' + disciplinaOferecidaDto.sala.numero;
       disciplinaOferecida.semestre = disciplinaOferecidaDto.semestre;
       disciplinaOferecida.turma = disciplinaOferecidaDto.turma;
+      disciplinaOferecida.ano = disciplinaOferecidaDto.ano;
 
       return disciplinaOferecida;
   }

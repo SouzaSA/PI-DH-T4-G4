@@ -1,6 +1,7 @@
 package com.pi.dh.domain.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -9,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 import com.pi.dh.domain.model.Telefone;
 import com.pi.dh.domain.repository.TelefoneRepository;
+import com.pi.dh.dto.TelefoneDTO;
+import com.pi.dh.mapper.TelefoneMapper;
+import com.pi.dh.request.TelefoneRequest;
 
 @Service
 public class TelefoneService {
@@ -16,17 +20,24 @@ public class TelefoneService {
 	@Autowired
 	private TelefoneRepository telefoneRepository;
 	
+	@Autowired
+	private TelefoneMapper mapper;
+	
 	@Transactional
-	public void salvar(Telefone telefone) {
-		telefoneRepository.save(telefone);
+	public void salvar(TelefoneRequest telefoneRequest) {
+		telefoneRepository.save(mapper.requestToModel(telefoneRequest));
 	}
 	
-	public List<Telefone> listar() {
-		return telefoneRepository.findAll();
+	public List<TelefoneDTO> listar() {
+		//return telefoneRepository.findAll();
+		return telefoneRepository.findAll()
+				.stream()
+				.map(pess -> mapper.modelToDTO(pess))
+				.collect(Collectors.toList());
 	}
 	
-	public Telefone buscarPorId(Long id) {
-		return telefoneRepository.findById(id).get();
+	public TelefoneDTO buscarPorId(Long id) {
+		return mapper.modelToDTO(telefoneRepository.findById(id).get());
 	}
 	
 	@Transactional
@@ -35,10 +46,10 @@ public class TelefoneService {
 	}
 	
 	@Transactional
-	public void atualizar(Telefone telefone, Long id) {
+	public void atualizar(TelefoneRequest telefoneRequest, Long id) {
 		Telefone tel = telefoneRepository.findById(id).get();
 		
-		tel.setTelefone(telefone.getTelefone());
+		tel.setTelefone(mapper.requestToModel(telefoneRequest).getTelefone());
 
 		
 		telefoneRepository.save(tel);

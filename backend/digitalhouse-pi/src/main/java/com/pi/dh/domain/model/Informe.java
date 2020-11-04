@@ -5,9 +5,11 @@ import java.time.OffsetDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -51,7 +53,8 @@ private static final long serialVersionUID = 1L;
 	@Column(name="data_publicacao")
 	private OffsetDateTime dataPublicacao;
 	
-	@ManyToOne(optional=true)
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="fk_professor_id")
 	private Professor professor;
 
 	public Informe(Long informeId, String titulo, String descricao, Professor professor, PrioridadeInforme prioridade, Departamentos departamento) {

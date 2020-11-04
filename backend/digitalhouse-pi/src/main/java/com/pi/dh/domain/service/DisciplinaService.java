@@ -1,6 +1,7 @@
 package com.pi.dh.domain.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -34,8 +35,12 @@ public class DisciplinaService {
 	    
 	}
 	
-	public List<Disciplina> listar() {
-		return disciplinaRepository.findAll();
+	public List<DisciplinaDTO> listar() {
+		//return disciplinaRepository.findAll();
+		return disciplinaRepository.findAll()
+				.stream()
+				.map(pess -> mapper.modelToDTO(pess))
+				.collect(Collectors.toList());
 	}
 	
 	public Disciplina buscarPorId(Long id) {

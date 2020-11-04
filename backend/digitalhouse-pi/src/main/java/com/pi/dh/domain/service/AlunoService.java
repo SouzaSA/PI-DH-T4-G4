@@ -1,6 +1,7 @@
 package com.pi.dh.domain.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -48,12 +49,16 @@ public class AlunoService {
 	    return mapper.modelToDTO( alunoRepository.save(aluno) );
 	}
 	
-	public List<Aluno> listar() {
-		return alunoRepository.findAll();
+	public List<AlunoDTO> listar() {
+		//return alunoRepository.findAll();
+		return alunoRepository.findAll()
+				.stream()
+				.map(alu -> mapper.modelToDTO(alu))
+				.collect(Collectors.toList());
 	}
 	
-	public Aluno buscarPorId(Long id) {
-		return alunoRepository.findById(id).get();
+	public AlunoDTO buscarPorId(Long id) {
+		return mapper.modelToDTO(alunoRepository.findById(id).get());
 	}
 	
 	@Transactional
@@ -62,11 +67,11 @@ public class AlunoService {
 	}
 	
 	@Transactional
-	public void atualizar(Aluno aluno, Long id) {
+	public void atualizar(AlunoRequest aluno, Long id) {
 		Aluno al = alunoRepository.findById(id).get();
 		
-		al.setPessoa(aluno.getPessoa());
-		al.setCurso(aluno.getCurso());
+		al.setPessoa(mapper.requestToModel(aluno).getPessoa());
+		al.setCurso(mapper.requestToModel(aluno).getCurso());
 		
 		alunoRepository.save(al);
 	}

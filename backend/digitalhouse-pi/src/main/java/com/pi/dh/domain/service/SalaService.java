@@ -1,6 +1,7 @@
 package com.pi.dh.domain.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -9,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 import com.pi.dh.domain.model.Sala;
 import com.pi.dh.domain.repository.SalaRepository;
+import com.pi.dh.dto.SalaDTO;
+import com.pi.dh.mapper.SalaMapper;
+import com.pi.dh.request.SalaRequest;
 
 @Service
 public class SalaService {
@@ -16,17 +20,24 @@ public class SalaService {
 	@Autowired
 	private SalaRepository salaRepository;
 	
+	@Autowired
+	private SalaMapper mapper;
+	
 	@Transactional
-	public void salvar(Sala sala) {
-		salaRepository.save(sala);
+	public void salvar(SalaRequest salaRequest) {
+		salaRepository.save(mapper.requestToModel(salaRequest));
 	}
 	
-	public List<Sala> listar() {
-		return salaRepository.findAll();
+	public List<SalaDTO> listar() {
+		//return salaRepository.findAll();
+		return salaRepository.findAll()
+				.stream()
+				.map(sal -> mapper.modelToDTO(sal))
+				.collect(Collectors.toList());
 	}
 	
-	public Sala buscarPorId(Long id) {
-		return salaRepository.findById(id).get();
+	public SalaDTO buscarPorId(Long id) {
+		return mapper.modelToDTO(salaRepository.findById(id).get());
 	}
 	
 	@Transactional
@@ -35,12 +46,12 @@ public class SalaService {
 	}
 	
 	@Transactional
-	public void atualizar(Sala sala, Long id) {
+	public void atualizar(SalaRequest salaRequest, Long id) {
 		Sala sl = salaRepository.findById(id).get();
-		sl.setAndar(sala.getAndar());
-		sl.setCapacidade(sala.getCapacidade());
-		sl.setDepartamento(sala.getDepartamento());
-		sl.setNumero(sala.getNumero());
+		sl.setAndar(salaRequest.getAndar());
+		sl.setCapacidade(salaRequest.getCapacidade());
+		sl.setDepartamento(salaRequest.getDepartamento());
+		sl.setNumero(salaRequest.getNumero());
 		
 		salaRepository.save(sl);
 	}

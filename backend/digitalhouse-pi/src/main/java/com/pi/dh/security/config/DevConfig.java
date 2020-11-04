@@ -1,4 +1,4 @@
-package com.pi.dh.config;
+package com.pi.dh.security.config;
 
 import java.text.ParseException;
 

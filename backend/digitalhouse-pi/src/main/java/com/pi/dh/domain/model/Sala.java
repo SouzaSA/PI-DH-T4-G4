@@ -1,12 +1,15 @@
 package com.pi.dh.domain.model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -40,5 +43,12 @@ public class Sala implements Serializable {
 	
 	@Column
 	private Integer capacidade;
+	
+	@OneToMany(
+			mappedBy = "sala",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
+	private List<DisciplinaOferecida> disciplinasOferecidas;
 	
 }

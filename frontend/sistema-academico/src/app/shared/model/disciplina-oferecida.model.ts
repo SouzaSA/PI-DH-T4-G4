@@ -11,6 +11,7 @@ export class DisciplinaOferecida {
   sala?: string;
   semestre?: number;
   turma?: number;
+  ano?: number;
 
   constructor() {
     this.disciplinaOferecidaId = undefined;
@@ -21,6 +22,7 @@ export class DisciplinaOferecida {
     this.sala = undefined;
     this.semestre = undefined;
     this.turma = undefined;
+    this.ano = undefined;
   }
 
 }

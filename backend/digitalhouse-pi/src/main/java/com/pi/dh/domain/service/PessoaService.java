@@ -2,6 +2,7 @@ package com.pi.dh.domain.service;
 
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -40,12 +41,16 @@ public class PessoaService {
 	    
 	}
 	
-	public List<Pessoa> listar() {
-		return pessoaRepository.findAll();
+	public List<PessoaDTO> listar() {
+		//return pessoaRepository.findAll();
+		return pessoaRepository.findAll()
+				.stream()
+				.map(pess -> mapper.modelToDTO(pess))
+				.collect(Collectors.toList());
 	}
 	
-	public Pessoa buscarPorId(Long id) {
-		return pessoaRepository.findById(id).get();
+	public PessoaDTO buscarPorId(Long id) {
+		return mapper.modelToDTO(pessoaRepository.findById(id).get());
 	}
 	
 	@Transactional
@@ -54,7 +59,7 @@ public class PessoaService {
 	}
 	
 	@Transactional
-	public void atualizar(Pessoa pessoa, Long id) {
+	public void atualizar(PessoaRequest pessoa, Long id) {
 		Pessoa pess = pessoaRepository.findById(id).get();
 		
 		pess.setSobrenome(pessoa.getSobrenome());

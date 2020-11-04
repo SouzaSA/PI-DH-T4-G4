@@ -1,6 +1,7 @@
 package com.pi.dh.domain.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -32,8 +33,13 @@ public class CursoService {
 	    return mapper.modelToDTO( cursoRepository.save(curso) );
 	}
 	
-	public List<Curso> listar() {
-		return cursoRepository.findAll();
+	public List<CursoDTO> listar() {
+		//return cursoRepository.findAll();
+		return cursoRepository.findAll()
+				.stream()
+				.map(pess -> mapper.modelToDTO(pess))
+				.collect(Collectors.toList());
+		
 	}
 	
 	public Curso buscarPorId(Long id) {

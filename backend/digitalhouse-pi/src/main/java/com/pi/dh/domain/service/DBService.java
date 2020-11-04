@@ -32,8 +32,8 @@ public class DBService {
 	private EnderecoRepository enderecoRepository;
 	
 	public void instantiateTestDatabase() throws ParseException {
-		
-		Pessoa pess1 = new Pessoa(null, "Santiago", "Thyago", "ssantiagotl@gmail.com", "teste123");
+		//password = 123
+		Pessoa pess1 = new Pessoa(null, "Santiago", "Thyago", "ssantiagotl@gmail.com", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW");
 		
 		Endereco endereco = new Endereco();
 		endereco.setBairro("Parque das Arvores");
@@ -43,12 +43,13 @@ public class DBService {
 		endereco.setComplemento("Casa");
 		endereco.setNumero("345");
 		endereco.setRua("Rua das Acácias");
-		pessoaRepository.save(pess1);
-		
-		endereco.setPessoa(pess1);
 		
 		enderecoRepository.save(endereco);
+		
 		pess1.setEndereco(endereco);
+		
+		//pessoaRepository.save(pess1);
+		
 		
 		Professor prof1 = new Professor(null, pess1, Departamentos.Dept1);
 		

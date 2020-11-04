@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pi.dh.domain.model.Sala;
 import com.pi.dh.domain.service.SalaService;
+import com.pi.dh.dto.SalaDTO;
+import com.pi.dh.request.SalaRequest;
 
 @RestController
 @RequestMapping("/salas")
@@ -25,17 +26,17 @@ public class SalaController {
 	private SalaService salaService;
 	
 	@PostMapping
-	public void salvar(@RequestBody Sala sala) {
-		salaService.salvar(sala);
+	public void salvar(@RequestBody SalaRequest salaRequest) {
+		salaService.salvar(salaRequest);
 	}
 	
 	@GetMapping
-	public List<Sala> listar() {
+	public List<SalaDTO> listar() {
 		return salaService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Sala buscarPorId(@PathVariable Long id) {
+	public SalaDTO buscarPorId(@PathVariable Long id) {
 		return salaService.buscarPorId(id);
 	}
 	
@@ -45,7 +46,7 @@ public class SalaController {
 	}
 	
 	@PutMapping("/{id}")
-	public void atualizar(@RequestBody Sala sala, @PathVariable Long id) {
-		salaService.atualizar(sala, id);
+	public void atualizar(@RequestBody SalaRequest salaRequest, @PathVariable Long id) {
+		salaService.atualizar(salaRequest, id);
 	}
 }

@@ -1,6 +1,7 @@
 import { SalaDto } from './sala.dto';
 import { DisciplinaDto } from './disciplina.dto';
 import { ProfessorDto } from './professor.dto';
+
 export interface DisciplinaOferecidaDto {
   disciplinaOferecidaId?: number;
   horario?: string;
@@ -9,4 +10,5 @@ export interface DisciplinaOferecidaDto {
   sala?: SalaDto;
   semestre?: number;
   turma?: number;
+  ano?: number;
 }

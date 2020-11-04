@@ -1,12 +1,17 @@
 package com.pi.dh.domain.model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -33,7 +38,15 @@ public class Curso implements Serializable {
 	@Column
 	private String nome;
 	
-	@OneToOne(optional=true)
+	@OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fk_professor_id")
 	private Professor professor;
+	
+	@OneToMany(
+			mappedBy = "curso",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+    )
+	private List<Aluno> alunos;
 
 }

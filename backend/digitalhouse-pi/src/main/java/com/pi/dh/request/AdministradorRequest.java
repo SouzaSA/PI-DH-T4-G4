@@ -10,7 +10,7 @@ public class AdministradorRequest implements Serializable {
 
 	private Long administradorId;
 
-	private PessoaRequest pessoaRequest;
+	private PessoaRequest pessoa;
 
 	
 }
