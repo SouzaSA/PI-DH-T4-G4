@@ -21,7 +21,7 @@ private static final long serialVersionUID = 1L;
 		super(usuario.getEmail(), usuario.getPassword(), permissoes);
 		
 		this.userId = usuario.getPessoaId();
-		this.nomeCompleto = usuario.getNome();
+		this.nomeCompleto = usuario.getNome() + " " + usuario.getSobrenome();
 	}
 	
 }

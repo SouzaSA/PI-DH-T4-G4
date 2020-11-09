@@ -1,8 +1,13 @@
 <div class="navbar navbar-expand-lg navbar-dark bg-primary rounded-right">
   <div class="navbar-nav flex-column">
-    <app-menu-adm-itens></app-menu-adm-itens>
-    <app-menu-prof-itens></app-menu-prof-itens>
-    <a class="nav-link" routerLinkActive="active" routerLink="/professor/disciplinas">Disciplinas</a>
+
+    <div *ngIf="temPermissao('SA04')">
+      <app-menu-adm-itens></app-menu-adm-itens>
+    </div>
+
+    <div *ngIf="temPermissao('SA03')">
+      <app-menu-prof-itens></app-menu-prof-itens>
+    </div>
     <a class="nav-link" routerLinkActive="active" routerLink="/departamento">Departamentos</a>
     <a class="nav-link" routerLinkActive="active" routerLink="/departamento1" (click)="setDepartamento('Dept1')">Humaninades</a>
     <a class="nav-link" routerLinkActive="active" routerLink="/departamento2" (click)="setDepartamento('Dept2')">Física</a>

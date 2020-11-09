@@ -13,17 +13,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-import com.pi.dh.domain.model.enums.Obrigatoria;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 @Entity
 @Table(name="disciplina")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
+@Data
 public class Disciplina implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -77,16 +71,5 @@ public class Disciplina implements Serializable {
     )
 	private List<CursaDisciplinaOferecida> disciplinasOferecidasCursadas;
     
-	
-	public Disciplina(Long disciplinaId, String nome, String ementa, Integer creditos, 
-			String codigo, Integer semestreIdeal, Obrigatoria obrigatoria) {
-		super();
-		this.disciplinaId = disciplinaId;
-		this.nome = nome;
-		this.ementa = ementa;
-		this.creditos = creditos;
-		this.codigo = codigo;
-		this.semestreIdeal = semestreIdeal;
-	}
 
 }

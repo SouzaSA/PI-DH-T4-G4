@@ -27,7 +27,7 @@ export class AlunoFormComponent implements OnInit {
   ngOnInit(): void {
 
     this.formulario = this.formBuilder.group({
-      pessoaRequest: [null],
+      pessoa: [null],
       alunoId: [null],
       curso: this.formBuilder.group({
         cursoId: [null],

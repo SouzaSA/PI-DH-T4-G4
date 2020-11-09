@@ -23,9 +23,9 @@ import com.pi.dh.dto.PessoaDTO;
 import com.pi.dh.request.PessoaRequest;
 import com.pi.dh.security.permit.CheckSecurity;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/pessoas")
-@CrossOrigin
 public class PessoaController {
 
 	@Autowired

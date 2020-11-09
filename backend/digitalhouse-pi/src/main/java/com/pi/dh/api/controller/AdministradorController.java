@@ -22,9 +22,9 @@ import com.pi.dh.dto.AdministradorDTO;
 import com.pi.dh.request.AdministradorRequest;
 import com.pi.dh.security.permit.CheckSecurity;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/administradores")
-@CrossOrigin
 public class AdministradorController {
 
 	@Autowired

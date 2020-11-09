@@ -65,7 +65,9 @@ export class CadastroAdministradoresComponent implements OnInit {
   constructor(private administradorService: AdministradorService) { }
 
   ngOnInit(): void {
-    this.administradorService.listarAdministradores().subscribe(administrador => this.administradores = administrador);
+    this.administradorService
+      .listarAdministradores()
+      .subscribe(administrador => this.administradores = administrador);
   }
 
 }

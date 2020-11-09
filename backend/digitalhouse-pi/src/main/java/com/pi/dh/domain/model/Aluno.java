@@ -16,15 +16,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 @Entity
 @Table(name="aluno")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
+@Data
 public class Aluno implements Serializable {
 	private static final long serialVersionUID = 1L;
 	

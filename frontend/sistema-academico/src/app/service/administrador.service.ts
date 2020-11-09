@@ -1,3 +1,4 @@
+
 import { DisciplinaOferecidaMapper } from './../shared/mapper/disciplina-ferecida.mapper';
 import { DisciplinaOferecidaDto } from './../shared/dto/disciplina-oferecida.dto';
 import { Professor } from './../shared/model/professor.model';
@@ -6,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { map, take, tap } from 'rxjs/operators';
 
+import { environment } from './../../environments/environment';
 import { ProfessorDto } from '../shared/dto/professor.dto';
 import { AlunoDto } from '../shared/dto/aluno.dto';
 import { AlunoMapper } from '../shared/mapper/aluno.mapper';
@@ -18,7 +20,7 @@ import { SalaDto } from '../shared/dto/sala.dto';
 @Injectable()
 export class AdministradorService {
 
-  private readonly API = 'http://localhost:3000/';
+  private readonly API = `${environment.URLSERVIDOR}`;
 
   constructor( private http: HttpClient) { }
 

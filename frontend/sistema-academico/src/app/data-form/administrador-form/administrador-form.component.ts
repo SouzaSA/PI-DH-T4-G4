@@ -26,7 +26,7 @@ export class AdministradorFormComponent implements OnInit {
   ngOnInit(): void {
 
     this.formulario = this.formBuilder.group({
-      pessoaRequest: [null],
+      pessoa: [null],
       administradorId: [null],
     });
 

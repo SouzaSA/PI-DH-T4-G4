@@ -12,15 +12,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 @Entity
 @Table(name="administrador")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
+@Data
 public class Administrador  implements Serializable {
 	private static final long serialVersionUID = 1L;
 	

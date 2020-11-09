@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DadosPessaisComponent } from './dados-pessais/dados-pessais.component';
+import { DadosPessaisComponent } from './shared/components/dados-pessais/dados-pessais.component';
 import { ProfessorComponent } from './professor/professor.component';
 import { InformesGeralComponent } from './informes-geral/informes-geral.component';
 import { InformesDepartamentoComponent } from './informes-departamento/informes-departamento.component';

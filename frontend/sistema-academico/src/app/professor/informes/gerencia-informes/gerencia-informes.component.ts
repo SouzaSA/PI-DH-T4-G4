@@ -17,7 +17,8 @@ export interface Departamento {
   styleUrls: ['./gerencia-informes.component.css'],
 })
 export class GerenciaInformesComponent implements OnInit {
-  informe: Informe;
+  informe: Informe = {};
+  informes: Informe[] = [];
   displayEditar: boolean = false;
   displayDeletar: boolean = false;
   prioridades: Prioridade[] = [
@@ -37,8 +38,6 @@ export class GerenciaInformesComponent implements OnInit {
 
   departamentoSelecionado: Departamento;
 
-  informeSelecionado: Informe;
-
   constructor(
     private informesService: InformesService,
     private router: Router
@@ -51,11 +50,11 @@ export class GerenciaInformesComponent implements OnInit {
   listaInformes() {
     this.informesService
       .listarInforme()
-      .subscribe((informes) => (this.informe = informes as any));
+      .subscribe((informes) => (this.informes = informes as any));
   }
 
   atualizarInforme(informe: any) {
-    this.informesService.atualizarInforme(this.informe).subscribe(() => {
+    this.informesService.atualizarInforme(informe).subscribe(() => {
       this.informesService.showMessage('Informe atualizado com sucesso.');
       this.displayEditar = false;
     });
@@ -63,7 +62,7 @@ export class GerenciaInformesComponent implements OnInit {
 
   janelaEditar(informe: any) {
     this.displayEditar = true;
-    return (this.informeSelecionado = informe);
+    return (this.informe = informe);
   }
 
   cancel() {
@@ -73,7 +72,7 @@ export class GerenciaInformesComponent implements OnInit {
 
   excluir(id: number) {
     this.displayDeletar = true;
-    return (this.informeSelecionado.id = id);
+    return (this.informe.id = id);
   }
 
   delete(id: number) {

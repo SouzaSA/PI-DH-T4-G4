@@ -68,7 +68,7 @@ export class ProfessorFormComponent implements OnInit {
       this.formulario.patchValue({
         professorId: professor.professorId,
         departamento: professor.departamento,
-        pessoaRequest: { 
+        pessoa: { 
           pessoaId: professor.pessoaId,
           nome: professor.nome,
           sobrenome: professor.sobrenome,

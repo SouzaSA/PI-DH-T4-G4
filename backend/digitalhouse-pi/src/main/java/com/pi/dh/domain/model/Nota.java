@@ -17,15 +17,11 @@ import javax.persistence.Table;
 
 import com.pi.dh.domain.model.enums.Avaliacoes;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 @Entity
 @Table(name="nota")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
+@Data
 public class Nota implements Serializable {
 	private static final long serialVersionUID = 1L;
 

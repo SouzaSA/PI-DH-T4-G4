@@ -11,12 +11,12 @@ import org.springframework.security.access.prepost.PreAuthorize;
 public @interface CheckSecurity {
 	public @interface Pessoa {
 		// SA01
-				@PreAuthorize("isAuthenticated() and " +
-						"hasAuthority('SA01')")
-				@Retention(RUNTIME)
-				@Target(METHOD)
-				public @interface PodeConsultar {
-				}
+		@PreAuthorize("isAuthenticated() and " +
+				"hasAuthority('SA02')")
+		@Retention(RUNTIME)
+		@Target(METHOD)
+		public @interface PodeConsultar {
+		}
 				
 		// SA02
 		@PreAuthorize("isAuthenticated() and " +

@@ -17,15 +17,11 @@ import javax.persistence.Table;
 
 import com.pi.dh.domain.model.enums.Departamentos;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 @Entity
 @Table(name="professor")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
+@Data
 public class Professor implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -33,7 +29,7 @@ public class Professor implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="professor_id")
-	private Long professor_id;
+	private Long professorId;
 	
 	@Column
 	private Integer departamento;
@@ -55,14 +51,6 @@ public class Professor implements Serializable {
 			orphanRemoval = true
 	)
 	private List<Informe> informes;
-
-	public Professor(Long professor_id, Pessoa pessoa, Departamentos departamento) {
-		super();
-		this.professor_id = professor_id;
-		this.pessoa = pessoa;
-		this.departamento = departamento.getCod();
-
-	}
 
 	public void setDepartamento(Departamentos departamento) {
 		this.departamento = departamento.getCod();

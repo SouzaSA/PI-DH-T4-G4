@@ -15,6 +15,6 @@ public class SalaRequest implements Serializable {
 	private Integer andar;
 	private Integer numero;
 	private Integer capacidade;
-	private List<DisciplinaOferecidaRequest> disciplinasOferecidas;
+	//private List<DisciplinaOferecidaRequest> disciplinasOferecidas;
 
 }

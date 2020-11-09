@@ -18,15 +18,11 @@ import javax.validation.constraints.Size;
 import com.pi.dh.domain.model.enums.Departamentos;
 import com.pi.dh.domain.model.enums.PrioridadeInforme;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 @Entity
 @Table(name="informe")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
+@Data
 public class Informe implements Serializable {
 private static final long serialVersionUID = 1L;
 
@@ -56,17 +52,6 @@ private static final long serialVersionUID = 1L;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="fk_professor_id")
 	private Professor professor;
-
-	public Informe(Long informeId, String titulo, String descricao, Professor professor, PrioridadeInforme prioridade, Departamentos departamento) {
-		super();
-		this.informeId = informeId;
-		this.titulo = titulo;
-		this.descricao = descricao;
-		this.professor = professor;
-		this.prioridade = prioridade.getCod();
-		this.departamento = departamento.getCod();
-
-	}
 	
 	public void setPrioridade(PrioridadeInforme prioridade) {
 		this.prioridade = prioridade.getCod();

@@ -18,9 +18,9 @@ import com.pi.dh.domain.service.CursaDisciplinaOferecidaService;
 import com.pi.dh.dto.CursaDisciplinaOferecidaDTO;
 import com.pi.dh.request.CursaDisciplinaOferecidaRequest;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/cursaDisciplinasOferecidas")
-@CrossOrigin
 public class CursaDisciplinaOferecidaController {
 
 	@Autowired

@@ -53,6 +53,11 @@ public class ProfessorController {
 		return professorService.buscarPorId(id);
 	}
 	
+	@GetMapping("/pessoa/{id}")
+	public ProfessorDTO buscarPorPessoaId(@PathVariable Long id) {
+		return professorService.buscarPorPessoaId(id);
+	}
+	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
 		professorService.excluir(id);

@@ -15,8 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.pi.dh.domain.model.Pessoa;
 import com.pi.dh.domain.repository.PessoaRepository;
 
-
-
 @Service
 public class JpaUserDetailsService implements UserDetailsService {
 

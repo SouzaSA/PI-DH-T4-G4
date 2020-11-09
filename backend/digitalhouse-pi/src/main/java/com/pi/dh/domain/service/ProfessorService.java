@@ -40,7 +40,7 @@ public class ProfessorService {
 		enderecoRepository.save(professor.getPessoa().getEndereco());
 		pessoaRepository.save(professor.getPessoa());
 		
-		professor.setProfessor_id(null);
+		professor.setProfessorId(null);
 	    return mapper.modelToDTO( professorRepository.save(professor) );
 	}
 	
@@ -54,6 +54,10 @@ public class ProfessorService {
 	
 	public ProfessorDTO buscarPorId(Long id) {
 		return mapper.modelToDTO(professorRepository.findById(id).get());
+	}
+	
+	public ProfessorDTO buscarPorPessoaId(Long id) {
+		return buscarPorId(professorRepository.getProfessorIdByPessoaId(id));
 	}
 	
 	@Transactional

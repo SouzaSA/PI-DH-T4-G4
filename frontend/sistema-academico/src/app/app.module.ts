@@ -1,5 +1,3 @@
-import { NotasComponent } from './professor/notas/notas.component';
-import { AdministradorModule } from './administrador/administrador.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -7,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 
+import { NotasComponent } from './professor/notas/notas.component';
+import { AdministradorModule } from './administrador/administrador.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
@@ -14,7 +14,7 @@ import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 import { InformesGeralComponent } from './informes-geral/informes-geral.component';
 import { InformesDepartamentoComponent } from './informes-departamento/informes-departamento.component';
 import { ProfessorComponent } from './professor/professor.component';
-import { DadosPessaisComponent } from './dados-pessais/dados-pessais.component';
+import { httpInterceptorProviders } from './shared/http-interceptors/index';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -59,7 +59,6 @@ import { CalendarModule } from 'primeng/calendar';
     InformesGeralComponent,
     InformesDepartamentoComponent,
     ProfessorComponent,
-    DadosPessaisComponent,
     GerenciaInformesComponent,
     GerenciaNotasComponent,
     NotasComponent,
@@ -102,7 +101,7 @@ import { CalendarModule } from 'primeng/calendar';
     PaginatorModule,
     CalendarModule,
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -15,6 +15,6 @@ public class SalaDTO implements Serializable {
 	private Integer andar;
 	private Integer numero;
 	private Integer capacidade;
-	private List<DisciplinaOferecidaDTO> disciplinasOferecidas;
+	//private List<DisciplinaOferecidaDTO> disciplinasOferecidas;
 
 }

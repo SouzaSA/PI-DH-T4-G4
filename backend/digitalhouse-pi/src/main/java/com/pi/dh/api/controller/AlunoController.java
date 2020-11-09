@@ -21,9 +21,9 @@ import com.pi.dh.domain.service.AlunoService;
 import com.pi.dh.dto.AlunoDTO;
 import com.pi.dh.request.AlunoRequest;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/alunos")
-@CrossOrigin
 public class AlunoController {
 
 	@Autowired
