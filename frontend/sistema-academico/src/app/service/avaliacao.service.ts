@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { environment } from './../../environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
 export class AvaliacaoService {
-  apiUrl = 'http://localhost:8080/avaliacao';
+  apiUrl = `${environment.URLSERVIDOR}`+'avaliacao';
   constructor(private httpClient: HttpClient) {}
 
   listar() {

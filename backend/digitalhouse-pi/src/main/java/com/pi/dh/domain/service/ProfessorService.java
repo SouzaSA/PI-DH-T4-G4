@@ -57,7 +57,7 @@ public class ProfessorService {
 	}
 	
 	public ProfessorDTO buscarPorPessoaId(Long id) {
-		return buscarPorId(professorRepository.getProfessorIdByPessoaId(id));
+		return mapper.modelToDTO(professorRepository.getProfessorIdByPessoaId(id));
 	}
 	
 	@Transactional

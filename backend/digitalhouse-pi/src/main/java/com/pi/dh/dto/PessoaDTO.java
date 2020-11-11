@@ -20,7 +20,7 @@ public class PessoaDTO implements Serializable {
     private String sobrenome;	
 	private String nome;	
 	private String email;	
-	private String password;	
+//	private String password;	
 	private Imagem foto;	
 	private List<TelefoneDTO> telefone;	
 	private EnderecoDTO endereco;

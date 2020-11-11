@@ -1,15 +1,16 @@
-import { Avaliacao } from './../professor/notas/notas.model';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { Observable } from 'rxjs';
 import { Aluno, Disciplina, Turma } from '../professor/notas/notas.model';
+import { environment } from './../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class NotasService {
   constructor(private http: HttpClient) {}
 
-  baseUrl = 'http://localhost:3000/turmas';
-  apiUrl = 'http://localhost:3000/disciplinas';
+  baseUrl = `${environment.URLSERVIDOR}`+'turmas';
+  apiUrl = `${environment.URLSERVIDOR}`+'disciplinas';
 
   getTurma(): Observable<Turma[]> {
     return this.http.get<Turma[]>(this.baseUrl);

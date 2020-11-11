@@ -1,15 +1,19 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DadosProfesssorComponent } from './dados-professsor/dados-professsor.component';
 
-
+import { DadosProfessorComponent } from './dados-professor/dados-professor.component';
 
 @NgModule({
   declarations: [
-    DadosProfesssorComponent
+    DadosProfessorComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
+  ],
+  exports: [
+    DadosProfessorComponent
   ]
 })
 export class ProfessorModule { }

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DadosPessaisComponent } from './shared/components/dados-pessais/dados-pessais.component';
+import { DadosPessoaisComponent } from './shared/components/dados-pessoais/dados-pessoais.component';
+import { DadosProfessorComponent } from './professor/dados-professor/dados-professor.component';
 import { ProfessorComponent } from './professor/professor.component';
 import { InformesGeralComponent } from './informes-geral/informes-geral.component';
 import { InformesDepartamentoComponent } from './informes-departamento/informes-departamento.component';
@@ -22,7 +23,7 @@ const routes: Routes = [
     path: 'professor',
     component: ProfessorComponent,
     children: [
-      { path: '', component: DadosPessaisComponent },
+      { path: '', component: DadosProfessorComponent },
       { path: 'informes', component: InformesComponent },
       { path: 'notas', component: NotasComponent },
     ],
@@ -31,7 +32,7 @@ const routes: Routes = [
     path: 'administrador',
     component: AdministradorComponent,
     children: [
-      { path: '', component: DadosPessaisComponent },
+      { path: '', component: DadosPessoaisComponent },
       { path: 'cadastro', component: MenuItensCadastroComponent },
     ],
   },

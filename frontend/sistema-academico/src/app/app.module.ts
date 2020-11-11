@@ -1,3 +1,6 @@
+import { ProfessorModule } from './professor/professor.module';
+import { DadosProfessorComponent } from './professor/dados-professor/dados-professor.component';
+import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -66,6 +69,7 @@ import { CalendarModule } from 'primeng/calendar';
     InformesComponent,
     CadastroInformesComponent,
     CadastroAvaliacaoComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -93,6 +97,8 @@ import { CalendarModule } from 'primeng/calendar';
     InputTextModule,
     DialogModule,
     AdministradorModule,
+    SharedModule,
+    ProfessorModule,
     DataFormModule,
     TableModule,
     AccordionModule,

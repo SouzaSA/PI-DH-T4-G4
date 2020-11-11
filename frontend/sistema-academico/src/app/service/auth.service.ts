@@ -146,4 +146,14 @@ export class AuthService {
     return true;
   }
 
+  getUserIdOnToken() {
+    const decoded: any = jwt_decode(window.localStorage.getItem('token'));
+
+    if (decoded.exp === undefined) {
+      return null;
+    }
+
+    return decoded.usuario_id;
+  }
+
 }

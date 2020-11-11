@@ -9,7 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { SharedRoutingModule } from './shared-routing.module';
-import { DadosPessaisComponent } from './components/dados-pessais/dados-pessais.component';
+import { DadosPessoaisComponent } from './components/dados-pessoais/dados-pessoais.component';
 import { TableLayoutComponent } from './components/table-layout/table-layout.component';
 import { FormDebugComponent } from './components/form-debug/form-debug.component';
 import { CampoControlErroComponent } from './components/campo-control-erro/campo-control-erro.component';
@@ -19,7 +19,7 @@ import { ErrorMsgComponent } from './components/error-msg/error-msg.component';
 
 @NgModule({
   declarations: [ 
-    DadosPessaisComponent,
+    DadosPessoaisComponent,
     TableLayoutComponent,
     FormDebugComponent,
     CampoControlErroComponent,
@@ -36,7 +36,7 @@ import { ErrorMsgComponent } from './components/error-msg/error-msg.component';
   ],
   exports: [
     SharedRoutingModule,
-    DadosPessaisComponent,
+    DadosPessoaisComponent,
     TableLayoutComponent,
     FormDebugComponent,
     CampoControlErroComponent,

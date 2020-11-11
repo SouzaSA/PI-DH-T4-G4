@@ -1,14 +1,17 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Informe } from '../shared/model/informes.model';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { Observable } from 'rxjs';
+
+import { environment } from './../../environments/environment';
+import { Informe } from '../shared/model/informes.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InformesService {
-  baseUrl = 'http://localhost:3000/informes';
+  baseUrl = `${environment.URLSERVIDOR}`+'informes';
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
 

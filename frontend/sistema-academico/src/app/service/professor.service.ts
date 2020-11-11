@@ -17,7 +17,7 @@ export class ProfessorService {
 
   constructor( private http: HttpClient) { }
 
-  getProfessorePorPessoaId(id: number)  {
+  getProfessorPorPessoaId(id: number)  {
     return this.http.get<ProfessorDto>(this.API+"professores/pessoa/"+id)
     .pipe(
       map((data: ProfessorDto) =>

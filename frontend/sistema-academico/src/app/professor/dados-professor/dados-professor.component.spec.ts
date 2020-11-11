@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DadosProfesssorComponent } from './dados-professsor.component';
+import { DadosProfessorComponent } from './dados-professor.component';
 
 describe('DadosProfesssorComponent', () => {
-  let component: DadosProfesssorComponent;
-  let fixture: ComponentFixture<DadosProfesssorComponent>;
+  let component: DadosProfessorComponent;
+  let fixture: ComponentFixture<DadosProfessorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DadosProfesssorComponent ]
+      declarations: [ DadosProfessorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DadosProfesssorComponent);
+    fixture = TestBed.createComponent(DadosProfessorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
