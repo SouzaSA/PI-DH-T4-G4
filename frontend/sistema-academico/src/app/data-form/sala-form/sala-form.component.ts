@@ -49,6 +49,11 @@ export class SalaFormComponent implements OnInit {
     this.administradorService.postSala(this.formulario.value).subscribe();
   }
 
+  cancel(){
+    this.resetar();
+    this.modalRef.hide();
+  }
+
   resetar(){
     this.formulario.reset();
   }

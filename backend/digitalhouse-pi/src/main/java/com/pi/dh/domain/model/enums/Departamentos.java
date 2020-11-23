@@ -5,10 +5,10 @@ import lombok.Getter;
 @Getter
 public enum Departamentos {
 
-	Dept1(1, "Humaninades"),
-	Dept2(2, "Física"),
-	Dept3(3, "Matemática"),
-	Dept4(4, "Química");
+	HUM(1, "Humaninades"),
+	FIS(2, "Física"),
+	MAT(3, "Matemática"),
+	QUI(4, "Química");
 	
 	private int cod;
 	private String description;
@@ -31,4 +31,6 @@ public enum Departamentos {
 		
 		throw new IllegalArgumentException("Departamento inválido");
 	}
+	
+	
 }

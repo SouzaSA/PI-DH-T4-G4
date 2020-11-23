@@ -52,6 +52,11 @@ public class AlunoController {
 		return alunoService.buscarPorId(id);
 	}
 	
+	@GetMapping("/pessoa/{id}")
+	public AlunoDTO buscarPorPessoaId(@PathVariable Long id) {
+		return alunoService.buscarPorPessoaId(id);
+	}
+	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
 		alunoService.excluir(id);

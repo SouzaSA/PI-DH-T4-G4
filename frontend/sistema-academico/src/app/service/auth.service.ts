@@ -24,7 +24,7 @@ export class AuthService {
         console.log(json);
         this.armazenarToken(json['access_token']);
         
-        console.log('Novo access token criado!'+JSON.stringify(this.jwtPayload));
+        console.log('Novo access token criado!\n'+JSON.stringify(this.jwtPayload));
         //this.router.navigate(['/listar/cliente']);        
       },
         (e) => {
@@ -34,6 +34,7 @@ export class AuthService {
 
   private armazenarToken(token: string) {
     this.jwtPayload = JSON.parse(atob(token.split('.')[1]));
+    console.log(this.jwtPayload.authorities);
     
     localStorage.setItem('token', token);
   }

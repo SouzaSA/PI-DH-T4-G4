@@ -15,12 +15,12 @@
           
           <form  [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-              <pessoa-form formControlName = "pessoaRequest"> </pessoa-form>
+              <pessoa-form formControlName = "pessoa"> </pessoa-form>
           
               <div class="form-row">
                   <div class="form-group col-md-12">
                       <button type="submit" class="btn btn-primary">Gravar</button>
-                      <button class="btn btn-secondary ml-2" (click)="modalRef.hide()">Cancelar</button>
+                      <button type="button" class="btn btn-secondary ml-2" (click)="modalRef.hide()">Cancelar</button>
                   </div>    
               </div>
               

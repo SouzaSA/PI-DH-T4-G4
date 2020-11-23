@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DadosPessoaisComponent } from './shared/components/dados-pessoais/dados-pessoais.component';
+import { DadosAdministradorComponent } from './administrador/dados-administrador/dados-administrador.component';
 import { DadosProfessorComponent } from './professor/dados-professor/dados-professor.component';
 import { ProfessorComponent } from './professor/professor.component';
 import { InformesGeralComponent } from './informes-geral/informes-geral.component';
@@ -32,7 +32,7 @@ const routes: Routes = [
     path: 'administrador',
     component: AdministradorComponent,
     children: [
-      { path: '', component: DadosPessoaisComponent },
+      { path: '', component: DadosAdministradorComponent },
       { path: 'cadastro', component: MenuItensCadastroComponent },
     ],
   },

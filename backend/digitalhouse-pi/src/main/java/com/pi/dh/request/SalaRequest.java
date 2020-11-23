@@ -1,7 +1,6 @@
 package com.pi.dh.request;
 
 import java.io.Serializable;
-import java.util.List;
 
 import lombok.Data;
 
@@ -15,6 +14,5 @@ public class SalaRequest implements Serializable {
 	private Integer andar;
 	private Integer numero;
 	private Integer capacidade;
-	//private List<DisciplinaOferecidaRequest> disciplinasOferecidas;
 
 }

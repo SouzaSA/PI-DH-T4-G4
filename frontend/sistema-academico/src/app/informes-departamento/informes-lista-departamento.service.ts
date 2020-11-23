@@ -22,6 +22,13 @@ export class InformesListaDepartamentoService {
     );
   }
 
+  listarPorDepartamento() {
+    return this.http.get<Informe[]>(this.API+'/departamento/' + this.departamento)
+    .pipe(
+      tap()
+    );
+  }
+
   changeDepartamento(dpto: string) {
     this.departamento = dpto;
   }

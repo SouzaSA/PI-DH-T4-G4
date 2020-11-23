@@ -9,7 +9,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 export class DadosPessoaisComponent implements OnChanges {
 
   @Input()
-  usuario: any;
+  usuario?: any;
 
   constructor() { }
 

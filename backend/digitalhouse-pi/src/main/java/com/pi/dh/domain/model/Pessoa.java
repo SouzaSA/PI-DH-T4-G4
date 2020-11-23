@@ -8,6 +8,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -60,14 +61,13 @@ public class Pessoa implements Serializable {
 	private String foto;
 	
 	@OneToMany(
-			mappedBy = "fkPessoaId",
+			mappedBy = "pessoa",
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
 	)
-	private List<Telefone> telefone;
+	private List<Telefone> telefones;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_endereco_id")
+	@Embedded
     private Endereco endereco;
 	
 	@OneToOne(
@@ -101,7 +101,5 @@ public class Pessoa implements Serializable {
 		inverseJoinColumns = @JoinColumn(name = "grupo_id")
 	)
 	private Set<Grupo> grupos = new HashSet<>();
-
-	
 
 }

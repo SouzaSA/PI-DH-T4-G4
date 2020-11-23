@@ -33,6 +33,6 @@ public class Telefone implements Serializable {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="fk_pessoa_id")
-	private Pessoa fkPessoaId;
+	private Pessoa pessoa;
 
 }

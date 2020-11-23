@@ -10,7 +10,7 @@ export class Administrador {
   complemento?: string;
   cidade: string;
   estado: string;
-  telefone: Array<string>;
+  telefones: Array<string>;
 
   constructor() {
     this.id = undefined;
@@ -24,6 +24,6 @@ export class Administrador {
     this.complemento = undefined;
     this.cidade = undefined;
     this.estado = undefined;
-    this.telefone = undefined;
+    this.telefones = undefined;
   }
 }

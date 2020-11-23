@@ -22,7 +22,7 @@ public class PessoaDTO implements Serializable {
 	private String email;	
 //	private String password;	
 	private Imagem foto;	
-	private List<TelefoneDTO> telefone;	
+	private List<TelefoneDTO> telefones;	
 	private EnderecoDTO endereco;
 	private Set<Grupo> grupos = new HashSet<>();
 	

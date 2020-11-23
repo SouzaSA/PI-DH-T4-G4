@@ -46,17 +46,17 @@ public @interface CheckSecurity {
 	}
 	
 	public @interface Aluno {
-		// SA01 e SA05
+		// SA01 e (SA05 ou S04)
 		@PreAuthorize("isAuthenticated() and " +
-				"hasAuthority('SA01')" + " and " + "hasAuthority('SA05')")
+				"hasAuthority('SA01')" + " and " + "(hasAuthority('SA05') or hasAuthority('SA04'))")
 		@Retention(RUNTIME)
 		@Target(METHOD)
 		public @interface PodeConsultar {
 		}	
 		
-		// SA02 e SA05
+		// SA02 e (SA05 ou S04)
 		@PreAuthorize("isAuthenticated() and " +
-			"hasAuthority('SA02')" + " and " + "hasAuthority('SA05')")
+			"hasAuthority('SA02')" + " and " + "(hasAuthority('SA05') or hasAuthority('SA04'))")
 		@Retention(RUNTIME)
 		@Target(METHOD)
 		public @interface PodeEditar {
@@ -64,17 +64,17 @@ public @interface CheckSecurity {
 	}
 	
 	public @interface Professor {
-		// SA01 e SA03
+		// SA01 e (SA03  ou S04)
 		@PreAuthorize("isAuthenticated() and " +
-				"hasAuthority('SA01')" + " and " + "hasAuthority('SA03')")
+				"hasAuthority('SA01')" + " and " + "(hasAuthority('SA03') or hasAuthority('SA04'))")
 		@Retention(RUNTIME)
 		@Target(METHOD)
 		public @interface PodeConsultar {
 		}	
 		
-		// SA02 e SA03
+		// SA02 e (SA03 ou S04)
 		@PreAuthorize("isAuthenticated() and " +
-			"hasAuthority('SA02')" + " and " + "hasAuthority('SA03')")
+			"hasAuthority('SA02')" + " and " + "(hasAuthority('SA03') or hasAuthority('SA04'))")
 		@Retention(RUNTIME)
 		@Target(METHOD)
 		public @interface PodeEditar {

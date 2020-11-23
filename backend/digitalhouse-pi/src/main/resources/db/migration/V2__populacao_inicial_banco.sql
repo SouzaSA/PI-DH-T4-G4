@@ -1,23 +1,14 @@
-INSERT INTO endereco (cep, rua, numero, bairro, complemento, cidade, estado) VALUES 
-	("12345677", "Rua das Acácias", "345", "Parque das Arvores", "casa", "Formigas","MG"),
-	("12233640", "Rua Maria Palmira Ferreira Ivo", "123", "Bosque dos Eucaliptos", "casa", "São José dos Campos", "SP"),
-	("12290550", "Avenida Selmo Ferreira Diniz Júnior", "852", "Perinho", "apartamento 150", "Caçapava", "SP"),
-	("12326500", "Rua Trinta e Oito", "39", "Veraneio Irajá", "casa", "Jacareí", "SP"),
-	("39790971", "Rua Darci Alves de Oliveira", "195", "Centro", "casa", "Água Boa", "MG"),
-	("46910970", "Distrito de Várzea do Caldas", "48", "Centro", "apartamento 21", "Várzea do Caldas", "BA"),
-	("24944854", "Rua R", "1", "Santa Paula (Inoã)", "casa", "Maricá", "RJ");
-	
-INSERT INTO pessoa (nome, sobrenome, email, password, fk_endereco_id) VALUES
-	("Thyago", "Santiago", "ssantiagotl@gmail.com", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 1),
-	("João", "das Couves", "joaodascouves@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 2),
-	("Maria", "das Couves", "mariadascouves@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 2),
-	("Alfredo", "Higiênico", "alfredo@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 3),
-	("Rita", "Risonha da Floresta", "rita@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 4),
-	("Clementina", "Clementina", "clementina@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 5),
-	("Harry", "Potter", "harrypotter@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 6),
-	("Helena", "de Troia", "helena@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 7),
-	("Perseu", "do Olimpo", "perseu@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 6),
-	("Perseia", "do Olimpo", "perseia@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", 7);
+INSERT INTO pessoa (nome, sobrenome, email, password, cep, rua, numero, bairro, complemento, cidade, estado) VALUES
+	("Thyago", "Santiago", "ssantiagotl@gmail.com", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", "12345677", "Rua das Acácias", "345", "Parque das Arvores", "casa", "Formigas","MG"),
+	("João", "das Couves", "joaodascouves@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", "12233640", "Rua Maria Palmira Ferreira Ivo", "123", "Bosque dos Eucaliptos", "casa", "São José dos Campos", "SP"),
+	("Maria", "das Couves", "mariadascouves@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", "12233640", "Rua Maria Palmira Ferreira Ivo", "123", "Bosque dos Eucaliptos", "casa", "São José dos Campos", "SP"),
+	("Alfredo", "Higiênico", "alfredo@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", "12290550", "Avenida Selmo Ferreira Diniz Júnior", "852", "Perinho", "apartamento 150", "Caçapava", "SP"),
+	("Rita", "Risonha da Floresta", "rita@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", "12326500", "Rua Trinta e Oito", "39", "Veraneio Irajá", "casa", "Jacareí", "SP"),
+	("Clementina", "Clementina", "clementina@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", "39790971", "Rua Darci Alves de Oliveira", "195", "Centro", "casa", "Água Boa", "MG"),
+	("Harry", "Potter", "harrypotter@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", "46910970", "Distrito de Várzea do Caldas", "48", "Centro", "apartamento 21", "Várzea do Caldas", "BA"),
+	("Helena", "de Troia", "helena@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", "24944854", "Rua R", "1", "Santa Paula (Inoã)", "casa", "Maricá", "RJ"),
+	("Perseu", "do Olimpo", "perseu@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", "46910970", "Distrito de Várzea do Caldas", "48", "Centro", "apartamento 21", "Várzea do Caldas", "BA"),
+	("Perseia", "do Olimpo", "perseia@escola.com.br", "$2y$12$jSk8ljb6Unj26zALSCACvO11s6/Uw4PMP0XCnlotscXFioCiZ8CGW", "24944854", "Rua R", "1", "Santa Paula (Inoã)", "casa", "Maricá", "RJ");
 	
 INSERT INTO professor (departamento, fk_pessoa_id) VALUES 
 	(1, 1),
@@ -125,10 +116,14 @@ INSERT INTO grupo_permissao (grupo_id, permissao_id) VALUES
 	(1, 3),
 	(2, 1),
 	(2, 2),
-	(2, 4),
+	(2, 5),
 	(3, 1),
 	(3, 2),
-	(3, 5);
+	(3, 4);
+	
+INSERT INTO usuario_grupo (usuario_id, grupo_id) VALUES
+	(1, 1),
+	(5, 3);
 
 
 

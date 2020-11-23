@@ -17,7 +17,7 @@ export class AdministradorMapper {
         administrador.complemento = administradorDto.pessoa.endereco.complemento;
         administrador.cidade = administradorDto.pessoa.endereco.cidade;
         administrador.estado = administradorDto.pessoa.endereco.estado;
-        administrador.telefone = administradorDto.pessoa.telefone.map(v => v.telefone);
+        administrador.telefones = administradorDto.pessoa.telefones.map(v => v.telefone);
 
         return administrador;
     }

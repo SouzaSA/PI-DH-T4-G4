@@ -74,7 +74,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
 	
 	private SecurityScheme securityScheme() {
 		return new OAuthBuilder()
-				.name("frontend-client")
+				.name("Digital")
 				.grantTypes(grantTypes())
 				.scopes(scopes())
 				.build();
@@ -82,7 +82,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
 	
 	private SecurityContext securityContext() {
 		var securityReference = SecurityReference.builder()
-				.reference("digital")
+				.reference("Digital")
 				.scopes(scopes().toArray(new AuthorizationScope[0]))
 				.build();
 		

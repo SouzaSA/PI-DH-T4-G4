@@ -7,5 +7,5 @@ export interface PessoaDto {
     sobrenome?: string;
     email?: string;
     endereco?: EnderecoDto;
-    telefone?: Array<TelefoneDto>;
+    telefones?: Array<TelefoneDto>;
   }

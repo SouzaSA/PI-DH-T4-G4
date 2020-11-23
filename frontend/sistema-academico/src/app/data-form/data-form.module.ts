@@ -12,6 +12,7 @@ import { AdministradorFormComponent } from './administrador-form/administrador-f
 import { SalaFormComponent } from './sala-form/sala-form.component';
 import { DisciplinaFormComponent } from './disciplina-form/disciplina-form.component';
 import { DisciplinaOferecidaFormComponent } from './disciplina-oferecida-form/disciplina-oferecida-form.component';
+import { TelefoneFormComponent } from './pessoa-form/telefone-form/telefone-form.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DisciplinaOferecidaFormComponent } from './disciplina-oferecida-form/di
     AdministradorFormComponent,
     SalaFormComponent,
     DisciplinaFormComponent,
-    DisciplinaOferecidaFormComponent
+    DisciplinaOferecidaFormComponent,
+    TelefoneFormComponent
   ],
   imports: [
     SharedModule,

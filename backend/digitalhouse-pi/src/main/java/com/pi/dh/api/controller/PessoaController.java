@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pi.dh.domain.service.EnderecoService;
 import com.pi.dh.domain.service.PessoaService;
 import com.pi.dh.dto.PessoaDTO;
 import com.pi.dh.request.PessoaRequest;
@@ -31,15 +30,12 @@ public class PessoaController {
 	@Autowired
 	private PessoaService pessoaService;
 	
-	@Autowired
-	private EnderecoService enderecoService;
 	
 	@PostMapping
 	public ResponseEntity<?> salvar(@RequestBody @Valid PessoaRequest pessoaRequest) {
 		
 		try {
 			PessoaDTO pessoaDTO = pessoaService.salvar(pessoaRequest);
-			enderecoService.salvar(pessoaRequest.getEndereco());
 			return ResponseEntity.status(HttpStatus.CREATED).body(pessoaDTO);
 			
 		} catch (Exception ex) {

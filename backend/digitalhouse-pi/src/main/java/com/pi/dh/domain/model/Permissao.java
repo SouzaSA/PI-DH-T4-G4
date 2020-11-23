@@ -1,5 +1,6 @@
 package com.pi.dh.domain.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,5 +25,4 @@ public class Permissao {
 	
 	@Column(nullable = false)
 	private String descricao;
-	
 }

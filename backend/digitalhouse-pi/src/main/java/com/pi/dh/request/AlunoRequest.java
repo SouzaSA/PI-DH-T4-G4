@@ -9,7 +9,7 @@ public class AlunoRequest implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long alunoId;
-	private PessoaRequest pessoaRequest;	
+	private PessoaRequest pessoa;	
 	private CursoRequest curso;
 	
 }

@@ -14,6 +14,7 @@ import { TableLayoutComponent } from './components/table-layout/table-layout.com
 import { FormDebugComponent } from './components/form-debug/form-debug.component';
 import { CampoControlErroComponent } from './components/campo-control-erro/campo-control-erro.component';
 import { ErrorMsgComponent } from './components/error-msg/error-msg.component';
+import { PageSpinnerComponent } from './components/page-spinner/page-spinner.component';
 
 
 
@@ -23,7 +24,8 @@ import { ErrorMsgComponent } from './components/error-msg/error-msg.component';
     TableLayoutComponent,
     FormDebugComponent,
     CampoControlErroComponent,
-    ErrorMsgComponent
+    ErrorMsgComponent,
+    PageSpinnerComponent
    ],
   imports: [
     CommonModule,

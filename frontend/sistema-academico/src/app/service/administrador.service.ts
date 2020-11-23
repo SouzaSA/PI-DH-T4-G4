@@ -16,6 +16,7 @@ import { ProfessorMapper } from '../shared/mapper/professor.mapper';
 import { AdministradorDto } from '../shared/dto/administrador.dto';
 import { DisciplinaDto } from '../shared/dto/disciplina.dto';
 import { SalaDto } from '../shared/dto/sala.dto';
+import { Administrador } from '../shared/model/administrador.model';
 
 @Injectable()
 export class AdministradorService {
@@ -23,6 +24,16 @@ export class AdministradorService {
   private readonly API = `${environment.URLSERVIDOR}`;
 
   constructor( private http: HttpClient) { }
+
+  getAdministradorPorPessoaId(id: number)  {
+    return this.http.get<AdministradorDto>(this.API+"administradores/pessoa/"+id)
+    .pipe(
+      map((data: AdministradorDto) =>
+        <Administrador>AdministradorMapper.toAdministrador(data)
+      ),
+      tap(console.log)
+    );
+  }
 
   listarAlunos() {
     return this.http.get<AlunoDto[]>(this.API+"alunos")

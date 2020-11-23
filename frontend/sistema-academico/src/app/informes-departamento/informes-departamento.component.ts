@@ -16,7 +16,7 @@ export class InformesDepartamentoComponent implements OnInit {
   constructor(private service: InformesListaDepartamentoService) { }
 
   ngOnInit(): void {
-    this.service.listar().subscribe(dados => this.informes = dados.filter((dado) => dado.departamento == this.service.departamento));
+    this.service.listarPorDepartamento().subscribe(informes => this.informes = informes);
   }
 
   setDepartamento(dpto: string){

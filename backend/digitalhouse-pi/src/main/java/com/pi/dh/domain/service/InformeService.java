@@ -2,6 +2,7 @@ package com.pi.dh.domain.service;
 
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -9,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pi.dh.domain.model.Informe;
+import com.pi.dh.domain.model.enums.Departamentos;
 import com.pi.dh.domain.repository.InformeRepository;
+import com.pi.dh.dto.InformeDTO;
 
 @Service
 public class InformeService {
@@ -25,6 +28,10 @@ public class InformeService {
 	
 	public List<Informe> listar() {
 		return informeRepository.findAll();
+	}
+	
+	public List<InformeDTO> listarPorDepartamento(Departamentos departamento) {
+		return informeRepository.findAllByDepartamento(departamento.getCod()).stream().map(obj -> new InformeDTO(obj)).collect(Collectors.toList());
 	}
 	
 	public Informe buscarPorId(Long id) {

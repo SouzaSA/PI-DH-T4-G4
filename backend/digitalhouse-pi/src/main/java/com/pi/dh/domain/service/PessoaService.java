@@ -7,10 +7,11 @@ import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.pi.dh.domain.model.Pessoa;
-import com.pi.dh.domain.repository.EnderecoRepository;
 import com.pi.dh.domain.repository.PessoaRepository;
 import com.pi.dh.dto.PessoaDTO;
 import com.pi.dh.mapper.PessoaMapper;
@@ -23,10 +24,17 @@ public class PessoaService {
 	private PessoaRepository pessoaRepository;
 	
 	@Autowired
-	private EnderecoRepository enderecoRepository;
-	
-	@Autowired
 	private PessoaMapper mapper;
+	
+	public static String geraPassBase64(String nomeSobrenome) {
+	    String pass = "";
+	    
+	    PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	    
+	    pass = passwordEncoder.encode(nomeSobrenome);
+	    //decode =>>>  String textoDeserializado = new String(Base64.getDecoder().decode(pass));
+	    return pass;
+	}
 		
 	@Transactional
 	public PessoaDTO salvar(PessoaRequest pessoaRequest) {
@@ -35,8 +43,11 @@ public class PessoaService {
 		
 		pessoa.setPessoaId(null);
 		pessoa.setDataCadastro(OffsetDateTime.now());
-		enderecoRepository.save(pessoa.getEndereco());
-		
+		pessoa.setPassword(geraPassBase64(pessoa.getNome()+pessoa.getSobrenome()));
+		pessoa.getTelefones().stream().forEach(telefone -> telefone.setPessoa(pessoa));
+		pessoa.setGrupos(pessoa.getGrupos());
+
+		//pessoa.setGrupos(getGrupos(pessoaRequest.getGrupos()));
 	    return mapper.modelToDTO( pessoaRepository.save(pessoa) );
 	    
 	}

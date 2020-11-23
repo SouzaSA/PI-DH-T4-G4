@@ -1,62 +1,69 @@
-<div class="container-fluid">
+<div *ngIf = "(usuario | async); else elseBlock">
 
-
-  <div class="row">
-    <div class="upload-image">
-      imagem/upload-imagem
-    </div>
-    <div class="my-auto ml-4 ">
-      <span class="display-4">
-        {{usuario.nome}} {{usuario.sobrenome}}
-      </span>
-      <h3>
-        {{usuario.departamento}}
-      </h3>
-    </div>
-  </div>
-  <div class="mr-1">
-    <div class="row mt-3">
-      <div class="col-12">
-          <span class="pl-4 pr-2 pill-head pill-style">Email:</span>
-          <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.email}} </span>
-      </div>
-    </div>
-    <div class="row mt-3">
-      <div class="col-12">
-        <span class="pl-4 pr-2 pill-head pill-style">CEP:</span>
-        <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.cep}} </span>
-      </div>
-    </div>
-    <div class="row mt-3">
-      <div class="col-8">
-        <span class="pl-4 pr-2 pill-head pill-style">Logradouro:</span>
-        <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.rua}}</span>
-      </div>
-      <div class="col-4">
-        <span class="pl-4 pr-2 pill-head pill-style">Número:</span>
-        <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.numero}}</span>
-      </div>
-    </div>
-    <div class="row mt-3">
-      <div class="col-12">
-        <span class="pl-4 pr-2 pill-head pill-style">Complemento:</span>
-        <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.complemento}}</span>
-      </div>
-    </div>
-    <div class="row mt-3">
-      <div class="col-5">
-        <span class="pl-4 pr-2 pill-head pill-style">Bairro:</span>
-        <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.bairro}}</span>
-      </div>
-      <div class="col-5">
-        <span class="pl-4 pr-2 pill-head pill-style">Cidade:</span>
-        <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.cidade}}</span>
-      </div>
-      <div class="col-2">
-        <span class="pl-4 pr-2 pill-head pill-style">UF:</span>
-        <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.estado}}</span>
-      </div>
-    </div>
-  </div>
+  <page-spinner></page-spinner>
 
 </div>
+
+<ng-template #elseBlock>
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="upload-image">
+        imagem/upload-imagem
+      </div>
+      <div class="my-auto ml-4 ">
+        <span class="display-4">
+          {{usuario.nome}} {{usuario.sobrenome}}
+        </span>
+        <h3>
+          {{usuario.departamento}}
+        </h3>
+      </div>
+    </div>
+    <div class="mr-1">
+      <div class="row mt-3">
+        <div class="col-12">
+            <span class="pl-4 pr-2 pill-head pill-style">Email:</span>
+            <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.email}} </span>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <span class="pl-4 pr-2 pill-head pill-style">CEP:</span>
+          <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.cep}} </span>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-8">
+          <span class="pl-4 pr-2 pill-head pill-style">Logradouro:</span>
+          <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.rua}}</span>
+        </div>
+        <div class="col-4">
+          <span class="pl-4 pr-2 pill-head pill-style">Número:</span>
+          <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.numero}}</span>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <span class="pl-4 pr-2 pill-head pill-style">Complemento:</span>
+          <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.complemento}}</span>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-5">
+          <span class="pl-4 pr-2 pill-head pill-style">Bairro:</span>
+          <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.bairro}}</span>
+        </div>
+        <div class="col-5">
+          <span class="pl-4 pr-2 pill-head pill-style">Cidade:</span>
+          <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.cidade}}</span>
+        </div>
+        <div class="col-2">
+          <span class="pl-4 pr-2 pill-head pill-style">UF:</span>
+          <span class="pl-2 pr-4 pill-tail pill-style">{{usuario.estado}}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ng-template>

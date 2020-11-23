@@ -54,6 +54,11 @@ public class AdministradorController {
 		return administradorService.buscarPorId(id);
 	}
 	
+	@GetMapping("/pessoa/{id}")
+	public AdministradorDTO buscarPorPessoaId(@PathVariable Long id) {
+		return administradorService.buscarPorPessoaId(id);
+	}
+	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
 		administradorService.excluir(id);

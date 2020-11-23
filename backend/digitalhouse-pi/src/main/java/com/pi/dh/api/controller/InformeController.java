@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pi.dh.domain.model.Informe;
+import com.pi.dh.domain.model.enums.Departamentos;
 import com.pi.dh.domain.service.InformeService;
 import com.pi.dh.dto.InformeDTO;
 
@@ -37,6 +38,19 @@ public class InformeController {
 		List<Informe> list = informeService.listar();
 		List<InformeDTO> listDto = list.stream().map(obj -> new InformeDTO(obj)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDto);
+	}
+	
+	@GetMapping("/departamento/{departamento}")
+	public ResponseEntity<List<InformeDTO>> listarPorDepartamento(@PathVariable String departamento) {
+		//System.out.println(Enum.valueOf(Departamentos.class, departamento));
+		try {
+			Departamentos dpto = Enum.valueOf(Departamentos.class, departamento);
+			return ResponseEntity.ok().body(informeService.listarPorDepartamento(dpto));
+			
+		} catch (Exception ex) {
+			 System.out.println("Departamento Inválido");
+		}
+		return null;
 	}
 	
 	@GetMapping("/{id}")

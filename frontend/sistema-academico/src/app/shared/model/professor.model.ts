@@ -14,7 +14,7 @@ export class Professor {
   complemento?: string;
   cidade?: string;
   estado?: string;
-  telefone?: Array<string>;
+  telefones?: Array<string>;
   departamento?: string;
 
   constructor() {
@@ -31,7 +31,7 @@ export class Professor {
     this.complemento = undefined;
     this.cidade = undefined;
     this.estado = undefined;
-    this.telefone = undefined;
+    this.telefones = undefined;
     this.departamento = undefined;
   }
 
