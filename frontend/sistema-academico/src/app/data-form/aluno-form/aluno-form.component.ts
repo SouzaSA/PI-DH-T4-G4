@@ -54,6 +54,11 @@ export class AlunoFormComponent implements OnInit {
     this.formulario.reset();
   }
 
+  cancel(){
+    this.resetar();
+    this.modalRef.hide();
+  }
+
   verificaValidTouched(campo){
 
     return !this.formulario.get(campo).valid && this.formulario.get(campo).touched;
