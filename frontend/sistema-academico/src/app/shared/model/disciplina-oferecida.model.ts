@@ -4,7 +4,6 @@ import { ProfessorDto } from './../dto/professor.dto';
 
 export class DisciplinaOferecida {
   disciplinaOferecidaId?: number;
-  nome?: string;
   horario?: string;
   professor?: string;
   disciplina?: string;
@@ -15,7 +14,6 @@ export class DisciplinaOferecida {
 
   constructor() {
     this.disciplinaOferecidaId = undefined;
-    this.nome = undefined;
     this.horario = undefined;
     this.professor = undefined;
     this.disciplina = undefined;

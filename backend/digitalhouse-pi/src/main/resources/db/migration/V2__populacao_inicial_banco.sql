@@ -49,14 +49,14 @@ INSERT INTO requere (fk_disciplina_id, fk_requerida_id) VALUES
 	(8, 7);
 	
 INSERT INTO sala (andar, capacidade, departamento, numero) VALUES 
-	(0, 50, "Dept4", 1530),
-	(1, 50, "Dept4", 2536),
-	(0, 70, "Dept2", 1640),
-	(1, 50, "Dept2", 2612),
-	(1, 35, "Dept1", 2444),
-	(1, 25, "Dept1", 2410),
-	(1, 55, "Dept3", 2312),
-	(1, 75, "Dept3", 2322);
+	(0, 50, 3, 1530),
+	(1, 50, 3, 2536),
+	(0, 70, 1, 1640),
+	(1, 50, 1, 2612),
+	(1, 35, 0, 2444),
+	(1, 25, 0, 2410),
+	(1, 55, 2, 2312),
+	(1, 75, 2, 2322);
 	
 INSERT INTO disciplina_oferecida (ano, dia_semana, horario, semestre, turma, fk_disciplina_id, fk_professor_id, fk_sala_id) VALUES
 	(2020, "SEG", "M1", 1, 1, 1, 1, 1),

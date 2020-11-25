@@ -1,6 +1,6 @@
 import { Component, forwardRef, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormGroup, FormBuilder, Validators, ControlValueAccessor, Validator, ValidationErrors, AbstractControl, NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ControlValueAccessor, Validator, ValidationErrors, AbstractControl, NG_VALUE_ACCESSOR, NG_VALIDATORS, FormArray } from '@angular/forms';
 import { TelefoneDto } from 'src/app/shared/dto/telefone.dto';
 
 @Component({
@@ -28,12 +28,31 @@ export class PessoaFormComponent implements OnInit, ControlValueAccessor, Valida
     sobrenome: [null, Validators.required],
     email: [null, Validators.required],
     endereco: [null],
-    telefones: [null]
+    telefones: this.formBuilder.array([])
   });
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+  }
+
+  get telefones() {
+    return this.pessoaForm.get('telefones') as FormArray;
+  }
+
+  newTelefone(): FormGroup {
+    return this.formBuilder.group({
+      telefoneId: '',
+      telefone: '',
+    })
+  }
+
+  addTelefone() {
+    this.telefones.push(this.newTelefone());
+  }
+   
+  removeTelefone(i:number) {
+    this.telefones.removeAt(i);
   }
 
   public onTouched: () => void = () => {};

@@ -20,8 +20,8 @@ export class CadastroDisciplinaOferecidaComponent implements OnInit {
         header: 'Código'
       },
       {
-        primaryKey: 'nome',
-        header: 'Nome'
+        primaryKey: 'disciplina',
+        header: 'Disciplina'
       },
       {
         primaryKey: 'horario',
@@ -30,10 +30,6 @@ export class CadastroDisciplinaOferecidaComponent implements OnInit {
       {
         primaryKey: 'professor',
         header: 'Professor'
-      },
-      {
-        primaryKey: 'disciplina',
-        header: 'Disciplina'
       },
       {
         primaryKey: 'sala',

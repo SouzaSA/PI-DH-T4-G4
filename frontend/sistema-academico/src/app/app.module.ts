@@ -1,8 +1,5 @@
-import { ProfessorModule } from './professor/professor.module';
-import { DadosProfessorComponent } from './professor/dados-professor/dados-professor.component';
-import { SharedModule } from './shared/shared.module';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -10,6 +7,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { NotasComponent } from './professor/notas/notas.component';
 import { AdministradorModule } from './administrador/administrador.module';
+import { AlunoModule } from './aluno/aluno.module';
+import { ProfessorModule } from './professor/professor.module';
+import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
@@ -68,8 +68,7 @@ import { CalendarModule } from 'primeng/calendar';
     MenuProfItensComponent,
     InformesComponent,
     CadastroInformesComponent,
-    CadastroAvaliacaoComponent,
-    
+    CadastroAvaliacaoComponent
   ],
   imports: [
     BrowserModule,
@@ -100,6 +99,7 @@ import { CalendarModule } from 'primeng/calendar';
     SharedModule,
     ProfessorModule,
     DataFormModule,
+    AlunoModule,
     TableModule,
     AccordionModule,
     KeyFilterModule,

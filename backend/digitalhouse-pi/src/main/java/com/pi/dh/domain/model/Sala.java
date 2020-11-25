@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.pi.dh.domain.model.enums.Departamentos;
+
 import lombok.Data;
 
 @Entity
@@ -29,7 +31,7 @@ public class Sala implements Serializable {
 	
 	@Size(max = 40)
 	@Column
-	private String departamento;
+	private Departamentos departamento;
 	
 	@Column
 	private Integer andar;

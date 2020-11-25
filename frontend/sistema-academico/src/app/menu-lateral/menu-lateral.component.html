@@ -8,6 +8,11 @@
     <div *ngIf="temPermissao('SA03')">
       <app-menu-prof-itens></app-menu-prof-itens>
     </div>
+
+    <div *ngIf="temPermissao('SA05')">
+      <app-menu-aluno-itens></app-menu-aluno-itens>
+    </div>
+
     <a class="nav-link" routerLinkActive="active" routerLink="/departamento">Departamentos</a>
     <a class="nav-link" routerLinkActive="active" routerLink="/departamento1" (click)="setDepartamento('HUM')">Humaninades</a>
     <a class="nav-link" routerLinkActive="active" routerLink="/departamento2" (click)="setDepartamento('FIS')">Física</a>

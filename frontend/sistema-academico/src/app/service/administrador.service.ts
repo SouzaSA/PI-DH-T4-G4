@@ -1,5 +1,5 @@
 
-import { DisciplinaOferecidaMapper } from './../shared/mapper/disciplina-ferecida.mapper';
+import { DisciplinaOferecidaMapper } from '../shared/mapper/disciplina-oferecida.mapper';
 import { DisciplinaOferecidaDto } from './../shared/dto/disciplina-oferecida.dto';
 import { Professor } from './../shared/model/professor.model';
 import { Injectable } from '@angular/core';
@@ -90,13 +90,13 @@ export class AdministradorService {
   listarDisciplinasOferecidas() {
     return this.http.get<DisciplinaOferecidaDto[]>(this.API+"disciplinaOferecidas")
     .pipe(
+      tap(console.log),
       map((data: DisciplinaOferecidaDto[]) =>
         data.map(
           (item: DisciplinaOferecidaDto) =>
             DisciplinaOferecidaMapper.toDisciplinaOferecida(item),
         )
-      ),
-      tap(console.log)
+      )
     );
   }
 

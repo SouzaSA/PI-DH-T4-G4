@@ -40,7 +40,7 @@ export class ProfessorFormComponent implements OnInit {
   ngOnInit(): void {
 
     this.formulario = this.formBuilder.group({
-      pessoaRequest: [null],
+      pessoa: [null],
       departamento: [null],
       professorId: [null]
     });

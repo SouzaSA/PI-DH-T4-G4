@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pi.dh.domain.model.Sala;
+import com.pi.dh.domain.model.enums.Departamentos;
 import com.pi.dh.domain.repository.SalaRepository;
 import com.pi.dh.dto.SalaDTO;
 import com.pi.dh.mapper.SalaMapper;
@@ -50,7 +51,7 @@ public class SalaService {
 		Sala sl = salaRepository.findById(id).get();
 		sl.setAndar(salaRequest.getAndar());
 		sl.setCapacidade(salaRequest.getCapacidade());
-		sl.setDepartamento(salaRequest.getDepartamento());
+		sl.setDepartamento(Departamentos.toEnum(salaRequest.getDepartamento()));
 		sl.setNumero(salaRequest.getNumero());
 		
 		salaRepository.save(sl);

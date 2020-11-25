@@ -22,4 +22,7 @@ public class DisciplinaOferecidaDTO implements Serializable {
 	private DisciplinaDTO disciplina;
     private SalaDTO sala;
     
+    public String getHorario() {
+    	return horario.getHora();
+    }
 }

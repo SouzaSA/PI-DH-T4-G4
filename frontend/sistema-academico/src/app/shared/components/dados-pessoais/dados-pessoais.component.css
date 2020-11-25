@@ -8,13 +8,9 @@
   background-repeat: no-repeat;
 }
 
-.cell-height {
-  height: 30px
-}
-
 .pill-style {
   height: 100%;
-  font-size: 20px;
+  font-size: 15px;
   margin-bottom: 5px;
   padding: 5px 0px;
 }

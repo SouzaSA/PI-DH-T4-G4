@@ -1,3 +1,7 @@
+import { InscricaoAlunoComponent } from './aluno/inscricao-aluno/inscricao-aluno.component';
+import { DisciplinasComponent } from './aluno/disciplinas/disciplinas.component';
+import { HistoricoComponent } from './aluno/historico/historico.component';
+import { DadosAlunoComponent } from './aluno/dados-aluno/dados-aluno.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -34,6 +38,16 @@ const routes: Routes = [
     children: [
       { path: '', component: DadosAdministradorComponent },
       { path: 'cadastro', component: MenuItensCadastroComponent },
+    ],
+  },
+  {
+    path: 'administrador',
+    component: AdministradorComponent,
+    children: [
+      { path: '', component: DadosAlunoComponent },
+      { path: 'historico', component: HistoricoComponent },
+      { path: 'disciplinas', component: DisciplinasComponent },
+      { path: 'inscricao', component: InscricaoAlunoComponent },
     ],
   },
 ];

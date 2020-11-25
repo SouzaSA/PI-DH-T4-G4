@@ -1,10 +1,12 @@
-<ng-container [formGroup]="telefonesForm">
-  <div class="form-row">
-    <div *ngFor="let telefone of telefones().controls; let i=index" [formGroupName]="i">
-      <label for="'telefone'+i" class="control-label mb-0">Telefone {{i+1}}: </label>
-      <input type="text" class="form-control" [formControl]="telefones()[i]" [id]="'telefone'+i" placeholder="Número">
-      <button type="button" (click)="removeTelefone(i)">Remover</button>
+<ng-container [formGroup]="telefonesForm" class="mb-2">
+  <button type="button" class="btn btn-primary" (click)="addTelefone()">Adicionar telefone</button>
+  <div formArrayName="telefones" class="form-row">
+    <div *ngFor="let telefone of telefones.controls; let i=index">
+      <div [formGroupName]="i" class="ml-2 mt-2">
+        <label for="'telefone'+i" class="control-label mb-0">Telefone {{i+1}}: </label>
+        <input type="text" class="form-control" [id]="'telefone'+i" placeholder="Número">
+        <button type="button" class="btn btn-warning" (click)="removeTelefone(i)">Remover</button>
+      </div>
     </div> 
   </div> 
-  <button type="button" (click)="addTelefone()">Adicionar</button>
 </ng-container>

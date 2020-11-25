@@ -14,4 +14,7 @@ public class ProfessorDTO implements Serializable {
 	private PessoaDTO pessoa;
 	private Departamentos departamento;
 	
+	public String getDepartamento() {
+		return departamento.getDescription();
+	}
 }
