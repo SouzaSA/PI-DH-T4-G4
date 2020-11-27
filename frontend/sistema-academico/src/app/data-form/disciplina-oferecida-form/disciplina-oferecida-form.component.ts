@@ -37,6 +37,7 @@ export class DisciplinaOferecidaFormComponent implements OnInit {
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
       disciplinaOferecidaId: [null],
+      dia: [null],
       horario: [null],
       professor: [null],
       disciplina: [null],

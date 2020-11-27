@@ -39,6 +39,41 @@
         </div>
 
         <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="semestre" class="control-label mb-0">Semestre</label>
+            <input type="number" class="form-control" formControlName="semestre" id="semestre">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="ano" class="control-label mb-0">Ano</label>
+            <input type="number" class="form-control" formControlName="ano" id="ano">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="turma" class="control-label mb-0">Turma</label>
+            <input type="number" class="form-control" formControlName="turma" id="turma">
+          </div>
+
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="dia" class="control-label mb-0">Dia</label>
+            <select class="form-control" id="dia" formControlName="dia">
+              <option *ngFor="let d of dias" [value]="d">{{ d }}</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-3">
+            <label for="horario" class="control-label mb-0">Horario</label>
+            <select class="form-control" id="horario" formControlName="horario">
+              <option *ngFor="let hora of horarios" [value]="hora">{{ hora }}</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-row">
           <div class="form-group col-md-12">
             <button type="submit" class="btn btn-primary">Gravar</button>
             <button type="button" class="btn btn-secondary ml-2" (click)="cancel()">Cancelar</button>
