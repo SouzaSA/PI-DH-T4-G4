@@ -6,7 +6,7 @@ export class ProfessorMapper {
     static toProfessor( professorDto: ProfessorDto) : Professor {
         let professor = new Professor();
 
-        professor.professorId = professorDto.professor_id;
+        professor.professorId = professorDto.professorId;
         professor.pessoaId = professorDto.pessoa.pessoaId;
         professor.enderecoId = professorDto.pessoa.endereco.id;
         professor.nome = professorDto.pessoa.nome;

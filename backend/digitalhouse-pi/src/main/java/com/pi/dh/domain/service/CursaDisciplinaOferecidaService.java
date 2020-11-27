@@ -41,7 +41,7 @@ public class CursaDisciplinaOferecidaService {
 	public CursaDisciplinaOferecidaDTO buscarPorId(Long id) {
 		return mapper.modelToDTO(cursaDisciplinaOferecidaRepository.findById(id).get());
 	}
-	
+		
 	@Transactional
 	public void excluir(Long id) {
 		cursaDisciplinaOferecidaRepository.deleteById(id);

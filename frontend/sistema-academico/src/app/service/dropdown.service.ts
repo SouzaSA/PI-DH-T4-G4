@@ -1,13 +1,21 @@
+import { tap } from 'rxjs/operators';
+import { SalaDto } from './../shared/dto/sala.dto';
+import { DisciplinaDto } from './../shared/dto/disciplina.dto';
+import { ProfessorDto } from './../shared/dto/professor.dto';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
+import { environment } from './../../environments/environment';
 import { EstadoBr } from './../shared/model/estado-br.model';
 import { Cidade } from '../shared/model/cidade';
-import { map } from '../../../node_modules/rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DropdownService {
+
+  private readonly API = `${environment.URLSERVIDOR}`;
+
   constructor(private http: HttpClient) {}
 
   getEstadosBr() {
@@ -20,5 +28,25 @@ export class DropdownService {
     //   // tslint:disable-next-line:triple-equals
     //   map((cidades: Cidade[]) => cidades.filter(c => c.estado == idEstado))
     // );
+  }
+
+  getHorarios () {
+    return this.http.get<String[]>(`${this.API}enums/horarios`);
+  }
+
+  getDias () {
+    return this.http.get<String[]>(`${this.API}enums/dias`);
+  }
+
+  getProfessores () {
+    return this.http.get<ProfessorDto[]>(`${this.API}professores`);
+  }
+
+  getDisciplinas () {
+    return this.http.get<DisciplinaDto[]>(`${this.API}disciplinas`);
+  }
+
+  getSalas () {
+    return this.http.get<SalaDto[]>(`${this.API}salas`);
   }
 }

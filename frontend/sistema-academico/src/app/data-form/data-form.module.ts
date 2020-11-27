@@ -39,7 +39,8 @@ import { DisciplinaOferecidaFormComponent } from './disciplina-oferecida-form/di
     PessoaFormComponent,
     AdministradorFormComponent,
     SalaFormComponent,
-    DisciplinaFormComponent
+    DisciplinaFormComponent,
+    DisciplinaOferecidaFormComponent
   ]
 })
 export class DataFormModule { }
