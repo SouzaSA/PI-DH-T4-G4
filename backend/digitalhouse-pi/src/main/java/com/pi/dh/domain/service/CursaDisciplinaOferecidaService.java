@@ -41,6 +41,13 @@ public class CursaDisciplinaOferecidaService {
 	public CursaDisciplinaOferecidaDTO buscarPorId(Long id) {
 		return mapper.modelToDTO(cursaDisciplinaOferecidaRepository.findById(id).get());
 	}
+	
+	public List<CursaDisciplinaOferecidaDTO> buscarPorAlunoId(Long id) {
+		return cursaDisciplinaOferecidaRepository.findAllByAlunoId(id)
+				.stream()
+				.map(curdis -> mapper.modelToDTO(curdis))
+				.collect(Collectors.toList());
+	}
 		
 	@Transactional
 	public void excluir(Long id) {
@@ -52,7 +59,7 @@ public class CursaDisciplinaOferecidaService {
 		CursaDisciplinaOferecida cdo = cursaDisciplinaOferecidaRepository.findById(id).get();
 		
 		cdo.setDataInscricao(cursaDisciplinaOferecida.getDataInscricao());
-		cdo.setData_deferimento(cursaDisciplinaOferecida.getData_deferimento());
+		cdo.setDataDeferimento(cursaDisciplinaOferecida.getData_deferimento());
 		cdo.setAluno(mapper.requestToModel(cursaDisciplinaOferecida).getAluno());
 		cdo.setDisciplinaOferecida(mapper.requestToModel(cursaDisciplinaOferecida).getDisciplinaOferecida());
 

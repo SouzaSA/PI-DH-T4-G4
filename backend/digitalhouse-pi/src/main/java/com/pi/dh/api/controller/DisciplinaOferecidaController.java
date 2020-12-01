@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pi.dh.domain.model.DisciplinaOferecida;
 import com.pi.dh.domain.service.DisciplinaOferecidaService;
 import com.pi.dh.dto.DisciplinaOferecidaDTO;
+import com.pi.dh.request.DisciplinaOferecidaRequest;
 
 @RestController
 @RequestMapping("/disciplinaOferecidas")
@@ -26,8 +27,8 @@ public class DisciplinaOferecidaController {
 	private DisciplinaOferecidaService disciplinaOferecidaService;
 	
 	@PostMapping
-	public void salvar(@RequestBody DisciplinaOferecida disciplinaOferecida) {
-		disciplinaOferecidaService.salvar(disciplinaOferecida);
+	public void salvar(@RequestBody DisciplinaOferecidaRequest disciplinaOferecidaRequest) {
+		disciplinaOferecidaService.salvar(disciplinaOferecidaRequest);
 	}
 	
 	@GetMapping

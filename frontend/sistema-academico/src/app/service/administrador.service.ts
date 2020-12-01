@@ -143,6 +143,13 @@ export class AdministradorService {
   
   }
 
+  postDisciplinaOferecida(disciplinaOferecidaData) {
+    console.log(JSON.stringify(disciplinaOferecidaData));
+    return this.http.post(this.API+"disciplinaOferecidas", disciplinaOferecidaData)
+      .pipe(take(1));
+  
+  }
+
   putProfessor(professorData, id) {
     console.log(JSON.stringify(professorData));
     return this.http.put(this.API+"professores"+"/"+id, professorData)

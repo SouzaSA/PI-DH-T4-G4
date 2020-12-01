@@ -24,6 +24,10 @@ export class CadastroDisciplinaOferecidaComponent implements OnInit {
         header: 'Disciplina'
       },
       {
+        primaryKey: 'diaSemana',
+        header: 'Dia'
+      },
+      {
         primaryKey: 'horario',
         header: 'Horário'
       },

@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.pi.dh.domain.model.enums.Avaliacoes;
 
 import lombok.Data;
@@ -34,10 +35,14 @@ public class Nota implements Serializable {
 	@Column
 	private Avaliacoes titulo;
 	
+	@Column
+	private Integer numero;
+	
 	@Column(precision=5, scale=2)
 	private BigDecimal valor;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonBackReference
 	@JoinColumn(name="fk_cursa_disciplina_oferecida_id")
 	private CursaDisciplinaOferecida disciplinaCursadaAluno;
 	

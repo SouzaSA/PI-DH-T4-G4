@@ -14,6 +14,7 @@ public class NotaDTO implements Serializable {
 	
 	private Long notaId;
 	private Avaliacoes titulo;
+	private Integer numero;
 	private BigDecimal valor;
 	private CursaDisciplinaOferecida disciplinaCursadaAluno;
 	

@@ -16,6 +16,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Entity
@@ -31,10 +34,12 @@ public class Aluno implements Serializable {
 	private Long alunoId;
 
 	@OneToOne(fetch = FetchType.LAZY)
+	@JsonBackReference
     @JoinColumn(name = "fk_pessoa_id")
 	private Pessoa pessoa;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonBackReference
 	@JoinColumn(name="fk_curso_id")
 	private Curso curso;
 	
@@ -43,6 +48,7 @@ public class Aluno implements Serializable {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
     )
+	@JsonManagedReference
 	private List<CursaDisciplinaOferecida> disciplinasCursadas;
 	
 }

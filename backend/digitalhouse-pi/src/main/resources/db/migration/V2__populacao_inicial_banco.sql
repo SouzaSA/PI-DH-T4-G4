@@ -63,7 +63,8 @@ INSERT INTO disciplina_oferecida (ano, dia_semana, horario, semestre, turma, fk_
 	(2020, "SEG", "V1", 1, 1, 3, 2, 1),
 	(2020, "TER", "M1", 1, 1, 4, 1, 4),
 	(2020, "QUA", "M1", 1, 1, 5, 3, 3),
-	(2020, "QUI", "M1", 1, 1, 7, 4, 5);
+	(2020, "QUI", "M1", 1, 1, 7, 4, 5),
+	(2020, "SAB", "M1", 1, 1, 7, 4, 5);
 
 INSERT INTO informe (data_publicacao, departamento, descricao, prioridade, titulo, fk_professor_id) VALUES
 	("2020-02-01 15:25:15", 4, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 3, "Loren Ipson 01", 1),
@@ -123,7 +124,30 @@ INSERT INTO grupo_permissao (grupo_id, permissao_id) VALUES
 	
 INSERT INTO usuario_grupo (usuario_id, grupo_id) VALUES
 	(1, 1),
-	(5, 3);
-
-
-
+	(5, 3),
+	(9, 2);
+	
+INSERT INTO cursa_disciplina_oferecida (data_inscricao, data_deferimento, faltas, fk_aluno_id, fk_disciplina_oferecida_id) VALUES
+	(NOW(), NOW(), 0, 2, 1),
+	(NOW(), NOW(), 0, 2, 2),
+	(NOW(), NOW(), 2, 2, 3),
+	(NOW(), NOW(), 4, 2, 4),
+	(NOW(), NOW(), 4, 2, 5),
+	(NOW(), NOW(), 2, 2, 6);
+	
+INSERT INTO nota (titulo, numero, valor, fk_cursa_disciplina_oferecida_id) VALUES
+	("PROVA", 1, 55.30, 1),
+	("PROVA", 2, 77.80, 1),
+	("PROVA", 1, 80.25, 2),
+	("PROVA", 2, 90.00, 2),
+	("PROVA", 3, 99.50, 2),
+	("PROVA", 1, 50.25, 3),
+	("PROVA", 2, 82.50, 3),
+	("TRABALHO", 1, 100.00, 3),
+	("PROVA", 1, 100.00, 4),
+	("PROVA", 2, 80.00, 4),
+	("SEMINARIO", 1, 85.00, 4),
+	("SEMINARIO", 2, 90.00, 4),
+	("PROVA", 1, 30.00, 5),
+	("TRABALHO", 1, 100.00, 6),
+	("SEMINARIO", 2, 100.00, 6);

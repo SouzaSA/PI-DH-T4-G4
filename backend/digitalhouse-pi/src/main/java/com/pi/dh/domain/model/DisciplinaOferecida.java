@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.pi.dh.domain.model.enums.DiaSemana;
 import com.pi.dh.domain.model.enums.Hora;
 
@@ -54,14 +55,17 @@ public class DisciplinaOferecida implements Serializable {
 	private Integer turma;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonBackReference
 	@JoinColumn(name="fk_professor_id")
 	private Professor professor;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonBackReference
 	@JoinColumn(name="fk_disciplina_id")
 	private Disciplina disciplina;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonBackReference
 	@JoinColumn(name="fk_sala_id")
     private Sala sala;
 

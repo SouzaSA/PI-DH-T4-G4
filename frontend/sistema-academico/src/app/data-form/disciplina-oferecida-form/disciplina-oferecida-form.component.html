@@ -16,24 +16,30 @@
       <form  [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div class="form-row"> 
           <div class="form-group col-md-4">
-            <label for="disciplina" class="control-label mb-0">Disciplina</label>
-            <select class="form-control" id="disciplina" formControlName="disciplina">
-              <option *ngFor="let disc of disciplinas" [value]="disc.disciplinaId">{{ disc.nome }}</option>
-            </select>
+            <div formGroupName="disciplina">
+              <label for="disciplina" class="control-label mb-0">Disciplina</label>
+              <select class="form-control" id="disciplina" formControlName="disciplinaId">
+                <option *ngFor="let disc of disciplinas" [value]="disc.disciplinaId">{{ disc.nome }}</option>
+              </select>
+            </div>
           </div>
 
           <div class="form-group col-md-4">
-            <label for="professor" class="control-label mb-0">Professor</label>
-            <select class="form-control" id="professor" formControlName="professor">
-              <option *ngFor="let prof of professores" [value]="prof.professorId">{{ prof.pessoa.nome + ' ' + prof.pessoa.sobrenome }}</option>
-            </select>
+            <div formGroupName="professor">
+              <label for="professor" class="control-label mb-0">Professor</label>
+              <select class="form-control" id="professor" formControlName="professorId">
+                <option *ngFor="let prof of professores" [value]="prof.professorId">{{ prof.pessoa.nome + ' ' + prof.pessoa.sobrenome }}</option>
+              </select>
+            </div>
           </div>
 
           <div class="form-group col-md-4">
-            <label for="sala" class="control-label mb-0">Sala</label>
-            <select class="form-control" id="sala" formControlName="sala">
-              <option *ngFor="let sal of salas" [value]="sal.salaId">{{ sal.departamento + ' ' + sal.numero }}</option>
-            </select>
+            <div formGroupName="sala">
+              <label for="sala" class="control-label mb-0">Sala</label>
+              <select class="form-control" id="sala" formControlName="salaId">
+                <option *ngFor="let sal of salas" [value]="sal.salaId">{{ sal.departamento + ' ' + sal.numero }}</option>
+              </select>
+            </div>
           </div>
 
         </div>
@@ -41,17 +47,17 @@
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="semestre" class="control-label mb-0">Semestre</label>
-            <input type="number" class="form-control" formControlName="semestre" id="semestre">
+            <input type="number" class="form-control" formControlName="semestre" id="semestre" min="0">
           </div>
 
           <div class="form-group col-md-4">
             <label for="ano" class="control-label mb-0">Ano</label>
-            <input type="number" class="form-control" formControlName="ano" id="ano">
+            <input type="number" class="form-control" formControlName="ano" id="ano" min="0">
           </div>
 
           <div class="form-group col-md-4">
             <label for="turma" class="control-label mb-0">Turma</label>
-            <input type="number" class="form-control" formControlName="turma" id="turma">
+            <input type="number" class="form-control" formControlName="turma" id="turma" min="0">
           </div>
 
         </div>
@@ -59,7 +65,7 @@
         <div class="form-row">
           <div class="form-group col-md-3">
             <label for="dia" class="control-label mb-0">Dia</label>
-            <select class="form-control" id="dia" formControlName="dia">
+            <select class="form-control" id="dia" formControlName="diaSemana">
               <option *ngFor="let d of dias" [value]="d">{{ d }}</option>
             </select>
           </div>
@@ -79,9 +85,15 @@
             <button type="button" class="btn btn-secondary ml-2" (click)="cancel()">Cancelar</button>
           </div>    
         </div>
+
+        <!--
+          <app-form-debug [form]="formulario"></app-form-debug>
+        -->
               
       </form>
   
     </div>
   </div>  
+
+  
 </ng-template>  

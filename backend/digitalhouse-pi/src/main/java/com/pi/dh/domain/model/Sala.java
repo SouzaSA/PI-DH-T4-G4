@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.pi.dh.domain.model.enums.Departamentos;
 
 import lombok.Data;
@@ -47,6 +48,7 @@ public class Sala implements Serializable {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
 	)
+	@JsonManagedReference
 	private List<DisciplinaOferecida> disciplinasOferecidas;
 	
 }

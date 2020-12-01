@@ -16,15 +16,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name="cursa_disciplina_oferecida")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
 public class CursaDisciplinaOferecida implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -32,19 +31,24 @@ public class CursaDisciplinaOferecida implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="cursa_disciplina_oferecida_id")
-	private Long cursaDisciplinaOferecida;
+	private Long cursaDisciplinaOferecidaId;
 	
 	@Column(name="data_inscricao")
 	private OffsetDateTime dataInscricao;
 	
 	@Column(name="data_deferimento")
-	private OffsetDateTime data_deferimento;
+	private OffsetDateTime dataDeferimento;
+	
+	@Column(name="faltas")
+	private Integer faltas;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonBackReference
 	@JoinColumn(name="fk_aluno_id")
 	private Aluno aluno;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonBackReference
 	@JoinColumn(name="fk_disciplina_oferecida_id")
 	private DisciplinaOferecida disciplinaOferecida;
 	
@@ -53,6 +57,7 @@ public class CursaDisciplinaOferecida implements Serializable {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
     )
+	@JsonManagedReference
 	private List<Nota> notas;
 	
 }

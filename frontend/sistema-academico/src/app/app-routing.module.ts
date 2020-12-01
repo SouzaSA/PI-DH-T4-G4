@@ -1,3 +1,4 @@
+import { AlunoComponent } from './aluno/aluno.component';
 import { InscricaoAlunoComponent } from './aluno/inscricao-aluno/inscricao-aluno.component';
 import { DisciplinasComponent } from './aluno/disciplinas/disciplinas.component';
 import { HistoricoComponent } from './aluno/historico/historico.component';
@@ -41,8 +42,8 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'administrador',
-    component: AdministradorComponent,
+    path: 'aluno',
+    component: AlunoComponent,
     children: [
       { path: '', component: DadosAlunoComponent },
       { path: 'historico', component: HistoricoComponent },

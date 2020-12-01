@@ -113,6 +113,7 @@ CREATE TABLE IF NOT EXISTS `informe` (
 CREATE TABLE IF NOT EXISTS `nota` (
   `nota_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(255) DEFAULT NULL,
+  `numero` int(11) DEFAULT NULL,
   `valor` decimal(5,2) DEFAULT NULL,
   `fk_cursa_disciplina_oferecida_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`nota_id`),

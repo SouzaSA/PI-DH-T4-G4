@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Entity
@@ -48,6 +50,7 @@ public class Disciplina implements Serializable {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
 	)
+    @JsonManagedReference
 	private List<DisciplinaOferecida> disciplinasOferecidas;
 	
     @OneToMany(
@@ -55,6 +58,7 @@ public class Disciplina implements Serializable {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
     )
+    @JsonManagedReference
 	private List<Requere> disciplinas;
     
     @OneToMany(
@@ -62,6 +66,7 @@ public class Disciplina implements Serializable {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
     )
+    @JsonManagedReference
 	private List<Requere> requeridas;
     
     @OneToMany(
@@ -69,6 +74,7 @@ public class Disciplina implements Serializable {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
     )
+    @JsonManagedReference
 	private List<CursaDisciplinaOferecida> disciplinasOferecidasCursadas;
     
 

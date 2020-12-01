@@ -7,6 +7,7 @@ import { AlunoMapper } from './../shared/mapper/aluno.mapper';
 import { environment } from './../../environments/environment';
 import { AlunoDto } from '../shared/dto/aluno.dto';
 import { Aluno } from './../shared/model/aluno.model';
+import { CursaDisciplinaOferecidaDto } from '../shared/dto/cursa-disciplina-oferecida.dto';
 
 
 @Injectable({
@@ -26,5 +27,9 @@ export class AlunoService {
       ),
       tap(console.log)
     );
+  }
+
+  getCursaDisciplinaOferecida(id: number) {
+    return this.http.get<CursaDisciplinaOferecidaDto[]>(this.API+"cursaDisciplinasOferecidas/aluno/"+id)
   }
 }

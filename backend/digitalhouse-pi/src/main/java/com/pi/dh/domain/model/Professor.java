@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.pi.dh.domain.model.enums.Departamentos;
 
 import lombok.Data;
@@ -36,6 +38,7 @@ public class Professor implements Serializable {
 
 	@OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_pessoa_id")
+	@JsonBackReference
 	private Pessoa pessoa;
 	
 	@OneToMany(
@@ -43,6 +46,7 @@ public class Professor implements Serializable {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
 	)
+	@JsonManagedReference
 	private List<DisciplinaOferecida> disciplinaOferecida;
 	
 	@OneToMany(
@@ -50,6 +54,7 @@ public class Professor implements Serializable {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
 	)
+	@JsonManagedReference
 	private List<Informe> informes;
 
 	public void setDepartamento(Departamentos departamento) {

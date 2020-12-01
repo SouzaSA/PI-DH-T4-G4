@@ -37,14 +37,20 @@ export class DisciplinaOferecidaFormComponent implements OnInit {
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
       disciplinaOferecidaId: [null],
-      dia: [null],
+      diaSemana: [null],
       horario: [null],
-      professor: [null],
-      disciplina: [null],
-      sala: [null],
       semestre: [null],
       turma: [null],
-      ano: [null]
+      ano: [(new Date()).getFullYear()],
+      professor: this.formBuilder.group({
+        professorId: [null],
+      }),
+      disciplina: this.formBuilder.group({
+        disciplinaId: [null],
+      }),
+      sala: this.formBuilder.group({
+        salaId: [null],
+      })
     });
 
     this.dropdownService.getHorarios().subscribe(dados => this.horarios = dados);
@@ -69,7 +75,7 @@ export class DisciplinaOferecidaFormComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formulario.value);
-    this.administradorService.postDisciplina(this.formulario.value).subscribe();
+    this.administradorService.postDisciplinaOferecida(this.formulario.value).subscribe();
   }
 
   resetar(){

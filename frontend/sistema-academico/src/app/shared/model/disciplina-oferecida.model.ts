@@ -4,6 +4,7 @@ import { ProfessorDto } from './../dto/professor.dto';
 
 export class DisciplinaOferecida {
   disciplinaOferecidaId?: number;
+  diaSemana?: string;
   horario?: string;
   professor?: string;
   disciplina?: string;

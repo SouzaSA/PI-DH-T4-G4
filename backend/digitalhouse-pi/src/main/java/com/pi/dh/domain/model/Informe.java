@@ -15,6 +15,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.pi.dh.domain.model.enums.Departamentos;
 import com.pi.dh.domain.model.enums.PrioridadeInforme;
 
@@ -50,6 +51,7 @@ private static final long serialVersionUID = 1L;
 	private OffsetDateTime dataPublicacao;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonBackReference
 	@JoinColumn(name="fk_professor_id")
 	private Professor professor;
 	

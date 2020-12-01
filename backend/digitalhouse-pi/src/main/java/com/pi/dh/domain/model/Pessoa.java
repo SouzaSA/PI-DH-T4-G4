@@ -22,6 +22,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -65,6 +67,7 @@ public class Pessoa implements Serializable {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
 	)
+	@JsonManagedReference
 	private List<Telefone> telefones;
 	
 	@Embedded
@@ -76,6 +79,7 @@ public class Pessoa implements Serializable {
             fetch = FetchType.LAZY, 
             optional = false
     )
+	@JsonManagedReference
 	private Administrador administrador;
 	
 	@OneToOne(
@@ -84,6 +88,7 @@ public class Pessoa implements Serializable {
             fetch = FetchType.LAZY, 
             optional = false
     )
+	@JsonManagedReference
 	private Aluno aluno;
 	
 	@OneToOne(
@@ -92,6 +97,7 @@ public class Pessoa implements Serializable {
             fetch = FetchType.LAZY, 
             optional = false
     )
+	@JsonManagedReference
 	private Professor professor;
 	
 	@ManyToMany

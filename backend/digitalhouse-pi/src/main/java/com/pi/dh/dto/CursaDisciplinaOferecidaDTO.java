@@ -11,9 +11,10 @@ public class CursaDisciplinaOferecidaDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-	private Long cursaDisciplinaOferecida;
+	private Long cursaDisciplinaOferecidaId;
 	private OffsetDateTime dataInscricao;
-	private OffsetDateTime data_deferimento;
+	private OffsetDateTime dataDeferimento;
+	private Integer faltas;
 	private AlunoDTO aluno;
 	private DisciplinaOferecidaDTO disciplinaOferecida;
 	private List<NotaDTO> notas;

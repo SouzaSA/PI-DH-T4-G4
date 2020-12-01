@@ -41,6 +41,11 @@ public class CursaDisciplinaOferecidaController {
 		return cursaDisciplinaOferecidaService.buscarPorId(id);
 	}
 	
+	@GetMapping("/aluno/{id}")
+	public List<CursaDisciplinaOferecidaDTO> buscarPorAlunoId(@PathVariable Long id) {
+		return cursaDisciplinaOferecidaService.buscarPorAlunoId(id);
+	}
+	
 	@DeleteMapping("/{id}")
 	public void excluir(@PathVariable Long id) {
 		cursaDisciplinaOferecidaService.excluir(id);

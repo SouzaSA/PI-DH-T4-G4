@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import jwt_decode from 'jwt-decode';
 
 import { AuthRepository } from '../seguranca/auth-repository';
+import { AlunoService } from './aluno.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,11 @@ export class AuthService {
 
   jwtPayload: any; 
 
-  constructor(public repository: AuthRepository, private router: Router) { 
+  constructor(
+    private alunoService: AlunoService,
+    public repository: AuthRepository, 
+    private router: Router
+  ) { 
     this.carregarToken();
   }
 
@@ -23,6 +28,7 @@ export class AuthService {
         const json: JSON = JSON.parse(JSON.stringify(resposta));
         console.log(json);
         this.armazenarToken(json['access_token']);
+        this.armazenarUsuario(this.jwtPayload);
         
         console.log('Novo access token criado!\n'+JSON.stringify(this.jwtPayload));
         //this.router.navigate(['/listar/cliente']);        
@@ -34,9 +40,24 @@ export class AuthService {
 
   private armazenarToken(token: string) {
     this.jwtPayload = JSON.parse(atob(token.split('.')[1]));
-    console.log(this.jwtPayload.authorities);
     
     localStorage.setItem('token', token);
+  }
+
+  private armazenarUsuario(jwtPayload) {
+     //prof
+     if(jwtPayload.authorities.includes('SA03')) {
+      sessionStorage.setItem('professor', 'value');
+    }
+    //admin
+    if(jwtPayload.authorities.includes('SA04')) {
+      sessionStorage.setItem('administrador', 'value');
+    }
+    //aluno
+    if(jwtPayload.authorities.includes('SA05')) {
+      console.log("entreiaqui");
+      this.alunoService.getAlunoPorPessoaId(this.getUserIdOnToken()).subscribe(alu => sessionStorage.setItem('alunoId', alu.id));
+    }
   }
 
   private carregarToken() {
@@ -51,6 +72,7 @@ export class AuthService {
     return this.repository.postLogout().subscribe(resposta => {
         this.limparAccessToken();
         this.router.navigate(['']);
+        sessionStorage.clear();
       },
       (e) => {
         console.log(e.error.error_description);      

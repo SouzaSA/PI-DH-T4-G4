@@ -13,9 +13,10 @@ public class CursaDisciplinaOferecidaRequest  implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Long cursaDisciplinaOferecida;
+	private Long cursaDisciplinaOferecidaId;
 	private OffsetDateTime dataInscricao;
 	private OffsetDateTime data_deferimento;
+	private Integer faltas;
 	private AlunoRequest aluno;
 	private DisciplinaOferecidaRequest disciplinaOferecida;
 	private List<NotaRequest> notas;

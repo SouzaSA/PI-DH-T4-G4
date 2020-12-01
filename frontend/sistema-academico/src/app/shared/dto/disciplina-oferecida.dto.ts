@@ -5,6 +5,7 @@ import { ProfessorDto } from './professor.dto';
 export interface DisciplinaOferecidaDto {
   disciplinaOferecidaId?: number;
   horario?: string;
+  diaSemana?: string;
   professor?: ProfessorDto;
   disciplina?: DisciplinaDto;
   sala?: SalaDto;

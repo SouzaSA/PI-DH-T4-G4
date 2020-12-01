@@ -7,6 +7,7 @@ export class DisciplinaOferecidaMapper {
 
       disciplinaOferecida.disciplinaOferecidaId = disciplinaOferecidaDto.disciplinaOferecidaId;
       disciplinaOferecida.horario = disciplinaOferecidaDto.horario;
+      disciplinaOferecida.diaSemana = disciplinaOferecidaDto.diaSemana;
       disciplinaOferecida.professor = disciplinaOferecidaDto.professor.pessoa.nome;
       disciplinaOferecida.disciplina = disciplinaOferecidaDto.disciplina.nome;
       disciplinaOferecida.sala = disciplinaOferecidaDto.sala.departamento + ' ' + disciplinaOferecidaDto.sala.numero;

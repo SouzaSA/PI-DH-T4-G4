@@ -24,5 +24,18 @@ public enum Hora {
 		return hora;
 	}
 	
+	public static Hora toEnum(String hora) {
+		if (hora.equals(null) || hora.equals("")) {
+			return null;
+		}
+		
+		for (Hora x : Hora.values()) {
+			if (hora.equals(x.getHora())) {
+				return x;
+			}
+		}
+		
+		throw new IllegalArgumentException("Hora inválida");
+	}
 
 }

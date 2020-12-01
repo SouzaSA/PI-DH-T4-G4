@@ -42,7 +42,8 @@ import { PageSpinnerComponent } from './components/page-spinner/page-spinner.com
     TableLayoutComponent,
     FormDebugComponent,
     CampoControlErroComponent,
-    ErrorMsgComponent
+    ErrorMsgComponent,
+    PageSpinnerComponent
   ]
 })
 export class SharedModule { }

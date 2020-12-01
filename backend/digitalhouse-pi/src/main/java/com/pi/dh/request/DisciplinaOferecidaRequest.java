@@ -13,8 +13,8 @@ public class DisciplinaOferecidaRequest implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long disciplinaOferecidaId;
-	private Hora horario;
-	private DiaSemana diaSemana;
+	private String horario;
+	private String diaSemana;
 	private Integer semestre;
 	private Short ano;
 	private Integer turma;

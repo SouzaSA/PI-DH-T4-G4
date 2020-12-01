@@ -31,11 +31,11 @@ export class DropdownService {
   }
 
   getHorarios () {
-    return this.http.get<String[]>(`${this.API}enums/horarios`);
+    return this.http.get<string[]>(`${this.API}enums/horarios`);
   }
 
   getDias () {
-    return this.http.get<String[]>(`${this.API}enums/dias`);
+    return this.http.get<string[]>(`${this.API}enums/dias`);
   }
 
   getProfessores () {
