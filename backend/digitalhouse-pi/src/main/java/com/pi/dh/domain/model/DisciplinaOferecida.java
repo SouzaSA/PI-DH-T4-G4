@@ -1,22 +1,22 @@
 package com.pi.dh.domain.model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.pi.dh.domain.model.enums.DiaSemana;
-import com.pi.dh.domain.model.enums.Hora;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -37,14 +37,6 @@ public class DisciplinaOferecida implements Serializable {
 	@Column(name="disciplina_oferecida_id")
 	private Long disciplinaOferecidaId;
 	
-	@Enumerated(EnumType.STRING)
-	@Column
-	private Hora horario;
-	
-	@Enumerated(EnumType.STRING)
-	@Column(name="dia_semana")
-	private DiaSemana diaSemana;
-	
 	@Column
 	private Integer semestre;
 	
@@ -53,6 +45,14 @@ public class DisciplinaOferecida implements Serializable {
 	
 	@Column
 	private Integer turma;
+	
+	@OneToMany(
+			mappedBy = "disciplinaOferecida",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
+	@JsonManagedReference
+	private List<DiaHora> diasHoras;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonBackReference

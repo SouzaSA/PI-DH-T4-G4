@@ -1,11 +1,8 @@
-import { SalaDto } from './../dto/sala.dto';
-import { DisciplinaDto } from './../dto/disciplina.dto';
-import { ProfessorDto } from './../dto/professor.dto';
+import { DiaHora } from './diaHora.model';
 
 export class DisciplinaOferecida {
   disciplinaOferecidaId?: number;
-  diaSemana?: string;
-  horario?: string;
+  diasHoras?: DiaHora[];
   professor?: string;
   disciplina?: string;
   sala?: string;
@@ -15,7 +12,7 @@ export class DisciplinaOferecida {
 
   constructor() {
     this.disciplinaOferecidaId = undefined;
-    this.horario = undefined;
+    this.diasHoras = undefined;
     this.professor = undefined;
     this.disciplina = undefined;
     this.sala = undefined;

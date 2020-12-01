@@ -9,8 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pi.dh.domain.model.DisciplinaOferecida;
-import com.pi.dh.domain.model.enums.DiaSemana;
-import com.pi.dh.domain.model.enums.Hora;
+import com.pi.dh.domain.repository.DiaHoraRepository;
 import com.pi.dh.domain.repository.DisciplinaOferecidaRepository;
 import com.pi.dh.domain.repository.DisciplinaRepository;
 import com.pi.dh.domain.repository.ProfessorRepository;
@@ -32,6 +31,9 @@ public class DisciplinaOferecidaService {
 	private DisciplinaRepository disciplinaRepository;
 	
 	@Autowired
+	private DiaHoraRepository diaHoraRepository;
+	
+	@Autowired
 	private SalaRepository salaRepository;
 	
 	@Autowired
@@ -46,8 +48,9 @@ public class DisciplinaOferecidaService {
 		disciplinaOferecida.setProfessor(professorRepository.findById(disciplinaOferecida.getProfessor().getProfessorId()).get());
 		disciplinaOferecida.setDisciplina(disciplinaRepository.findById(disciplinaOferecida.getDisciplina().getDisciplinaId()).get());
 		disciplinaOferecida.setSala(salaRepository.findById(disciplinaOferecida.getSala().getSalaId()).get());
-		disciplinaOferecida.setHorario(Hora.toEnum(disciplinaOferecidaRequest.getHorario()));
-		disciplinaOferecida.setDiaSemana(DiaSemana.toEnum(disciplinaOferecidaRequest.getDiaSemana()));
+		disciplinaOferecida.getDiasHoras().stream().forEach(diaHora -> {
+			diaHora.setDisciplinaOferecida(disciplinaOferecida);
+		});
 		disciplinaOferecidaRepository.save(disciplinaOferecida);
 	}
 	
@@ -72,17 +75,20 @@ public class DisciplinaOferecidaService {
 	public void atualizar(DisciplinaOferecida disciplinaOferecida, Long id) {
 		DisciplinaOferecida discO = disciplinaOferecidaRepository.findById(id).get();
 		
-		discO.setHorario(disciplinaOferecida.getHorario());
-		discO.setDiaSemana(disciplinaOferecida.getDiaSemana());
+		discO.getDiasHoras().stream().forEach(diaHora -> {
+			diaHoraRepository.deleteById(diaHora.getDiaHoraId());
+		});
+		discO.setDiasHoras(disciplinaOferecida.getDiasHoras());
+		discO.getDiasHoras().stream().forEach(diaHora -> {
+			diaHora.setDisciplinaOferecida(discO);
+		});
+		
 		discO.setSemestre(disciplinaOferecida.getSemestre());
 		discO.setAno(disciplinaOferecida.getAno());
 		discO.setTurma(disciplinaOferecida.getTurma());
 		discO.setProfessor(disciplinaOferecida.getProfessor());
 		discO.setDisciplina(disciplinaOferecida.getDisciplina());
 		discO.setSala(disciplinaOferecida.getSala());
-
-
-
 		
 		disciplinaOferecidaRepository.save(discO);
 	}

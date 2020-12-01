@@ -32,15 +32,15 @@ INSERT INTO aluno (fk_curso_id, fk_pessoa_id) VALUES
 	(2, 9),
 	(3, 10);
 	
-INSERT INTO disciplina (codigo, creditos, ementa, nome, semestre_ideal) VALUES
-	("MAT-12", 3, "Números reais. Funções reais de uma variável real. Limites. Funções contínuas: teoremas do valor intermediário e de Bolzano-Weierstrass. Derivadas: definição e propriedades, funções diferenciáveis, regra da cadeia e derivada da função inversa. Teorema do valor médio. Fórmula de Taylor e pesquisa de máximos, mínimos e pontos de inflexão; aplicações. Regras de L'Hospital. Integral de Riemann: definição, propriedades e interpretação geométrica. O Teorema Fundamental do Cálculo. Técnicas de integração. Aplicações. Integrais impróprias. Sequências numéricas: continuidade e convergência, seqüências monótonas, convergência e completude do conjunto dos números reais. Séries Numéricas: convergência ou divergência de uma série. Critérios de convergência: critérios do termo geral, da razão, da raiz, da integral e critério de Leibniz. Convergência absoluta e convergência condicional. Séries de Potências: intervalo de convergência e o Teorema de Abel. Propriedades da soma de uma série de potências: continuidade, derivação e integração termo a termo. Séries de Taylor das principais funções elementares. Aplicações.","Cálculo Diferencial e Integral I", "1"),
-	("MAT-22", 3, "Noções da topologia no Rn. Curvas parametrizadas em Rn. Funções de várias variáveis, curvas e superfíceis de nível. Limite e continuidade. Derivadas direcionais e derivadas parciais. Diferenciabilidade e diferencial. Regra da cadeia. O vetor gradiente e sua interpretação. Derivadas parciais de ordem superior. Fórmula de Taylor e pesquisa de máximos, mínimos e pontos de sela. Extremos condicionados: Multiplicadores de Lagrange. Transformações entre espaços reais: a diferencial e a matriz Jacobiana. Conjuntos de nível. Teorema da Função Implícita e Teorema da Função Inversa. Integrais Múltiplas: integral dupla e integral tripla. Integral iterada e o Teorema de Fubini. Mudança de variáveis na integral. Coordenadas polares, cilíndricas e esféricas. Aplicações.", "Cálculo Diferencial e Integral II", 2),
-	("HUM-02", 3, "Conceito de ética e de moral. Noções de teoria ética: Ética clássica; Ética kantiana; Ética utilitarista. Ética moderna, indivíduo e sociedade: Enfoques temáticos como bioética, ética e economia, códigos de conduta empresarial e meio ambiente. Ética na engenharia: Código de Ética Profissional; Tecnologia e riscos; Falhas humanas e falhas tecnológicas. Responsabilidade do engenheiro; Exemplos de excelência e exemplos de infrações éticas", "Ética", 2),
-	("HUM-03", 3, "Filosofia, mito e religião. O fisiologismo primordial. Argumentação e retórica: Sócrates e os sofistas. Platão: o cosmo, o humano e a polis. A síntese aristotélica. Epicuro e os estóicos. Cícero e a preservação da cultura grega na Roma Antiga. O helenismo e a passagem ao mundo cristão.", "Introdução à Filosofia: As Origens", 4),
-	("FIS-15", 3, "Forças. Estática. Equilíbrio de um corpo rígido. Cinemática da partícula em um plano. Movimento circular. Dinâmica da partícula. Conceito de referencial inercial. Leis de Newton. Princípio de conservação do momento linear. Atrito. Sistemas com massa variável. Dinâmica do movimento curvilíneo. Momento angular. Forças centrais. Movimento relativo. Transformações de Galileu. Referenciais não inerciais. Trabalho e energia. Forças conservativas e energia potencial. Movimento sob ação de forças conservativas. Curvas de potencial. Forças não conservativas. Dinâmica de um sistema de partículas: centro de massa, momento angular, energia cinética. Colisões.", "Mecânica I", 5),
-	("FIS-26", 3, "Dinâmica do corpo rígido: centro de massa, momento de inércia, energia, equação do movimento de rotação, rolamento, movimento giroscópico. Movimento oscilatório: dinâmica do movimento harmônico simples; pêndulos, osciladores acoplados, oscilações harmônicas, oscilações amortecidas, oscilações forçadas e ressonância. Movimento ondulatório: ondas em cordas, ondas estacionárias, ressonância, ondas sonoras, batimento, efeito Doppler. Gravitação. Introdução à Mecânica Analítica: trabalho virtual, equação de D’Alembert, equações de Lagrange, princípio de Hamilton e equações de Hamilton.", "Mecânica II", 6),
-	("QUI-18", 3, "Principais experiências para a caracterização do átomo, espectro atômico do átomo de hidrogênio e o modelo de Bohr, estrutura atômica, espectros atômicos, seus níveis energéticos e geometria dos orbitais atômicos. Ligações Químicas: covalentes, iônicas e metálicas com abordagem nos modelos do elétron localizado e dos orbitais moleculares. Momento de dipolo elétrico das moléculas. Estrutura cristalina dos metais e dos compostos iônicos simples. Faces planas naturais e ângulos diedros, clivagem, hábito. Célula unitária e sistemas cristalinos. Empilhamento compacto. Índices de Miller. Difração de raios X. Defeitos e ideias básicas sobre estrutura dos silicatos.", "Química Geral I", 1),
-	("QUI-28", 3, "Termodinâmica química: energia interna, entalpia, entropia e energia livre de Gibbs. Potencial químico, atividade e fugacidade. Relação entre energia livre de Gibbs e constante de equilíbrio. Eletroquímica: equilíbrios de reações de óxido-redução, eletrodos, potenciais de equilíbrio dos eletrodos, pilhas e baterias, leis da eletrólise e corrosão.", "Química Geral II", 2);
+INSERT INTO disciplina (codigo, horas_semanais, creditos, ementa, nome, semestre_ideal) VALUES
+	("MAT-12", 4, 3, "Números reais. Funções reais de uma variável real. Limites. Funções contínuas: teoremas do valor intermediário e de Bolzano-Weierstrass. Derivadas: definição e propriedades, funções diferenciáveis, regra da cadeia e derivada da função inversa. Teorema do valor médio. Fórmula de Taylor e pesquisa de máximos, mínimos e pontos de inflexão; aplicações. Regras de L'Hospital. Integral de Riemann: definição, propriedades e interpretação geométrica. O Teorema Fundamental do Cálculo. Técnicas de integração. Aplicações. Integrais impróprias. Sequências numéricas: continuidade e convergência, seqüências monótonas, convergência e completude do conjunto dos números reais. Séries Numéricas: convergência ou divergência de uma série. Critérios de convergência: critérios do termo geral, da razão, da raiz, da integral e critério de Leibniz. Convergência absoluta e convergência condicional. Séries de Potências: intervalo de convergência e o Teorema de Abel. Propriedades da soma de uma série de potências: continuidade, derivação e integração termo a termo. Séries de Taylor das principais funções elementares. Aplicações.","Cálculo Diferencial e Integral I", "1"),
+	("MAT-22", 4, 3, "Noções da topologia no Rn. Curvas parametrizadas em Rn. Funções de várias variáveis, curvas e superfíceis de nível. Limite e continuidade. Derivadas direcionais e derivadas parciais. Diferenciabilidade e diferencial. Regra da cadeia. O vetor gradiente e sua interpretação. Derivadas parciais de ordem superior. Fórmula de Taylor e pesquisa de máximos, mínimos e pontos de sela. Extremos condicionados: Multiplicadores de Lagrange. Transformações entre espaços reais: a diferencial e a matriz Jacobiana. Conjuntos de nível. Teorema da Função Implícita e Teorema da Função Inversa. Integrais Múltiplas: integral dupla e integral tripla. Integral iterada e o Teorema de Fubini. Mudança de variáveis na integral. Coordenadas polares, cilíndricas e esféricas. Aplicações.", "Cálculo Diferencial e Integral II", 2),
+	("HUM-02", 4, 3, "Conceito de ética e de moral. Noções de teoria ética: Ética clássica; Ética kantiana; Ética utilitarista. Ética moderna, indivíduo e sociedade: Enfoques temáticos como bioética, ética e economia, códigos de conduta empresarial e meio ambiente. Ética na engenharia: Código de Ética Profissional; Tecnologia e riscos; Falhas humanas e falhas tecnológicas. Responsabilidade do engenheiro; Exemplos de excelência e exemplos de infrações éticas", "Ética", 2),
+	("HUM-03", 4, 3, "Filosofia, mito e religião. O fisiologismo primordial. Argumentação e retórica: Sócrates e os sofistas. Platão: o cosmo, o humano e a polis. A síntese aristotélica. Epicuro e os estóicos. Cícero e a preservação da cultura grega na Roma Antiga. O helenismo e a passagem ao mundo cristão.", "Introdução à Filosofia: As Origens", 4),
+	("FIS-15", 4, 3, "Forças. Estática. Equilíbrio de um corpo rígido. Cinemática da partícula em um plano. Movimento circular. Dinâmica da partícula. Conceito de referencial inercial. Leis de Newton. Princípio de conservação do momento linear. Atrito. Sistemas com massa variável. Dinâmica do movimento curvilíneo. Momento angular. Forças centrais. Movimento relativo. Transformações de Galileu. Referenciais não inerciais. Trabalho e energia. Forças conservativas e energia potencial. Movimento sob ação de forças conservativas. Curvas de potencial. Forças não conservativas. Dinâmica de um sistema de partículas: centro de massa, momento angular, energia cinética. Colisões.", "Mecânica I", 5),
+	("FIS-26", 4, 3, "Dinâmica do corpo rígido: centro de massa, momento de inércia, energia, equação do movimento de rotação, rolamento, movimento giroscópico. Movimento oscilatório: dinâmica do movimento harmônico simples; pêndulos, osciladores acoplados, oscilações harmônicas, oscilações amortecidas, oscilações forçadas e ressonância. Movimento ondulatório: ondas em cordas, ondas estacionárias, ressonância, ondas sonoras, batimento, efeito Doppler. Gravitação. Introdução à Mecânica Analítica: trabalho virtual, equação de D’Alembert, equações de Lagrange, princípio de Hamilton e equações de Hamilton.", "Mecânica II", 6),
+	("QUI-18", 4, 3, "Principais experiências para a caracterização do átomo, espectro atômico do átomo de hidrogênio e o modelo de Bohr, estrutura atômica, espectros atômicos, seus níveis energéticos e geometria dos orbitais atômicos. Ligações Químicas: covalentes, iônicas e metálicas com abordagem nos modelos do elétron localizado e dos orbitais moleculares. Momento de dipolo elétrico das moléculas. Estrutura cristalina dos metais e dos compostos iônicos simples. Faces planas naturais e ângulos diedros, clivagem, hábito. Célula unitária e sistemas cristalinos. Empilhamento compacto. Índices de Miller. Difração de raios X. Defeitos e ideias básicas sobre estrutura dos silicatos.", "Química Geral I", 1),
+	("QUI-28", 4, 3, "Termodinâmica química: energia interna, entalpia, entropia e energia livre de Gibbs. Potencial químico, atividade e fugacidade. Relação entre energia livre de Gibbs e constante de equilíbrio. Eletroquímica: equilíbrios de reações de óxido-redução, eletrodos, potenciais de equilíbrio dos eletrodos, pilhas e baterias, leis da eletrólise e corrosão.", "Química Geral II", 2);
 
 INSERT INTO requere (fk_disciplina_id, fk_requerida_id) VALUES
 	(2, 1),
@@ -58,13 +58,39 @@ INSERT INTO sala (andar, capacidade, departamento, numero) VALUES
 	(1, 55, 2, 2312),
 	(1, 75, 2, 2322);
 	
-INSERT INTO disciplina_oferecida (ano, dia_semana, horario, semestre, turma, fk_disciplina_id, fk_professor_id, fk_sala_id) VALUES
-	(2020, "SEG", "M1", 1, 1, 1, 1, 1),
-	(2020, "SEG", "V1", 1, 1, 3, 2, 1),
-	(2020, "TER", "M1", 1, 1, 4, 1, 4),
-	(2020, "QUA", "M1", 1, 1, 5, 3, 3),
-	(2020, "QUI", "M1", 1, 1, 7, 4, 5),
-	(2020, "SAB", "M1", 1, 1, 7, 4, 5);
+INSERT INTO disciplina_oferecida (ano, semestre, turma, fk_disciplina_id, fk_professor_id, fk_sala_id) VALUES
+	(2020, 1, 1, 1, 1, 1),
+	(2020, 1, 1, 3, 2, 1),
+	(2020, 1, 1, 4, 1, 4),
+	(2020, 1, 1, 5, 3, 3),
+	(2020, 1, 1, 7, 4, 5),
+	(2020, 1, 1, 8, 4, 5);
+	
+INSERT INTO dia_hora (dia_semana, horario, fk_disciplina_oferecida_id) VALUES
+	("SEG", "M1", 1),
+	("SEG", "M2", 1),
+	("SEG", "M3", 1),
+	("SEG", "M4", 1),
+	("SEG", "V1", 2),
+	("SEG", "V2", 2),
+	("TER", "V1", 2),
+	("TER", "V2", 2),
+	("TER", "M1", 3),
+	("TER", "M2", 3),
+	("QUA", "M3", 3),
+	("QUA", "M4", 3),
+	("QUA", "M1", 4),
+	("QUA", "M2", 4),
+	("TER", "M3", 4),
+	("TER", "M4", 4),
+	("QUI", "M1", 5),
+	("QUI", "M2", 5),
+	("QUI", "M3", 5),
+	("QUI", "M4", 5),
+	("SAB", "M1", 6),
+	("SAB", "M2", 6),
+	("SAB", "M3", 6),
+	("SAB", "M4", 6);
 
 INSERT INTO informe (data_publicacao, departamento, descricao, prioridade, titulo, fk_professor_id) VALUES
 	("2020-02-01 15:25:15", 4, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 3, "Loren Ipson 01", 1),

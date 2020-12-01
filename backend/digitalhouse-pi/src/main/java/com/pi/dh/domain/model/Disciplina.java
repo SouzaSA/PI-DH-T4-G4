@@ -38,6 +38,9 @@ public class Disciplina implements Serializable {
     @Column
     private Integer creditos;
     
+    @Column(name="horas_semanais")
+    private Integer horasSemanais;
+    
     @Size(max=10)
     @Column
     private String codigo;

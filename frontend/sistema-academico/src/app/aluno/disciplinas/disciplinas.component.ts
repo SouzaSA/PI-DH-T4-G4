@@ -27,41 +27,64 @@ export class DisciplinasComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getDiasSemana();
-    this.getHorarios();
+    this.alunoService.getAlunoPorPessoaId(this.authService.getUserIdOnToken()).subscribe(alu => this.aluno = alu);
 
-    this.alunoService.getAlunoPorPessoaId(this.authService.getUserIdOnToken()).subscribe(alu => this.aluno = alu),
-
-    this.alunoService.getCursaDisciplinaOferecida(+sessionStorage.getItem('alunoId')).subscribe(disciplinasCursadas => this.disciplinasCursadas = disciplinasCursadas)
+    this.alunoService.getCursaDisciplinaOferecida(+sessionStorage.getItem('alunoId')).subscribe(disciplinasCursadas => {
+      this.disciplinasCursadas = disciplinasCursadas
+      if (!this.grade && this.disciplinasCursadas && this.diasSemana){
+        this.geraGradeHorario();
+      }
+    });
   
-    this.geraGradeHorario();
+    this.carregaGrade();
   }
 
   geraGradeHorario() {    
 
-    for (let index = 1; index < this.diasSemana.length+1; index++) {
-      this.grade[index][0] = this.diasSemana[index-1];
-    }
+    this.grade = [];
 
-    for (let index = 0; index < this.horarios.length; index++) {
-      this.grade[0][index] = this.horarios[index];
+    //inicializa a grade
+    for (let i = 0; i < this.horarios.length+1; i++) {
+      this.grade[i] = []
+      for (let j = 0; j < this.diasSemana.length+1; j++) {
+        this.grade[i][j] = '';
+        if (i == 0 && j != 0){
+          
+          this.grade[i][j] = this.diasSemana[j-1];
+        }
+        if (i != 0 && j == 0) {
+          this.grade[i][j] = this.horarios[i-1];
+        }
+      } 
     }
-
     this.disciplinasCursadas.forEach(element => {
-      this.grade[
-        this.diasSemana.indexOf(element.disciplinaOferecida.diaSemana)+1
-      ][
-        this.horarios.indexOf(element.disciplinaOferecida.horario)
-      ] = element.disciplinaOferecida.disciplina.codigo;
+      element.disciplinaOferecida.diasHoras.forEach( diaHora => {
+        console.log(diaHora.horario + " " + diaHora.diaSemana);
+        this.grade[
+          this.horarios.indexOf(diaHora.horario)+1
+        ][
+          this.diasSemana.indexOf(diaHora.diaSemana)+1
+        ] = element.disciplinaOferecida.disciplina.codigo;
+      })
+    });
+  }
+
+  //gambiarra
+  carregaGrade() {
+    this.dropdownService.getDias().subscribe(dados => {
+      this.diasSemana = dados;
+      if (!this.grade && this.disciplinasCursadas && this.horarios){
+        this.geraGradeHorario();
+      }
+    });
+    this.dropdownService.getHorarios().subscribe(dados => {
+      this.horarios = dados;
+      if (!this.grade && this.disciplinasCursadas && this.diasSemana){
+        this.geraGradeHorario();
+      }
     });
 
+    
   }
 
-  async getDiasSemana() {
-    this.dropdownService.getDias().subscribe(dados => this.diasSemana = dados);
-  }
-
-  getHorarios() {
-    this.dropdownService.getHorarios().subscribe(dados => this.horarios = dados);
-  }
 }

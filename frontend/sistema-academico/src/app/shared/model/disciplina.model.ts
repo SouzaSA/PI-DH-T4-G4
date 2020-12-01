@@ -1,6 +1,7 @@
 export class Disciplina {
     disciplinaId?: number;
     codigo?: string;
+    horasSemanais?: number;
     creditos?: number;
     ementa?: string;
     nome?: string;
@@ -10,6 +11,7 @@ export class Disciplina {
     constructor() {
         this.disciplinaId = undefined;
         this.codigo = undefined;
+        this.horasSemanais = undefined;
         this.creditos = undefined;
         this.ementa = undefined;
         this.nome = undefined;

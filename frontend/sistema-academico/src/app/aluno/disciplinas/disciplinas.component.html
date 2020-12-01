@@ -56,18 +56,14 @@
     </div>
   </div>
 
-  <div *ngIf = "!grade; else elseBlock" class="text-center">
-
-    <page-spinner></page-spinner>
-  
-  </div>
-
-  <div #elseBlock>
-    <div *ngFor="let row of grade index as i; odd as isOdd; even as isEven" [class.Odd]="isOdd" [class.even]="isEven">
-      <div *ngFor="let c of row">
-        {{c}}
-      </div>
-    </div>
-  </div>
+  <table class="table mt-4">
+    <tbody>
+      <tr *ngFor="let row of grade index as i; odd as isOdd; even as isEven" [class.Odd]="isOdd" [class.even]="isEven">
+        <td *ngFor="let c of row">
+          {{c}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
   
 </div>
