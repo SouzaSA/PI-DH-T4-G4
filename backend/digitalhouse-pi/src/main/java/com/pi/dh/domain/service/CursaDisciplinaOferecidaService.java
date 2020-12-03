@@ -42,10 +42,31 @@ public class CursaDisciplinaOferecidaService {
 		return mapper.modelToDTO(cursaDisciplinaOferecidaRepository.findById(id).get());
 	}
 	
-	public List<CursaDisciplinaOferecidaDTO> buscarPorAlunoId(Long id) {
-		return cursaDisciplinaOferecidaRepository.findAllByAlunoId(id)
+	public List<CursaDisciplinaOferecidaDTO> buscarPorProfessorId(Long professorId) {
+		return cursaDisciplinaOferecidaRepository.findAllByProfessorId(professorId)
 				.stream()
 				.map(curdis -> mapper.modelToDTO(curdis))
+				.collect(Collectors.toList());
+	}
+	
+	public List<CursaDisciplinaOferecidaDTO> buscarPorAlunoId(Long alunoId) {
+		return cursaDisciplinaOferecidaRepository.findAllByAlunoId(alunoId)
+				.stream()
+				.map(curdis -> mapper.modelToDTO(curdis))
+				.collect(Collectors.toList());
+	}
+	
+	public List<CursaDisciplinaOferecidaDTO> buscarPorDisciplinaId(Long disciplinaId){
+		return cursaDisciplinaOferecidaRepository.findAllByDisciplinaId(disciplinaId)
+				.stream()
+				.map(disOf -> mapper.modelToDTO(disOf))
+				.collect(Collectors.toList());
+	}
+	
+	public List<CursaDisciplinaOferecidaDTO> buscarAllByDisciplinaIdAndProfessorId(Long disciplinaId, Long professorId){
+		return cursaDisciplinaOferecidaRepository.findAllByDisciplinaIdAndProfessorId(disciplinaId, professorId)
+				.stream()
+				.map(disOf -> mapper.modelToDTO(disOf))
 				.collect(Collectors.toList());
 	}
 		

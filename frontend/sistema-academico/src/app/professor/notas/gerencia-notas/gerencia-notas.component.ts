@@ -1,6 +1,8 @@
-import { Disciplina, Turma } from '../notas.model';
-import { NotasService } from '../../../service/notas.service';
+import { DisciplinaDto } from './../../../shared/dto/disciplina.dto';
 import { Component, OnInit } from '@angular/core';
+
+import { CursaDisciplinaOferecidaDto } from 'src/app/shared/dto/cursa-disciplina-oferecida.dto';
+import { NotasService } from '../../../service/notas.service';
 
 @Component({
   selector: 'app-gerencia-notas',
@@ -8,15 +10,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gerencia-notas.component.css'],
 })
 export class GerenciaNotasComponent implements OnInit {
-  turmas: Turma[];
-  disciplinas: Disciplina[];
+  turmas: CursaDisciplinaOferecidaDto[];
+  disciplinas: DisciplinaDto[];
 
   constructor(private notasService: NotasService) {}
 
   ngOnInit() {
-    this.notasService.getTurma().subscribe((turmas) => {
-      this.turmas = turmas;
-    });
+    // this.notasService.getTurma().subscribe((turmas) => {
+    //   this.turmas = turmas;
+    // });
     this.notasService.getDisciplina().subscribe((disciplinas) => {
       this.disciplinas = disciplinas;
     });

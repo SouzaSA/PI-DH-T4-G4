@@ -1,3 +1,5 @@
+import { ProfessorService } from './professor.service';
+import { AdministradorService } from './administrador.service';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 
@@ -15,6 +17,8 @@ export class AuthService {
 
   constructor(
     private alunoService: AlunoService,
+    private administradorService: AdministradorService,
+    private professorService: ProfessorService,
     public repository: AuthRepository, 
     private router: Router
   ) { 
@@ -47,16 +51,18 @@ export class AuthService {
   private armazenarUsuario(jwtPayload) {
      //prof
      if(jwtPayload.authorities.includes('SA03')) {
-      sessionStorage.setItem('professor', 'value');
+      this.professorService.getProfessorPorPessoaId(this.getUserIdOnToken()).
+      subscribe(prof => sessionStorage.setItem('professorId', prof.professorId.toString()));
     }
     //admin
     if(jwtPayload.authorities.includes('SA04')) {
-      sessionStorage.setItem('administrador', 'value');
+      this.administradorService.getAdministradorPorPessoaId(this.getUserIdOnToken()).
+        subscribe(adm => sessionStorage.setItem('administradorId', adm.id));
     }
     //aluno
     if(jwtPayload.authorities.includes('SA05')) {
-      console.log("entreiaqui");
-      this.alunoService.getAlunoPorPessoaId(this.getUserIdOnToken()).subscribe(alu => sessionStorage.setItem('alunoId', alu.id));
+      this.alunoService.getAlunoPorPessoaId(this.getUserIdOnToken())
+        .subscribe(alu => sessionStorage.setItem('alunoId', alu.id));
     }
   }
 

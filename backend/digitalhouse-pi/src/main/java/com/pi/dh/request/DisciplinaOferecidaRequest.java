@@ -2,9 +2,6 @@ package com.pi.dh.request;
 
 import java.io.Serializable;
 
-import com.pi.dh.domain.model.enums.DiaSemana;
-import com.pi.dh.domain.model.enums.Hora;
-
 import lombok.Data;
 
 @Data

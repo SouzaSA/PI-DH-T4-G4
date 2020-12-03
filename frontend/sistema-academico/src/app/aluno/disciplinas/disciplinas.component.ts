@@ -1,10 +1,10 @@
-import { AuthService } from './../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 import { DropdownService } from './../../service/dropdown.service';
+import { AuthService } from './../../service/auth.service';
 import { AlunoService } from './../../service/aluno.service';
 import { CursaDisciplinaOferecidaDto } from '../../shared/dto/cursa-disciplina-oferecida.dto';
-import { Aluno } from 'src/app/professor/notas/notas.model';
+import { Aluno } from './../../shared/model/aluno.model';
 
 @Component({
   selector: 'app-disciplinas',
@@ -29,7 +29,7 @@ export class DisciplinasComponent implements OnInit {
 
     this.alunoService.getAlunoPorPessoaId(this.authService.getUserIdOnToken()).subscribe(alu => this.aluno = alu);
 
-    this.alunoService.getCursaDisciplinaOferecida(+sessionStorage.getItem('alunoId')).subscribe(disciplinasCursadas => {
+    this.alunoService.getCursaDisciplinaOferecidaPeloAlunoId(+sessionStorage.getItem('alunoId')).subscribe(disciplinasCursadas => {
       this.disciplinasCursadas = disciplinasCursadas
       if (!this.grade && this.disciplinasCursadas && this.diasSemana){
         this.geraGradeHorario();
@@ -57,6 +57,7 @@ export class DisciplinasComponent implements OnInit {
         }
       } 
     }
+    //popula grade com os codigos das disciplinas
     this.disciplinasCursadas.forEach(element => {
       element.disciplinaOferecida.diasHoras.forEach( diaHora => {
         console.log(diaHora.horario + " " + diaHora.diaSemana);

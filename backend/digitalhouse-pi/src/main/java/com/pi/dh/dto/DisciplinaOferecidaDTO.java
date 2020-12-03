@@ -18,5 +18,6 @@ public class DisciplinaOferecidaDTO implements Serializable {
 	private ProfessorDTO professor;
 	private DisciplinaDTO disciplina;
     private SalaDTO sala;
+    //private List<CursaDisciplinaOferecidaDTO> disciplinasOferecidasCursadas;
     
 }

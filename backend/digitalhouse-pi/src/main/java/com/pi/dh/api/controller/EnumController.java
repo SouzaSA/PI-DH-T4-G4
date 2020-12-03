@@ -28,4 +28,9 @@ public class EnumController {
 		return enumService.listaDias();
 	}
 	
+	@GetMapping("/avaliacoes")
+	public List<String> ListaAvaliacoes() {
+		return enumService.listaAvaliacoes();
+	}
+	
 }

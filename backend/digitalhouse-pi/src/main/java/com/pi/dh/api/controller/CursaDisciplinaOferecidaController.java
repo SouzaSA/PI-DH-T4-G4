@@ -41,9 +41,24 @@ public class CursaDisciplinaOferecidaController {
 		return cursaDisciplinaOferecidaService.buscarPorId(id);
 	}
 	
-	@GetMapping("/aluno/{id}")
-	public List<CursaDisciplinaOferecidaDTO> buscarPorAlunoId(@PathVariable Long id) {
-		return cursaDisciplinaOferecidaService.buscarPorAlunoId(id);
+	@GetMapping("/aluno/{alunoId}")
+	public List<CursaDisciplinaOferecidaDTO> buscarPorAlunoId(@PathVariable Long alunoId) {
+		return cursaDisciplinaOferecidaService.buscarPorAlunoId(alunoId);
+	}
+	
+	@GetMapping("/professor/{professorId}")
+	public List<CursaDisciplinaOferecidaDTO> buscarPorProfessorId(@PathVariable Long professorId) {
+		return cursaDisciplinaOferecidaService.buscarPorProfessorId(professorId);
+	}
+	
+	@GetMapping("/disciplina/{disciplinaId}")
+	public List<CursaDisciplinaOferecidaDTO> buscarPorDisciplinaId(@PathVariable Long disciplinaId) {
+		return cursaDisciplinaOferecidaService.buscarPorDisciplinaId(disciplinaId);
+	}
+	
+	@GetMapping("/disciplina/{disciplinaId}/professor/{professorId}")
+	public List<CursaDisciplinaOferecidaDTO> buscarAllByDisciplinaIdAndProfessorId(@PathVariable Long disciplinaId, @PathVariable Long professorId) {
+		return cursaDisciplinaOferecidaService.buscarAllByDisciplinaIdAndProfessorId(disciplinaId, professorId);
 	}
 	
 	@DeleteMapping("/{id}")

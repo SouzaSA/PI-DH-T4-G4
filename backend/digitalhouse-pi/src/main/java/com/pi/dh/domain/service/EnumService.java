@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.pi.dh.domain.model.enums.Avaliacoes;
 import com.pi.dh.domain.model.enums.DiaSemana;
 import com.pi.dh.domain.model.enums.Hora;
 
@@ -18,6 +19,10 @@ public class EnumService {
 	
 	public List<String> listaDias() {
 		return  Arrays.asList(DiaSemana.values()).stream().map(value -> value.getDia()).collect(Collectors.toList());
+	}
+	
+	public List<String> listaAvaliacoes() {
+		return Arrays.asList(Avaliacoes.values()).stream().map(value -> value.toString()).collect(Collectors.toList());
 	}
 	
 }

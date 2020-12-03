@@ -68,5 +68,14 @@ public class DisciplinaOferecida implements Serializable {
 	@JsonBackReference
 	@JoinColumn(name="fk_sala_id")
     private Sala sala;
+	
+	@OneToMany (
+			mappedBy = "disciplinaOferecida",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
+	@JsonManagedReference
+	private List<CursaDisciplinaOferecida> cursaDisciplinasOferecidas;
+	
 
 }

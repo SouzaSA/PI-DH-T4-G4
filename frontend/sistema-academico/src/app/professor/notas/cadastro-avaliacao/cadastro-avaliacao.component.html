@@ -9,7 +9,7 @@
       >
         <ng-template let-group pTemplate="group">
           <div class="p-d-flex p-ai-center">
-            <span>{{ group.label }}</span>
+            <span>{{ group.codigo }}</span>
           </div>
         </ng-template>
       </p-dropdown>
@@ -26,7 +26,7 @@
     <input
       type="text"
       pInputText
-      (ngModel)="(avaliacao.nome)"
+      (ngModel)="(avaliacao.titulo)"
       [ngModelOptions]="{ standalone: true }"
       placeholder="Avaliação"
     />
@@ -54,7 +54,7 @@
     <tr>
       <td>{{ avaliacao.disciplina }}</td>
       <td>{{ avaliacao.turma }}</td>
-      <td>{{ avaliacao.nome }}</td>
+      <td>{{ avaliacao.titulo }}</td>
       <td>{{ avaliacao.data }}</td>
       <td class="deletar-atualizar">
         <p-button

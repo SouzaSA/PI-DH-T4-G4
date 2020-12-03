@@ -1,7 +1,13 @@
-import { Avaliacao, Turma } from './../notas.model';
 import { Component, OnInit } from '@angular/core';
 import { SelectItem, SelectItemGroup } from 'primeng/api';
+
+import { map } from 'rxjs/operators';
+
+import { ProfessorService } from './../../../service/professor.service';
 import { AvaliacaoService } from 'src/app/service/avaliacao.service';
+import { DisciplinaDto } from './../../../shared/dto/disciplina.dto';
+import { CursaDisciplinaOferecidaDto } from 'src/app/shared/dto/cursa-disciplina-oferecida.dto';
+import { NotaDto } from 'src/app/shared/dto/nota.dto';
 
 @Component({
   selector: 'app-cadastro-avaliacao',
@@ -9,34 +15,26 @@ import { AvaliacaoService } from 'src/app/service/avaliacao.service';
   styleUrls: ['./cadastro-avaliacao.component.css'],
 })
 export class CadastroAvaliacaoComponent implements OnInit {
-  disciplinas: SelectItemGroup[];
+  disciplinasPeloProfessor: CursaDisciplinaOferecidaDto[];
+  disciplinas: DisciplinaDto[];
+  avaliacao: NotaDto;
   items: SelectItem[];
-  avaliacao: Avaliacao;
   turmaSelecionada: string;
   operacao = true;
   data: Date;
 
-  constructor(private avaliacaoService: AvaliacaoService) {
-    this.disciplinas = [
-      {
-        label: 'DISC1',
-        value: 'DISC1',
-        items: [
-          { label: 'DISC1-A', value: 'DISC1-A' },
-          { label: 'DISC1-B', value: 'DISC1-B' },
-        ],
-      },
-      {
-        label: 'DISC2',
-        value: 'DISC2',
-        items: [{ label: 'DISC2-A', value: 'DISC2-A' }],
-      },
-      { label: 'DISC3', value: 'DISC3', items: [] },
-      { label: 'DISC4', value: 'DISC4', items: [] },
-    ];
-  }
+  constructor(
+    private professorService: ProfessorService,
+    private avaliacaoService: AvaliacaoService
+  ) {}
 
   ngOnInit(): void {
+    this.professorService.listaCursaDisciplinaOferecidaPeloProfessorId(+sessionStorage.getItem('professorId'))
+      .subscribe(data => {
+        this.disciplinasPeloProfessor = data,
+        this.disciplinas = Array.from(new Set(data.map(v => v.disciplinaOferecida.disciplina)))
+
+      });
     this.consultar();
   }
 

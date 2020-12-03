@@ -58,7 +58,14 @@ public class DisciplinaOferecidaService {
 		//return disciplinaOferecidaRepository.findAll();
 		return disciplinaOferecidaRepository.findAll()
 				.stream()
-				.map(pess -> mapper.modelToDTO(pess))
+				.map(disOf -> mapper.modelToDTO(disOf))
+				.collect(Collectors.toList());
+	}
+	
+	public List<DisciplinaOferecidaDTO> listarPorProfessorId(Long professorId){
+		return disciplinaOferecidaRepository.findAllByProfessor(professorId)
+				.stream()
+				.map(disOf -> mapper.modelToDTO(disOf))
 				.collect(Collectors.toList());
 	}
 	

@@ -13,6 +13,26 @@ public interface CursaDisciplinaOferecidaRepository extends JpaRepository<CursaD
 
 	@Query("SELECT cdo FROM CursaDisciplinaOferecida cdo "
 			+ "LEFT JOIN cdo.aluno alu WHERE alu.alunoId = ?1")
-	List<CursaDisciplinaOferecida> findAllByAlunoId(Long id);
+	List<CursaDisciplinaOferecida> findAllByAlunoId(Long alunoId);
+	
+	@Query("SELECT cdo FROM CursaDisciplinaOferecida cdo "
+			+ "LEFT JOIN cdo.disciplinaOferecida disOf "
+			+ "LEFT JOIN disOf.professor prof "
+			+ "WHERE prof.professorId = ?1")
+	List<CursaDisciplinaOferecida> findAllByProfessorId(Long professorId);
+	
+	@Query("SELECT cdo FROM CursaDisciplinaOferecida cdo "
+			+ "LEFT JOIN cdo.disciplinaOferecida disOf "
+			+ "LEFT JOIN disOf.disciplina dis "
+			+ "WHERE dis.disciplinaId = ?1")
+	List<CursaDisciplinaOferecida> findAllByDisciplinaId(Long disciplinaId);
+	
+	@Query("SELECT cdo FROM CursaDisciplinaOferecida cdo "
+			+ "LEFT JOIN cdo.disciplinaOferecida disOf "
+			+ "LEFT JOIN disOf.professor prof "
+			+ "LEFT JOIN disOf.disciplina dis "
+			+ "WHERE dis.disciplinaId = ?1 "
+			+ "AND prof.professorId = ?2")
+	List<CursaDisciplinaOferecida> findAllByDisciplinaIdAndProfessorId(Long disciplinaId, Long professorId);
 
 }

@@ -36,6 +36,11 @@ public class DisciplinaOferecidaController {
 		return disciplinaOferecidaService.listar();
 	}
 	
+	@GetMapping("/professor/{professorId}")
+	public List<DisciplinaOferecidaDTO> listarPorProfessorId(@PathVariable Long professorId) {
+		return disciplinaOferecidaService.listarPorProfessorId(professorId);
+	}
+	
 	@GetMapping("/{id}")
 	public DisciplinaOferecida buscarPorId(@PathVariable Long id) {
 		return disciplinaOferecidaService.buscarPorId(id);

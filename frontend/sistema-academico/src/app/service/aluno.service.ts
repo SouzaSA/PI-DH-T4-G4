@@ -29,7 +29,9 @@ export class AlunoService {
     );
   }
 
-  getCursaDisciplinaOferecida(id: number) {
+  getCursaDisciplinaOferecidaPeloAlunoId(id: number) {
     return this.http.get<CursaDisciplinaOferecidaDto[]>(this.API+"cursaDisciplinasOferecidas/aluno/"+id)
   }
+
+  
 }
