@@ -4,33 +4,39 @@
       <p-dropdown
         [options]="disciplinas"
         [(ngModel)]="turmaSelecionada"
-        placeholder="Turma"
-        [group]="true"
+        optionLabel="codigo"
+        placeholder="Disciplina"
+        (onChange)="atualizaUltimaAvaliacao(turmaSelecionada)"
       >
-        <ng-template let-group pTemplate="group">
-          <div class="p-d-flex p-ai-center">
-            <span>{{ group.codigo }}</span>
+        <ng-template pTemplate="selectedItem">
+            <div  *ngIf="turmaSelecionada">
+              {{ turmaSelecionada.codigo }}
+            </div>
+        </ng-template>
+        
+      </p-dropdown>
+    </div>
+
+    <div class="p-field p-col-6">
+      <p-dropdown
+        [options]="avaliacaoTipos"
+        [(ngModel)]="avaliacaoSelecionada"
+        placeholder="Avaliação"
+      >
+        <ng-template pTemplate="selectedItem">
+          <div *ngIf="avaliacaoSelecionada">
+            <span>{{ avaliacaoSelecionada }}</span>
           </div>
+        </ng-template>
+
+        <ng-template let-avaliacao pTemplate="item">
+          <div>{{avaliacao}}</div>
         </ng-template>
       </p-dropdown>
     </div>
-    <div class="p-field p-col-6">
-      <p-calendar
-        [(ngModel)]="data"
-        [ngModelOptions]="{ standalone: true }"
-        dateFormat="dd.mm.yy"
-      ></p-calendar>
-    </div>
+
   </div>
-  <div class="p-field p-col-6">
-    <input
-      type="text"
-      pInputText
-      (ngModel)="(avaliacao.titulo)"
-      [ngModelOptions]="{ standalone: true }"
-      placeholder="Avaliação"
-    />
-  </div>
+
 </div>
 <button
   pButton

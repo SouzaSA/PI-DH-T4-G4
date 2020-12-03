@@ -49,4 +49,8 @@ export class DropdownService {
   getSalas () {
     return this.http.get<SalaDto[]>(`${this.API}salas`);
   }
+
+  getAvaliacoes() {
+    return this.http.get<string[]>(`${this.API}enums/avaliacoes`).pipe(tap(console.log));
+  }
 }

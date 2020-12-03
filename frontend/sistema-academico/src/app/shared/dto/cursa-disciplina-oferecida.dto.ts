@@ -9,5 +9,5 @@ export interface CursaDisciplinaOferecidaDto {
   faltas?: Number,
   aluno?: AlunoDto,
   disciplinaOferecida?: DisciplinaOferecidaDto,
-  notas?: NotaDto
+  notas?: NotaDto[]
 }
